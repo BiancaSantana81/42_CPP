@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 14:47:49 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/04 10:54:05 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/04 10:56:41 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 void megaphone(std::string& str)
 {
     for (size_t i = 0; i < str.length(); i++)
-        str[i] = toupper(static_cast<unsigned char>(str[i]));
+        str[i] = toupper(str[i]);
     std::cout << str << std::endl;
 }
 
