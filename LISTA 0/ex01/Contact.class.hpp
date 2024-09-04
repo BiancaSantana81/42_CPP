@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 14:04:38 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/04 14:38:33 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/04 15:21:13 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ class Contact
 {
     public:
 
-    void PrintHello(void);
+    Contact( void );
+    ~Contact( void );
 };
 
 #endif

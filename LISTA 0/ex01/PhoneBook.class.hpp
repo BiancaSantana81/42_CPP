@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 11:10:30 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/04 14:38:29 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/04 15:17:32 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ class PhoneBook
 {
     public:
 
-    void PrintHello(void);
+    PhoneBook( void );
+    ~PhoneBook( void );
 };
 
 #endif
