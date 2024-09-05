@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 11:10:30 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/04 17:26:45 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/05 13:27:29 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,17 @@
 #include <iostream>
 # include<string>
 
+#include "Contact.hpp"
+
 class PhoneBook
 {
     public:
 
     PhoneBook( void );
     ~PhoneBook( void );
+
+    private:
+    Contact people[8];
 
 };
 

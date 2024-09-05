@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 14:04:38 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/05 11:23:23 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/05 18:15:18 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,11 @@ class Contact
     public:
 
     /* Functions constructor and destructor */
-        
+
     Contact();
     ~Contact();
 
     /* Functions for get values */
-    
     std::string getName() const;
     std::string getLast() const;
     std::string getNick() const;
@@ -47,6 +46,7 @@ class Contact
     void setNickname(std::string &newNickname);
     void setSecret(std::string &darkestSecret);
     void setNumber(int &newNumber);
+
 };
 
 #endif
