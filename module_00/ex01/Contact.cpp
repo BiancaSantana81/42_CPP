@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 14:31:50 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/10 14:12:43 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/10 16:38:02 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ std::string Contact::getSecret(void) const
     return (this->_darkestSecret);
 }
 
-int Contact::getNumber(void) const
+std::string Contact::getNumber(void) const
 {
     return (this->_phoneNumber);
 }
@@ -73,7 +73,7 @@ void Contact::setSecret(std::string &newdarkestSecret)
     this->_darkestSecret = newdarkestSecret;
 }
 
-void Contact::setNumber(int &newNumber)
+void Contact::setNumber(std::string &newNumber)
 {
     this->_phoneNumber = newNumber;
 }

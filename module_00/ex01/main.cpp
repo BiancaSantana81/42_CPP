@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 11:10:23 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/10 14:21:00 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/10 17:29:47 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ int main(void)
     std::string command;
 
     std::cout << MAGENTA << "Welcome to PhoneBook!" << RESET << std::endl;
-    std::cout << "Type your choice:" << std::endl;
     while (true)
     {
+        std::cout << "Type your choice:" << std::endl;
         std::getline(std::cin, command);
 
         if (command == "ADD")
