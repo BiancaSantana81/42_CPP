@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 11:10:30 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/05 13:27:29 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/10 11:53:45 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,9 @@ class PhoneBook
     ~PhoneBook( void );
 
     private:
-    Contact people[8];
 
+    static const int MAX_CONTACTS = 8;
+    Contact _contacts[MAX_CONTACTS];
 };
 
 #endif
