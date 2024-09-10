@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 14:31:50 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/10 12:13:53 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/10 14:12:43 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 
 Contact::Contact( void )
 {
-    std::cout << "Constructor Contact called." << std::endl;
     return ;
 }
 
@@ -24,7 +23,6 @@ Contact::Contact( void )
 
 Contact::~Contact( void )
 {
-    std::cout << "Destructor Contact called." << std::endl;
     return ;
 }
 

@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 14:04:38 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/05 18:15:18 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/10 14:59:27 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 # include<string>
+#include "colors.hpp"
 
 class Contact
 {
