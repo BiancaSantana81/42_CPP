@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 14:32:14 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/10 17:55:10 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/10 18:14:27 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,11 @@ void PhoneBook::addContact(void)
 
 void PhoneBook::searchContact(void)
 {
-    return ;
+    //index, name, lastname, nickname ->exibe todos os contatos em 4 colunas
+    
+    if (_contactCount == 0)
+        std::cout << RED << "PhoneBook is empty." << RESET << std::endl;
+
+    for (int i = 0; i <= MAX_CONTACTS; i++)
+        std::cout << _contact[i].getName() << std::endl;
 }
