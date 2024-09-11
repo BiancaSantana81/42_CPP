@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 14:32:14 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/11 16:42:45 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/11 18:24:30 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,7 +125,7 @@ void PhoneBook::searchContact(void)
             continue ;
         }
         valid_index = this->convertInt(content);
-        if (valid_index < 1 || valid_index > _contactCount)
+        if (valid_index < 1 || valid_index > _contactCount) // vou trocar por números aqui ao invés de _contactCount
         {
             std::cout << RED << "Invalid index. Please enter a number between 1 and " << _contactCount << "." << RESET << std::endl;
             valid_index = -1;
