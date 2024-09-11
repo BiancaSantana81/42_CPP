@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 14:31:50 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/10 16:38:02 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/11 15:50:03 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,4 +76,32 @@ void Contact::setSecret(std::string &newdarkestSecret)
 void Contact::setNumber(std::string &newNumber)
 {
     this->_phoneNumber = newNumber;
+}
+
+/* Functions for get values truncate */
+
+std::string Contact::getTruncName(void)
+{
+    return trucateString(this->_name);
+}
+
+std::string Contact::getTruncLast(void)
+{
+    return trucateString(this->_lastName);
+}
+
+std::string Contact::getTruncNick(void)
+{
+    return trucateString(this->_nickname);
+}
+
+/* Utils for Contact */
+
+std::string Contact::trucateString(std::string content)
+{
+    unsigned int length = 10;
+
+    if (content.length() >= length)
+        return (content.substr(0, length) + ".");
+    return (content);
 }

@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 14:04:38 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/10 16:39:34 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/11 15:50:11 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 # include<string>
+#include <stdlib.h>
 #include "colors.hpp"
 
 class Contact
@@ -26,6 +27,7 @@ class Contact
     std::string _nickname;
     std::string _darkestSecret;
     std::string _phoneNumber;
+    std::string trucateString(std::string content);
 
     public:
 
@@ -47,6 +49,11 @@ class Contact
     void setNickname(std::string &newNickname);
     void setSecret(std::string &darkestSecret);
     void setNumber(std::string &newNumber);
+
+    /* Functions for get values truncate */
+    std::string getTruncName(void);
+    std::string getTruncLast(void);
+    std::string getTruncNick(void);
 
 };
 
