@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 14:32:14 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/11 16:27:38 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/11 16:42:45 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ void PhoneBook::searchContact(void)
     std::cout << std::setw(10) << MAGENTA << " LastName " << "|";
     std::cout << std::setw(10) << MAGENTA << " Nickname " << " | " << RESET << std::endl;
     
-    for (int i = 0; i < _contactCount; i++)
+    for (int i = 0; i < _contactCount; i++) // eu acho que da seg fault por que eu to usando _contactCount que é realmente maior que o index.
     {
         std::cout <<std::setw(10) << (i + 1) << " | ";
         std::cout <<std::setw(10) << this->_contact[i].getTruncName() << " | ";
