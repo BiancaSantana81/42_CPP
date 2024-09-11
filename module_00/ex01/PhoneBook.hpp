@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/04 11:10:30 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/10 17:56:31 by bsantana         ###   ########.fr       */
+/*   Created: 2024/09/10 19:01:37 by bsantana          #+#    #+#             */
+/*   Updated: 2024/09/10 19:01:40 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 #define PHONEBOOK_HPP
 
 #include <iostream>
-# include<string>
+#include<string>
 #include <stdlib.h>
+#include <iomanip> // adicionei para criar a minha planilha.
 
 #include "Contact.hpp"
 #include "colors.hpp"

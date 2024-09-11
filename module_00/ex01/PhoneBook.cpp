@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 14:32:14 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/10 18:14:27 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/11 11:02:41 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void PhoneBook::addContact(void)
 {
     std::string content;
     int         index;
+    bool        valid_number;
 
     if (_contactCount >= MAX_CONTACTS)
         std::cout << RED << "Full list. The oldest contact added will be replaced by this one." << RESET << std::endl;
@@ -67,11 +68,21 @@ void PhoneBook::addContact(void)
         this->_contact[index].setSecret(content);
     }
     content.clear();
-    while (content.empty())
+    while (content.empty() || valid_number == false)
     {
+        valid_number = true;
         std::cout << "Enter number: ";
         std::getline(std::cin, content);
-        if (content.empty())
+        for (size_t i = 0; i < content.size(); i++)
+        {
+            if (!isdigit(content[i]))
+            {
+                valid_number = false;
+                std::cout << RED << "Just numbers!" << RESET << std::endl;
+                break ;
+            }
+        }
+        if (content.empty() || valid_number == false)
             std::cout << RED << "Please, type number." << RESET<< std::endl;
         this->_contact[index].setNumber(content);
     }
@@ -81,8 +92,6 @@ void PhoneBook::addContact(void)
 
 void PhoneBook::searchContact(void)
 {
-    //index, name, lastname, nickname ->exibe todos os contatos em 4 colunas
-    
     if (_contactCount == 0)
         std::cout << RED << "PhoneBook is empty." << RESET << std::endl;
 

@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 11:10:23 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/10 18:01:25 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/10 18:20:33 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,6 @@ int main(void)
             std::cout << "Please type: ADD, SEARCH or EXIT." << std::endl;
         }
     }
-    std::cout << BRIGHT_CYAN <<"Bye!" << RESET  << std::endl; 
+    std::cout << BRIGHT_CYAN <<"Bye!" << RESET  << std::endl;
     return (0);
 }
