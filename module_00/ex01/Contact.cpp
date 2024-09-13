@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 14:31:50 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/11 18:25:28 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/13 16:40:53 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,28 +80,28 @@ void Contact::setNumber(std::string &newNumber)
 
 /* Functions for get values truncate */
 
-std::string Contact::getTruncName(void)
+std::string Contact::getTruncName(void) const
 {
-    return trucateString(this->_name);
+    return truncateString(this->_name);
 }
 
-std::string Contact::getTruncLast(void)
+std::string Contact::getTruncLast(void) const 
 {
-    return trucateString(this->_lastName);
+    return truncateString(this->_lastName);
 }
 
-std::string Contact::getTruncNick(void)
+std::string Contact::getTruncNick(void) const
 {
-    return trucateString(this->_nickname);
+    return truncateString(this->_nickname);
 }
 
 /* Utils for Contact */
 
-std::string Contact::trucateString(std::string content)
+std::string Contact::truncateString(std::string content) const
 {
     unsigned int length = 9;
 
-    if (content.length() >= length)
+    if (content.length() > length)
         return (content.substr(0, length) + ".");
     return (content);
 }

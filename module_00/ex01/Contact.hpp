@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 14:04:38 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/11 15:50:11 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/13 16:41:13 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Contact
     std::string _nickname;
     std::string _darkestSecret;
     std::string _phoneNumber;
-    std::string trucateString(std::string content);
+    std::string truncateString(std::string content) const;
 
     public:
 
@@ -51,9 +51,9 @@ class Contact
     void setNumber(std::string &newNumber);
 
     /* Functions for get values truncate */
-    std::string getTruncName(void);
-    std::string getTruncLast(void);
-    std::string getTruncNick(void);
+    std::string getTruncName(void) const;
+    std::string getTruncLast(void) const ;
+    std::string getTruncNick(void) const;
 
 };
 
