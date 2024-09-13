@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 19:01:37 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/13 17:02:52 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/13 17:34:36 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ class PhoneBook
     void searchContact(void);
     void exit(void);
     int convertInt(std::string content);
+    void header(void);
 
     /* Utils for print display Header, contacts and details */
     

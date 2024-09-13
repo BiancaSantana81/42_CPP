@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 14:32:14 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/13 17:06:05 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/13 17:38:43 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,7 @@ void PhoneBook::searchContact(void)
             continue ;
         }
         valid_index = this->convertInt(content);
-        if (valid_index < 1 || valid_index > 8)
+        if (valid_index < 1 || valid_index > max_display)
         {
             std::cout << BRIGHT_RED << "Invalid index. Please enter a number between 1 and " << max_display << "." << RESET << std::endl;
             valid_index = -1;
@@ -163,6 +163,18 @@ void PhoneBook::utilsDisplayDetails(int valid_index)
         std::cout << BRIGHT_MAGENTA "Nickname: " RESET << this->_contact[valid_index - 1].getNick() << std::endl;
         std::cout << BRIGHT_MAGENTA "DarkestSecret: " RESET << this->_contact[valid_index - 1].getSecret() << std::endl;
         std::cout << BRIGHT_MAGENTA "Number: " RESET << this->_contact[valid_index - 1].getNumber() << std::endl;
+}
+
+void PhoneBook::header(void)
+{
+    std::cout << BRIGHT_MAGENTA "*************" << std::endl;
+    std::cout << BRIGHT_MAGENTA "* PHONEBOOK *" << std::endl;
+    std::cout << BRIGHT_MAGENTA "*************" << std::endl;
+    std::cout << BRIGHT_MAGENTA "* 1. ADD    *" << std::endl;
+    std::cout << BRIGHT_MAGENTA "* 2. SEARCH *" << std::endl;
+    std::cout << BRIGHT_MAGENTA "* 3. EXIT   *" << std::endl;
+    std::cout << BRIGHT_MAGENTA "*************" RESET << std::endl;
+    std::cout << BRIGHT_MAGENTA "Type your choice: " RESET;
 }
 
 void PhoneBook::exit(void)

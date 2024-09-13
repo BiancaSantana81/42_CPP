@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 11:10:23 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/13 17:05:26 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/13 17:36:41 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,9 @@ int main(void)
     PhoneBook phone;
     std::string command;
 
-    std::cout << BRIGHT_MAGENTA << "Welcome to PhoneBook!" << RESET << std::endl;
     while (true)
     {
-        std::cout << "Type your choice:" << std::endl;
+        phone.header();
         std::getline(std::cin, command);
 
         if (command == "ADD")
@@ -32,7 +31,7 @@ int main(void)
         else if (command == "EXIT")
             phone.exit();
         else
-            std::cout << BRIGHT_RED "Invalid!" RESET " Please type:" BRIGHT_CYAN " ADD, SEARCH or EXIT." RESET << std::endl;
+            std::cout << BRIGHT_RED "Invalid input!" RESET << std::endl;
     }
     return (0);
 }
