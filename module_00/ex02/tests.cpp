@@ -38,7 +38,7 @@ int		main( void ) {
 	ints_t::iterator	wit_end		= withdrawals.end(); // Iterator pointing to the end of 'withdrawals'
 
 	Account::displayAccountsInfos(); // Summary of current transactions
-	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
+	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) ); // Print the status of all accounts by iterating through the account list
 
 	for ( acc_int_t it( acc_begin, dep_begin );
 		  it.first != acc_end && it.second != dep_end;

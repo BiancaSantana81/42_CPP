@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 14:25:14 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/15 16:38:30 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/15 17:17:33 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,11 @@ int Account::getNbWithdrawals(void)
     return (_totalNbWithdrawals);
 }
 
+int Account::checkAmount(void) const
+{
+    return this->_amount;
+}
+
 /* Functions class Account */
 
 void Account::_displayTimestamp(void)
@@ -103,25 +108,64 @@ void Account::displayAccountsInfos(void)
               << std::endl;
 }
 
+// void Account::displayStatus(void) const
+// {
+//     return ;    
+// }
+
+void Account::displayStatus() const
+{
+    _displayTimestamp();
+    std::cout << BRIGHT_YELLOW "Index: [" << _accountIndex << "] " RESET
+              << BRIGHT_BLUE " amount: " RESET << _amount
+              << BRIGHT_GREEN " deposits: " RESET << _nbDeposits
+              << BRIGHT_RED " withdrawals: " RESET << _nbWithdrawals
+              << std::endl;
+}
+
 void Account::makeDeposit(int deposit)
 {
-    (void)deposit;
-    return ;
+    int p_amount;
+
+    p_amount = _amount;
+    _displayTimestamp();
+    _amount += deposit;
+    _nbDeposits++;
+    _totalNbDeposits++;
+    _totalAmount += deposit;
+    
+    std::cout << BRIGHT_YELLOW "Index: [" << _accountIndex << "] " RESET
+              << BRIGHT_RED" p_amount: " RESET << p_amount
+              << BRIGHT_GREEN " deposit: " RESET << deposit
+              << BRIGHT_BLUE " amount: " RESET << _amount
+              << BRIGHT_YELLOW " nb_deposits: " RESET << _nbDeposits
+              << std::endl;
 }
+
 
 bool Account::makeWithdrawal(int withdrawal)
 {
-    (void)withdrawal;
-    return (true);
-}
+    if (withdrawal > this->checkAmount())
+    {
+        _displayTimestamp();
+        std::cout << BRIGHT_YELLOW "Index: [" << _accountIndex << "] " RESET
+                  << BRIGHT_BLUE " p_amount: " RESET << _amount
+                  << BRIGHT_RED " withdrawal:refused!!! " RESET << std::endl;
+        return (false);
+    }
+    else
+    {
+        _amount -= withdrawal;
+        _totalAmount -= withdrawal;
+        _nbWithdrawals += 1;
+        _totalNbWithdrawals += 1;
 
-int Account::checkAmount(void) const
-{
-    return (0);
+         _displayTimestamp();
+         std::cout << BRIGHT_YELLOW "Index: [" << _accountIndex << "] " RESET
+                  << BRIGHT_BLUE " p_amount: " RESET << _amount + withdrawal
+                  << BRIGHT_RED " withdrawal: " RESET << withdrawal
+                  << BRIGHT_YELLOW " amount: " RESET << _amount
+                  << BRIGHT_BLUE " nb_withdrawals: " RESET << _nbWithdrawals << std::endl;
+        return (true);
+    }
 }
-
-void Account::displayStatus(void) const
-{
-    return ;    
-}
-
