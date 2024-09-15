@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 14:25:14 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/15 17:17:33 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/15 17:27:35 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 #define BRIGHT_YELLOW "\033[93m"
 #define BRIGHT_BLUE   "\033[94m"
 #define RESET   "\033[0m"
-
 
 /* Initializing program variables*/
 
@@ -80,6 +79,11 @@ int Account::checkAmount(void) const
 
 /* Functions class Account */
 
+/**
+ * @brief Displays the current timestamp in the format [YYYYMMDD_HHMMSS].
+ *
+ * Gets the current date and time and formats it for log display.
+ */
 void Account::_displayTimestamp(void)
 {
     std::time_t now;
@@ -98,6 +102,12 @@ void Account::_displayTimestamp(void)
     std::cout << "] ";
 }
 
+/**
+ * @brief Displays general information about all accounts.
+ *
+ * Shows the total number of accounts, the total amount, the total number of deposits,
+ * and the total number of withdrawals, preceded by the current timestamp.
+ */
 void Account::displayAccountsInfos(void)
 {
     _displayTimestamp();
@@ -108,11 +118,12 @@ void Account::displayAccountsInfos(void)
               << std::endl;
 }
 
-// void Account::displayStatus(void) const
-// {
-//     return ;    
-// }
-
+/**
+ * @brief Displays the status of the current account.
+ *
+ * Shows the account index, current balance, number of deposits, and number of withdrawals,
+ * preceded by the current timestamp.
+ */
 void Account::displayStatus() const
 {
     _displayTimestamp();
@@ -123,6 +134,16 @@ void Account::displayStatus() const
               << std::endl;
 }
 
+
+/**
+ * @brief Makes a deposit into the account and prints the transaction.
+ *
+ * Updates the account balance with the deposit amount, increments the deposit count,
+ * and updates the total deposits and total amount. Prints a message detailing the
+ * transaction, preceded by the current timestamp.
+ *
+ * @param deposit The amount to be deposited.
+ */
 void Account::makeDeposit(int deposit)
 {
     int p_amount;
@@ -137,12 +158,21 @@ void Account::makeDeposit(int deposit)
     std::cout << BRIGHT_YELLOW "Index: [" << _accountIndex << "] " RESET
               << BRIGHT_RED" p_amount: " RESET << p_amount
               << BRIGHT_GREEN " deposit: " RESET << deposit
-              << BRIGHT_BLUE " amount: " RESET << _amount
-              << BRIGHT_YELLOW " nb_deposits: " RESET << _nbDeposits
+              << BRIGHT_YELLOW " amount: " RESET << _amount
+              << BRIGHT_BLUE " nb_deposits: " RESET << _nbDeposits
               << std::endl;
 }
 
-
+/**
+ * @brief Attempts to make a withdrawal from the account.
+ *
+ * Checks if the withdrawal amount is greater than the available balance.
+ * If the withdrawal is refused, it displays a message and returns false.
+ * Otherwise, it updates the balance, the total withdrawals, and logs the transaction.
+ *
+ * @param withdrawal Amount to be withdrawn.
+ * @return bool Returns true if the withdrawal is successful, false otherwise.
+ */
 bool Account::makeWithdrawal(int withdrawal)
 {
     if (withdrawal > this->checkAmount())
