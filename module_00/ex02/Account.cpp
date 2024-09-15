@@ -6,13 +6,12 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 14:25:14 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/15 17:27:35 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/15 17:31:47 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
 #include <iostream>
-#include <iomanip>
 #include <ctime>
 
 #define BRIGHT_RED    "\033[91m"
