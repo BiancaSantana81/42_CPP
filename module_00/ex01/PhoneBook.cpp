@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 14:32:14 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/13 17:38:43 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/15 18:13:30 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,58 +32,73 @@ void PhoneBook::addContact(void)
     if (_contactCount >= MAX_CONTACTS)
         std::cout << RED "Full list. The oldest contact added will be replaced by this one." RESET << std::endl;
     index = _contactCount % MAX_CONTACTS;
+
     while (content.empty())
     {
         std::cout << BRIGHT_MAGENTA "Enter first name: " RESET;
         std::getline(std::cin, content);
+        if (std::cin.sync() == -1) 
+            return;
         if (content.empty())
-            std::cout << RED "Please, type a  first name." RESET << std::endl;
+            std::cout << RED "Please, type a first name." RESET << std::endl;
     }
     this->_contact[index].setName(content);
     content.clear();
+
     while (content.empty())
     {
         std::cout << BRIGHT_MAGENTA "Enter last name: " RESET;
         std::getline(std::cin, content);
+        if (std::cin.sync() == -1)
+            return ;
         if (content.empty())
             std::cout << RED "Please, type a last name." RESET << std::endl;
     }
     this->_contact[index].setLast(content);
     content.clear();
+
     while (content.empty())
     {
         std::cout << BRIGHT_MAGENTA "Enter nickname: " RESET;
         std::getline(std::cin, content);
+        if (std::cin.sync() == -1)
+            return ;
         if (content.empty())
-            std::cout << RED "Please, type nickname." RESET << std::endl;
+            std::cout << RED "Please, type a nickname." RESET << std::endl;
     }
     this->_contact[index].setNickname(content);
     content.clear();
+
     while (content.empty())
     {
         std::cout << BRIGHT_MAGENTA "Enter darkest secret: " RESET;
         std::getline(std::cin, content);
+        if (std::cin.sync() == -1)
+            return ;
         if (content.empty())
-            std::cout << RED "Please, type nickname." RESET << std::endl;
+            std::cout << RED "Please, type a darkest secret." RESET << std::endl;
     }
     this->_contact[index].setSecret(content);
     content.clear();
-    while (content.empty() || valid_number == false)
+
+    while (content.empty() || !valid_number)
     {
         valid_number = true;
         std::cout << BRIGHT_MAGENTA "Enter number: " RESET;
         std::getline(std::cin, content);
+        if (std::cin.sync() == -1) 
+            return ;
         for (size_t i = 0; i < content.size(); i++)
         {
             if (!isdigit(content[i]))
             {
                 valid_number = false;
                 std::cout << RED "Just numbers! ";
-                break ;
+                break;
             }
         }
-        if (content.empty() || valid_number == false)
-            std::cout << BRIGHT_RED "Please, type number." RESET << std::endl;
+        if (content.empty() || !valid_number)
+            std::cout << BRIGHT_RED "Please, type a valid number." RESET << std::endl;
     }
     this->_contact[index].setNumber(content);
     content.clear();
@@ -100,28 +115,31 @@ void PhoneBook::searchContact(void)
     if (_contactCount == 0)
     {
         std::cout << BRIGHT_RED << "PhoneBook is empty." << RESET << std::endl;
-        return ;
+        return;
     }
     
     utilsHeaderSearch();
     max_display = (_contactCount > 8) ? 8 : _contactCount;
     utilsPrintContacts(max_display);
     std::cout << "" << std::endl;
+
     while (valid_index == -1 || content.empty())
     {
         std::cout << "Type the index of the contact: " << RESET;
         std::getline(std::cin, content);
+        if (std::cin.sync() == -1)
+            return ;
         if (content.empty())
         {
             std::cout << BRIGHT_RED << "Please, type a valid index." << RESET << std::endl;
-            continue ;
+            continue;
         }
         valid_index = this->convertInt(content);
         if (valid_index < 1 || valid_index > max_display)
         {
             std::cout << BRIGHT_RED << "Invalid index. Please enter a number between 1 and " << max_display << "." << RESET << std::endl;
             valid_index = -1;
-            continue ;
+            continue;
         }
         utilsDisplayDetails(valid_index);
     }
