@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 14:52:08 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/16 15:57:15 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/16 17:41:57 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@
 /*                                 Class                                      */
 /* ************************************************************************** */
 
+
+#define BRIGHT_RED  "\033[91m"
+#define RESET       "\033[0m"
+
 class Zombie
 {
     private:
@@ -31,12 +35,20 @@ class Zombie
 
     public:
 
+    Zombie(void);
+    ~Zombie(void);
+
     void announce(void);
-    void randomChump(std::string name);
 
     std::string getName(void) const;
-    void setName(std::string &newName);
-
+    void setName(const std::string &newName);
 };
+
+/* ************************************************************************** */
+/*                             Functions                                      */
+/* ************************************************************************** */
+
+void randomChump(std::string name);
+Zombie *newZombie(std::string name);
 
 #endif

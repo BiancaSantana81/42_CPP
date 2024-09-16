@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 14:54:05 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/16 15:54:33 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/16 17:44:50 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int main(void)
 {
-   Zombie zombie;
-   std::string name_zombie;
+   Zombie *zombie;
 
-   name_zombie = "Foo";
+   zombie = newZombie("Maria");
+   zombie->announce();
+   delete zombie;
 
-   zombie.setName(name_zombie);
-
+   randomChump("Joana");
 }
