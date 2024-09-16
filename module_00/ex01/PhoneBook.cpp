@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 14:32:14 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/15 18:13:30 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/16 11:36:44 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,6 +145,14 @@ void PhoneBook::searchContact(void)
     }
 }
 
+void PhoneBook::exit(void)
+{
+    std::cout << BRIGHT_GREEN "*******************************" << std::endl;
+    std::cout << BRIGHT_GREEN "* Exiting PhoneBook. Goodbye! *" RESET << std::endl;
+    std::cout << BRIGHT_GREEN "*******************************" << std::endl;
+    std::exit(0);
+}
+
 /* Utils for print display Header, contacts and details */
 
 void PhoneBook::utilsHeaderSearch(void)
@@ -183,7 +191,7 @@ void PhoneBook::utilsDisplayDetails(int valid_index)
         std::cout << BRIGHT_MAGENTA "Number: " RESET << this->_contact[valid_index - 1].getNumber() << std::endl;
 }
 
-void PhoneBook::header(void)
+void PhoneBook::utilsHeader(void)
 {
     std::cout << BRIGHT_MAGENTA "*************" << std::endl;
     std::cout << BRIGHT_MAGENTA "* PHONEBOOK *" << std::endl;
@@ -193,12 +201,6 @@ void PhoneBook::header(void)
     std::cout << BRIGHT_MAGENTA "* 3. EXIT   *" << std::endl;
     std::cout << BRIGHT_MAGENTA "*************" RESET << std::endl;
     std::cout << BRIGHT_MAGENTA "Type your choice: " RESET;
-}
-
-void PhoneBook::exit(void)
-{
-    std::cout << BRIGHT_MAGENTA << "Exiting PhoneBook. Goodbye!" << RESET << std::endl;
-    std::exit(0);
 }
 
 /* Convert string to Int and check double index and letters in index input*/

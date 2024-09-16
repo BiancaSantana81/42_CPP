@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 14:25:14 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/15 17:31:47 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/16 11:46:47 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,10 @@ Account::Account(int initial_deposit)
 
 Account::~Account(void)
 {
+    _displayTimestamp();
+    std::cout << BRIGHT_YELLOW "Index: [" << _accountIndex << "] " RESET
+              << BRIGHT_BLUE "Amount: [" << _amount << "] " RESET
+              << BRIGHT_YELLOW " closed. " RESET << std::endl;
     return ;
 }
 
@@ -132,7 +136,6 @@ void Account::displayStatus() const
               << BRIGHT_RED " withdrawals: " RESET << _nbWithdrawals
               << std::endl;
 }
-
 
 /**
  * @brief Makes a deposit into the account and prints the transaction.

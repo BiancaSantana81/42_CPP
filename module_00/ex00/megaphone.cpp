@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 14:47:49 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/04 13:40:02 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/16 10:52:34 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,16 @@ class Megaphone
 
 int main(int argc, char **argv)
 {
+    Megaphone megaphone;
+    std::string argument;
+
     if (argc == 1)
-        std::cout << "*LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
     else
     {
         for (int i = 1; i < argc; i++)
         {
-            std::string argument;
             argument = argv[i];
-            Megaphone megaphone;
             megaphone.TransformString(argument);
         }
         std::cout << std::endl;
