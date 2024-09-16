@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 17:50:04 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/16 17:50:07 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/16 17:56:06 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ class Zombie
     void setName(const std::string &newName);
 };
 
-void randomChump(std::string name);
-Zombie *newZombie(std::string name);
+Zombie* zombieHorde(int N, std::string name);
 
 #endif
