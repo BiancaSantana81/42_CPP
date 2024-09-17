@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 17:48:40 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/17 11:08:08 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/17 11:15:21 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,5 @@ int main(void)
         std::cout << "Address horde2[0] : " << &horde2[0] << std::endl;
     }
     delete[] horde2;
+    return (0);
 }
