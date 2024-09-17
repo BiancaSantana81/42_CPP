@@ -4,12 +4,12 @@
 
 Zombie::Zombie(void)
 {
-    return ;
+    std::cout << "Zombie born." << std::endl;
 }
 
 Zombie::~Zombie( void )
 {
-    return ;
+    std::cout << _name << " died!" << std::endl;
 }
 
 /* Zombie class functions */
