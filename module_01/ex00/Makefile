@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+         #
+#    By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/03 14:04:07 by bsantana          #+#    #+#              #
-#    Updated: 2024/09/16 15:51:24 by bsantana         ###   ########.fr        #
+#    Updated: 2024/09/17 14:06:46 by bsantana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 WHITE := \033[1;37m
 PINK := \033[1;35m  
 
-NAME = zombie
+NAME = ex00
 CC = c++
 FLAGS = -Werror -Wall -Wextra -std=c++98
 MAKEFLAGS += --silent
