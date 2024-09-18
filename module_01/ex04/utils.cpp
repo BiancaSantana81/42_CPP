@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 17:50:51 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/17 18:50:07 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/18 16:53:53 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,6 @@ void replace(std::ifstream &input, std::ofstream &output, const std::string &s1,
             line.replace(pos, s1.length(), s2);
             pos += s2.length();
         }
-        output << line << std::endl; // escrever o conteúdo de line em .replace
+        output << line << std::endl; //  write the contents of line to the '.replace' file
     }
 }

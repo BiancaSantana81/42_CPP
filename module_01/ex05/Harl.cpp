@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 11:20:26 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/18 16:10:26 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/18 16:49:58 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void Harl::error(void)
 
 void Harl::complain(std:: string level)
 {
-    // Criar array com ponteiros para as funções de reclamação.
+    // Create an array with pointers to the claim functions.
     void(Harl::*complains[4])(void) = {
         &Harl::debug,
         &Harl::info,
@@ -63,7 +63,7 @@ void Harl::complain(std:: string level)
         &Harl::error
     };
 
-    // Array de níveis para percorrer
+    // Array of levels to traverse
     std::string current_level[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
     
     for (int i = 0; i < 4; i++)
@@ -74,5 +74,5 @@ void Harl::complain(std:: string level)
             return ;
         }
     }
-    std::cout << "Desconhecido." << std::endl;
+    std::cout << "Unknown level." << std::endl;
 }

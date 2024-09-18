@@ -6,12 +6,14 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:16:00 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/18 16:18:00 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/18 16:47:02 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HARL_HPP
 #define HARL_HPP
+
+/* Macros for colors */
 
 #define RED     "\033[31m"
 #define GREEN   "\033[32m"
@@ -24,6 +26,8 @@
 #include <iostream>
 #include <string>
 
+/* ENUM to use in swith case */
+
 enum logLevel
 {
     DEBUG_LEVEL,
@@ -33,7 +37,7 @@ enum logLevel
     INVALID_LEVEL
 };
 
-/* Class */
+/* Class Harl*/
 
 class Harl
 {
@@ -51,6 +55,7 @@ class Harl
     ~Harl();
 };
 
+/* Function to convert input in string format to ENUM  */
 int convertEnum(std::string level);
 
 #endif

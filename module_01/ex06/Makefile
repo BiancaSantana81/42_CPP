@@ -6,14 +6,14 @@
 #    By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/03 14:04:07 by bsantana          #+#    #+#              #
-#    Updated: 2024/09/18 16:21:33 by bsantana         ###   ########.fr        #
+#    Updated: 2024/09/18 17:00:27 by bsantana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 WHITE := \033[1;37m
 PINK := \033[1;35m  
 
-NAME = ex05
+NAME = harlFilter
 CC = c++
 FLAGS = -Werror -Wall -Wextra -std=c++98
 MAKEFLAGS += --silent
