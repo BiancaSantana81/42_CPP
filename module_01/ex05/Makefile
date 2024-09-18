@@ -6,21 +6,22 @@
 #    By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/03 14:04:07 by bsantana          #+#    #+#              #
-#    Updated: 2024/09/16 15:51:24 by bsantana         ###   ########.fr        #
+#    Updated: 2024/09/18 14:24:47 by bsantana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 WHITE := \033[1;37m
 PINK := \033[1;35m  
 
-NAME = zombie
+NAME = ex05
 CC = c++
 FLAGS = -Werror -Wall -Wextra -std=c++98
 MAKEFLAGS += --silent
 
-SRCS = main.cpp \
-	   Zombie.cpp newZombie.cpp randomChump.cpp
-OBJS = $(SRCS:.cpp=.o)
+SRCS = main.cpp Harl.cpp
+
+OBJS_DIR = objs
+OBJS = $(SRCS:%.cpp=$(OBJS_DIR)/%.o)
 
 all: $(NAME)
 
@@ -29,15 +30,18 @@ $(NAME): $(OBJS)
 	$(CC) $(FLAGS) -o $(NAME) $(OBJS)
 	@echo "$(PINK) Everything ready! 😉"
 
-%.o: %.cpp
+$(OBJS_DIR):
+	mkdir -p $(OBJS_DIR)
+
+$(OBJS_DIR)/%.o: %.cpp | $(OBJS_DIR)
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	@rm -f $(OBJS)
+	@rm -rf $(OBJS_DIR)
 
 fclean: clean
 	@rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re run
+.PHONY: all clean fclean re
