@@ -6,7 +6,7 @@
 #    By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/03 14:04:07 by bsantana          #+#    #+#              #
-#    Updated: 2024/09/18 17:00:27 by bsantana         ###   ########.fr        #
+#    Updated: 2024/09/19 14:55:01 by bsantana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CC = c++
 FLAGS = -Werror -Wall -Wextra -std=c++98
 MAKEFLAGS += --silent
 
-SRCS = main.cpp Harl.cpp utils.cpp
+SRCS = main.cpp Harl.cpp
 
 OBJS_DIR = objs
 OBJS = $(SRCS:%.cpp=$(OBJS_DIR)/%.o)

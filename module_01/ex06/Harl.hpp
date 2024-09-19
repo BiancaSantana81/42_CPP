@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:16:00 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/18 16:47:02 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/19 14:54:45 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,5 @@ class Harl
     Harl();
     ~Harl();
 };
-
-/* Function to convert input in string format to ENUM  */
-int convertEnum(std::string level);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:15:06 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/18 16:30:09 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/19 14:55:28 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,15 @@
 
 int main(int argc, char **argv)
 {
-    Harl complainer;
-    std::string option;
-
     if (argc != 2)
     {
         std::cout << "Enter just one level! " << std::endl;
         return (1);
     }
+
+    Harl complainer;
+    std::string option;
+
     option = argv[1];
     complainer.complain(option);
     return (0);

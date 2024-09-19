@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:17:18 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/18 16:23:13 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/19 15:01:38 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,16 @@ void Harl::error(void)
 
 void Harl::complain(std:: string level)
 {
-    switch (convertEnum(level))
+    std::string current_level[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+
+    int i;
+
+    for (i = 0; i < 4; i++)
+    {
+        if (level == current_level[i])
+            break ;
+    }
+    switch (i)
     {
         case DEBUG_LEVEL:
             debug();
@@ -67,5 +76,6 @@ void Harl::complain(std:: string level)
             break ;
         default:
             std::cout << RED "This is not a valid index!" RESET << std::endl;
+            break ;
     }
 }
