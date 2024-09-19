@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:17:18 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/19 15:01:38 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/19 15:19:55 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void Harl::complain(std:: string level)
             error();
             break ;
         default:
-            std::cout << RED "This is not a valid index!" RESET << std::endl;
+            std::cout << RED "This is not a valid entry!" RESET << std::endl;
             break ;
     }
 }

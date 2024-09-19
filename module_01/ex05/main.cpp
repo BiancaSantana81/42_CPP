@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 11:26:07 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/18 16:47:43 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/19 15:16:20 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main()
     complainer.complain("INFO");
     complainer.complain("WARNING");
     complainer.complain("ERROR");
-    //complainer.complain("Unknown");
+    complainer.complain("Unknown");
 
     return (0);
 }

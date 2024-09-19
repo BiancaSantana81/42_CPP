@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 17:50:51 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/18 16:53:53 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/19 15:13:57 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,12 @@ bool processInput(int argc, char **argv, std::ifstream &input, std::ofstream &ou
     std::string inputFile = argv[1];
     s1 = argv[2];
     s2 = argv[3];
+
+    if (s1.empty())
+    {
+        std::cerr << RED "The search string s1 cannot be empty." RESET << std::endl;
+        return (false);
+    }
     std::string outputFile = inputFile + ".replace";
 
     input.open(inputFile.c_str());
@@ -46,11 +52,6 @@ void replace(std::ifstream &input, std::ofstream &output, const std::string &s1,
     std::string line;
     std::size_t pos = 0;
 
-    if (s1.empty())
-    {
-        std::cerr << RED "The search string s1 cannot be empty." RESET << std::endl;
-        return;
-    }
     while (std::getline(input, line))
     {
         pos = 0;

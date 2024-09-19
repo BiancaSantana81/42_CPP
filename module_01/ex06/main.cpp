@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:15:06 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/19 14:55:28 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/19 15:18:49 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 {
     if (argc != 2)
     {
-        std::cout << "Enter just one level! " << std::endl;
+        std::cout << RED "Add a valid entry!" RESET << std::endl;
         return (1);
     }
 
