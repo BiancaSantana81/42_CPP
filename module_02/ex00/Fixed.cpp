@@ -6,11 +6,13 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 11:02:06 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/20 13:09:11 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/20 15:05:19 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
+const int Fixed::_bits = 8;
 
 /* CONSTRUTOR PADRÃO */
 

@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 11:02:02 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/20 13:43:38 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/20 15:24:14 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define FIXED_HPP
 
 #define BRIGHT_RED    "\033[91m"
+#define BRIGHT_MAGENTA "\033[95m"
 #define RESET   "\033[0m"
 
 #include <iostream>
