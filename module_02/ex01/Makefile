@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+         #
+#    By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/03 14:04:07 by bsantana          #+#    #+#              #
-#    Updated: 2024/09/19 16:46:58 by bsantana         ###   ########.fr        #
+#    Updated: 2024/09/20 15:02:09 by bsantana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CC = c++
 FLAGS = -Werror -Wall -Wextra -std=c++98
 MAKEFLAGS += --silent
 
-SRCS = main.cpp Harl.cpp
+SRCS = main.cpp Fixed.cpp
 
 OBJS_DIR = objs
 OBJS = $(SRCS:%.cpp=$(OBJS_DIR)/%.o)
