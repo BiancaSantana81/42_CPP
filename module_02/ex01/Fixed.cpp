@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 14:57:36 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/20 16:14:32 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/20 16:31:38 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@ Fixed::Fixed(const Fixed &other)
     *this = other;
 }
 
+/****************************************************************************/
+/*                   Constructors for Int and Float                         */
+/****************************************************************************/
 
 Fixed &Fixed::operator=(const Fixed &other)
 {
@@ -55,7 +58,6 @@ Fixed::Fixed(const float floatValue)
 
 int Fixed::getRawBits(void) const
 {
-    std::cout << "getRawBits member function called." << std::endl;
     return (_value);
 }
 
@@ -69,15 +71,14 @@ void Fixed::setRawBits(int const raw)
 /*                        Functions for converting values                   */
 /****************************************************************************/
 
-float Fixed::toFloat(void) const {
-    // Divide o valor de ponto fixo pelo fator de escala para obter o float original
-    return static_cast<float>(_bits) / (1 << _bits);
+int	Fixed::toInt(void) const
+{
+	return (this->getRawBits() >> Fixed::_bits);
 }
 
-// Função que converte o valor de ponto fixo para inteiro
-int Fixed::toInt(void) const {
-    // Desloca à direita para remover a parte fracionária
-    return _bits >> _bits;
+float	Fixed::toFloat(void) const
+{
+	return (static_cast<float>(this->getRawBits()) / (1 << Fixed::_bits));
 }
 
 /****************************************************************************/
