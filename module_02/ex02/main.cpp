@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 14:57:43 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/23 16:51:10 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/23 16:53:06 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int main(void)
 {
     Fixed a;
     Fixed const b(Fixed(5.05f) * Fixed(2));
-
 
     std::cout << BRIGHT_MAGENTA "=== Test 1: Initial values ​​for a and b ===\n" RESET;
     std::cout << BRIGHT_RED"a: " RESET << a << std::endl;

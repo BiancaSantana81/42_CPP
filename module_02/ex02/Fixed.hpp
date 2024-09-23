@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 14:57:39 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/23 16:12:00 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/23 17:11:04 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,13 @@ class Fixed
     public:
     
     // Construtores e destrutores 
-    Fixed(void); // construtor padrão
-    Fixed(const Fixed& other); // Construtor de cópia
-    Fixed(const int intValue); // Construtor para valor inteiro
-    Fixed(const float floatValue); // Construtor para valor flutuante
+    Fixed(void);
+    Fixed(const Fixed& other);
+    Fixed(const int intValue);
+    Fixed(const float floatValue);
     
-    Fixed &operator=(const Fixed &other); // Operador de atribuição de cópia
-    ~Fixed(void); // destrutor
+    Fixed &operator=(const Fixed &other);
+    ~Fixed(void);
     
     // Getter e setter
     int getRawBits(void) const;
@@ -72,7 +72,6 @@ class Fixed
     static const Fixed& min(const Fixed& a, const Fixed& b);
     static Fixed& max(Fixed& a, Fixed& b);
     static const Fixed& max(const Fixed& a, const Fixed& b);
-    
 };
 
 std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
