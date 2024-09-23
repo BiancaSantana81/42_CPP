@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 14:57:36 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/23 15:28:49 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/23 16:13:51 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ Fixed &Fixed::operator=(const Fixed &other)
         _value = other.getRawBits();
     else
         std::cout << BRIGHT_RED "Self-attribution detected! The objects already have the same value." RESET <<std::endl;
-    return (*this); // retorna uma referência ao objeto atual
+    return (*this);
 }
 
 Fixed::Fixed(const int intValue)
@@ -49,7 +49,7 @@ Fixed::Fixed(const int intValue)
 Fixed::Fixed(const float floatValue)
 {
     std::cout << "Float constructor called." << std::endl;
-    _value = roundf(floatValue * 256); // descola para direita os bits de 1 (1 << _bits), multiplica pelo float e arredonda com a roundf
+    _value = roundf(floatValue * 256);
 }
 
 /****************************************************************************/
@@ -73,12 +73,12 @@ void Fixed::setRawBits(int const raw)
 
 int	Fixed::toInt(void) const
 {
-	return (this->getRawBits() >> Fixed::_bits); // desloca para esquerda oito bits para obter o valor inteiro
+	return (this->getRawBits() >> Fixed::_bits);
 }
 
 float	Fixed::toFloat(void) const
 {
-	return (static_cast<float>(this->getRawBits()) / 256); // casting para converter ponto fixo para flutuante e depois divisão por 256 para dividir e retornar flutuante
+	return (static_cast<float>(this->getRawBits()) / 256);
 }
 
 /****************************************************************************/
@@ -97,6 +97,143 @@ std::ostream& operator<<(std::ostream& os, const Fixed& fixed)
 }
 
 /****************************************************************************/
+/*                          Comparison Operators                            */
+/****************************************************************************/
+
+bool Fixed::operator>(const Fixed& other) const
+{
+    return _value > other._value;
+}
+
+bool Fixed::operator<(const Fixed& other) const
+{
+    return _value < other._value;
+}
+
+bool Fixed::operator>=(const Fixed& other) const
+{
+    return _value >= other._value;
+}
+
+bool Fixed::operator<=(const Fixed& other) const
+{
+    return _value <= other._value;
+}
+
+bool Fixed::operator==(const Fixed& other) const
+{
+    return _value == other._value;
+}
+
+bool Fixed::operator!=(const Fixed& other) const
+{
+    return _value != other._value;
+}
+
+/****************************************************************************/
+/*                          Arithmetic operators                            */
+/****************************************************************************/
+
+Fixed Fixed::operator+(const Fixed& other) const
+{
+    Fixed result;
+
+    result.setRawBits(_value + other._value);
+    return (result);
+}
+
+Fixed Fixed::operator-(const Fixed& other) const
+{
+    Fixed result;
+
+    result.setRawBits(_value - other._value);
+    return (result);
+}
+
+Fixed Fixed::operator*(const Fixed& other) const
+{
+    Fixed result;
+  
+    result.setRawBits((_value * other._value) >> _bits);   // Multiplicação deve ser ajustada pela quantidade de bits
+    return (result);
+}
+
+Fixed Fixed::operator/(const Fixed& other) const
+{
+    if (other.getRawBits() == 0)
+    {
+        std::cout << "Error: division by zero!" << std::endl;
+    }
+
+    Fixed result;
+    result.setRawBits((_value << _bits) / other._value);
+    return (result);
+}
+
+/****************************************************************************/
+/*                          Arithmetic operators                            */
+/****************************************************************************/
+
+#include "Fixed.hpp"
+
+// Pré-incremento
+Fixed& Fixed::operator++()
+{
+    _value += 1; // Aumenta o valor em 1 (ou em ϵ, se necessário)
+    return *this;
+}
+
+// Pós-incremento
+Fixed Fixed::operator++(int)
+{
+    Fixed temp = *this; // Armazena o valor atual
+    ++(*this);          // Chama o operador de pré-incremento
+    return temp;       // Retorna o valor antigo
+}
+
+// Pré-decremento
+Fixed& Fixed::operator--()
+{
+    _value -= 1; // Diminui o valor em 1 (ou em ϵ, se necessário)
+    return *this;
+}
+
+// Pós-decremento
+Fixed Fixed::operator--(int)
+{
+    Fixed temp = *this; // Armazena o valor atual
+    --(*this);          // Chama o operador de pré-decremento
+    return temp;       // Retorna o valor antigo
+}
+
+/****************************************************************************/
+/*                    Functions that return min and max                     */
+/****************************************************************************/
+
+Fixed& Fixed::min(Fixed& a, Fixed& b)
+{
+    return (a < b) ? a : b;
+}
+
+// Função estática para retornar a menor referência constante
+const Fixed& Fixed::min(const Fixed& a, const Fixed& b)
+{
+    return (a < b) ? a : b;
+}
+
+// Função estática para retornar a maior referência
+Fixed& Fixed::max(Fixed& a, Fixed& b)
+{
+    return (a > b) ? a : b;
+}
+
+// Função estática para retornar a maior referência constante
+const Fixed& Fixed::max(const Fixed& a, const Fixed& b)
+{
+    return (a > b) ? a : b;
+}
+
+/****************************************************************************/
 /*                            Destructor                                    */
 /****************************************************************************/
 
@@ -104,4 +241,3 @@ Fixed::~Fixed()
 {
     std::cout << "Destructor called." << std::endl;
 }
-
