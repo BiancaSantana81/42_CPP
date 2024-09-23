@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 14:57:36 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/23 16:13:51 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/23 16:30:46 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,32 +100,32 @@ std::ostream& operator<<(std::ostream& os, const Fixed& fixed)
 /*                          Comparison Operators                            */
 /****************************************************************************/
 
-bool Fixed::operator>(const Fixed& other) const
+bool Fixed::operator>(const Fixed &other) const
 {
     return _value > other._value;
 }
 
-bool Fixed::operator<(const Fixed& other) const
+bool Fixed::operator<(const Fixed & other) const
 {
     return _value < other._value;
 }
 
-bool Fixed::operator>=(const Fixed& other) const
+bool Fixed::operator>=(const Fixed &other) const
 {
     return _value >= other._value;
 }
 
-bool Fixed::operator<=(const Fixed& other) const
+bool Fixed::operator<=(const Fixed &other) const
 {
     return _value <= other._value;
 }
 
-bool Fixed::operator==(const Fixed& other) const
+bool Fixed::operator==(const Fixed &other) const
 {
     return _value == other._value;
 }
 
-bool Fixed::operator!=(const Fixed& other) const
+bool Fixed::operator!=(const Fixed &other) const
 {
     return _value != other._value;
 }
@@ -134,7 +134,7 @@ bool Fixed::operator!=(const Fixed& other) const
 /*                          Arithmetic operators                            */
 /****************************************************************************/
 
-Fixed Fixed::operator+(const Fixed& other) const
+Fixed Fixed::operator+(const Fixed &other) const
 {
     Fixed result;
 
@@ -142,7 +142,7 @@ Fixed Fixed::operator+(const Fixed& other) const
     return (result);
 }
 
-Fixed Fixed::operator-(const Fixed& other) const
+Fixed Fixed::operator-(const Fixed &other) const
 {
     Fixed result;
 
@@ -150,7 +150,7 @@ Fixed Fixed::operator-(const Fixed& other) const
     return (result);
 }
 
-Fixed Fixed::operator*(const Fixed& other) const
+Fixed Fixed::operator*(const Fixed &other) const
 {
     Fixed result;
   
@@ -158,13 +158,13 @@ Fixed Fixed::operator*(const Fixed& other) const
     return (result);
 }
 
-Fixed Fixed::operator/(const Fixed& other) const
+Fixed Fixed::operator/(const Fixed &other) const
 {
     if (other.getRawBits() == 0)
     {
         std::cout << "Error: division by zero!" << std::endl;
+        return Fixed();
     }
-
     Fixed result;
     result.setRawBits((_value << _bits) / other._value);
     return (result);
@@ -179,31 +179,28 @@ Fixed Fixed::operator/(const Fixed& other) const
 // Pré-incremento
 Fixed& Fixed::operator++()
 {
-    _value += 1; // Aumenta o valor em 1 (ou em ϵ, se necessário)
+    _value += 1;
     return *this;
 }
 
-// Pós-incremento
 Fixed Fixed::operator++(int)
 {
-    Fixed temp = *this; // Armazena o valor atual
-    ++(*this);          // Chama o operador de pré-incremento
-    return temp;       // Retorna o valor antigo
+    Fixed temp = *this;
+    ++(*this);
+    return temp;
 }
 
-// Pré-decremento
 Fixed& Fixed::operator--()
 {
-    _value -= 1; // Diminui o valor em 1 (ou em ϵ, se necessário)
+    _value -= 1;
     return *this;
 }
 
-// Pós-decremento
 Fixed Fixed::operator--(int)
 {
     Fixed temp = *this; // Armazena o valor atual
-    --(*this);          // Chama o operador de pré-decremento
-    return temp;       // Retorna o valor antigo
+    --(*this);
+    return temp;
 }
 
 /****************************************************************************/
@@ -215,19 +212,16 @@ Fixed& Fixed::min(Fixed& a, Fixed& b)
     return (a < b) ? a : b;
 }
 
-// Função estática para retornar a menor referência constante
 const Fixed& Fixed::min(const Fixed& a, const Fixed& b)
 {
     return (a < b) ? a : b;
 }
 
-// Função estática para retornar a maior referência
 Fixed& Fixed::max(Fixed& a, Fixed& b)
 {
     return (a > b) ? a : b;
 }
 
-// Função estática para retornar a maior referência constante
 const Fixed& Fixed::max(const Fixed& a, const Fixed& b)
 {
     return (a > b) ? a : b;
