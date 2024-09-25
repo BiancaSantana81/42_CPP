@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 14:57:39 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/20 16:07:48 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/24 15:33:25 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,23 +29,23 @@ class Fixed
     static const int _bits = 8;
 
     public:
+
+    // Constructors and destructors 
+    Fixed(void);
+    Fixed(const Fixed& other); // Copy constructor
+    Fixed(const int intValue); // Constructor for integer value 
+    Fixed(const float floatValue); // Floating value constructor
     
-    // Construtores e destrutores 
-    Fixed(void); // construtor padrão
-    Fixed(const Fixed& other); // Construtor de cópia
-    Fixed(const int intValue); // Construtor para valor inteiro
-    Fixed(const float floatValue); // Construtor para valor flutuante
-    
-    Fixed &operator=(const Fixed &other); // Operador de atribuição de cópia
-    ~Fixed(void); // destrutor
-    
+    Fixed &operator=(const Fixed &other);  // Copy assignment operator
+    ~Fixed(void);
+
     // Getter e setter
     int getRawBits(void) const;
     void setRawBits(int const raw);
-    
-    // Funções para converter valores
+
+    // Functions to convert values
     float toFloat(void) const;
-    int toInt(void) const;
+    int   toInt(void) const;
 };
 
 std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
