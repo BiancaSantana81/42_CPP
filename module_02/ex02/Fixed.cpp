@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 14:57:36 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/23 16:30:46 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/25 11:55:11 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,11 @@
 
 Fixed::Fixed(void) : _value(0)
 {
-    std::cout << "Default constructor called." << std::endl;
+    return ;
 }
 
 Fixed::Fixed(const Fixed &other)
 {
-    std::cout << "Copy constructor called." << std::endl;
     *this = other;
 }
 
@@ -33,7 +32,6 @@ Fixed::Fixed(const Fixed &other)
 
 Fixed &Fixed::operator=(const Fixed &other)
 {
-    std::cout << "Copy assignment operator called." << std::endl;
     if (this != &other)
         _value = other.getRawBits();
     else
@@ -43,12 +41,10 @@ Fixed &Fixed::operator=(const Fixed &other)
 
 Fixed::Fixed(const int intValue)
 {
-    std::cout << "Int constructor called." << std::endl;
     _value = intValue << _bits;
 }
 Fixed::Fixed(const float floatValue)
 {
-    std::cout << "Float constructor called." << std::endl;
     _value = roundf(floatValue * 256);
 }
 
@@ -63,7 +59,6 @@ int Fixed::getRawBits(void) const
 
 void Fixed::setRawBits(int const raw)
 {
-    std::cout << "setRawBits member function called." << std::endl;
     this->_value = raw;
 }
 
@@ -82,14 +77,9 @@ float	Fixed::toFloat(void) const
 }
 
 /****************************************************************************/
-/*                   Convert to fixed to floating point                     */
+/*                   Overload operator to print in float                    */
 /****************************************************************************/
 
-// Sobrecarga do operador de saída (<<) para a classe Fixed.
-// Permite imprimir objetos Fixed diretamente usando std::cout.
-// Converte o valor armazenado em ponto fixo para ponto flutuante
-// chamando o método toFloat(), garantindo que a representação
-// seja legível como um número decimal.
 std::ostream& operator<<(std::ostream& os, const Fixed& fixed)
 {
     os << fixed.toFloat();
@@ -154,7 +144,7 @@ Fixed Fixed::operator*(const Fixed &other) const
 {
     Fixed result;
   
-    result.setRawBits((_value * other._value) >> _bits);   // Multiplicação deve ser ajustada pela quantidade de bits
+    result.setRawBits((_value * other._value) >> _bits); // Multiplication must be adjusted by the number of bits
     return (result);
 }
 
@@ -166,23 +156,23 @@ Fixed Fixed::operator/(const Fixed &other) const
         return Fixed();
     }
     Fixed result;
-    result.setRawBits((_value << _bits) / other._value);
+    result.setRawBits((_value << _bits) / other._value); // Performs fixed point division
     return (result);
 }
 
 /****************************************************************************/
-/*                          Arithmetic operators                            */
+/*                         Increment and decrement                          */
 /****************************************************************************/
 
 #include "Fixed.hpp"
 
-// Pré-incremento
-Fixed& Fixed::operator++()
+Fixed& Fixed::operator++() // Pre-increment: increments the internal value _value before using it
 {
     _value += 1;
     return *this;
 }
 
+// Post-decrement: stores the current value in a temporary variable and returns the original value (not decremented).
 Fixed Fixed::operator++(int)
 {
     Fixed temp = *this;
@@ -190,15 +180,16 @@ Fixed Fixed::operator++(int)
     return temp;
 }
 
-Fixed& Fixed::operator--()
+Fixed& Fixed::operator--() // Pre-increment: increments the internal value _value before using it
 {
     _value -= 1;
     return *this;
 }
 
+// Post-decrement: stores the current value in a temporary variable and returns the original value (not decremented).
 Fixed Fixed::operator--(int)
 {
-    Fixed temp = *this; // Armazena o valor atual
+    Fixed temp = *this;
     --(*this);
     return temp;
 }
@@ -233,5 +224,5 @@ const Fixed& Fixed::max(const Fixed& a, const Fixed& b)
 
 Fixed::~Fixed()
 {
-    std::cout << "Destructor called." << std::endl;
+    return ;
 }

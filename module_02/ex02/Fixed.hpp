@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 14:57:39 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/23 17:11:04 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/25 11:27:47 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,10 @@ class Fixed
     Fixed operator/(const Fixed& other) const;
 
     // Operadores de incremento/decremento
-    Fixed &operator++(); // pré-incremento
-    Fixed operator++(int); // Pós-incremento
-    Fixed& operator--(); // Pré-decremento
-    Fixed operator--(int); // Pós-decremento
+    Fixed &operator++(); // Pré-incremento: incrementa o valor antes de usá-lo (retorna o valor já incrementado).
+    Fixed operator++(int); // Pós-incremento: incrementa o valor depois de usá-lo (retorna o valor antes de ser incrementado).
+    Fixed &operator--(); // Pré-decremento: decrementa o valor antes de usá-lo (retorna o valor já decrementado).
+    Fixed operator--(int); // Pós-decremento: decrementa o valor depois de usá-lo (retorna o valor antes de ser decrementado).
 
     //Funções para encontrar o min e max
     static Fixed &min(Fixed &a, Fixed &b);
