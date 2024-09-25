@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 11:02:02 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/20 15:24:14 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/24 11:57:08 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ class Fixed
     private:
 
     int              _value;
-    static const int _bits;
+    static const int _bits = 8;
 
     public:
     
     Fixed(void);
-    Fixed(const Fixed& other); // Construtor de cópia
-    Fixed &operator=(const Fixed &other); // Operador de atribuição de cópia
+    Fixed(const Fixed& other); // Copy constructor
+    Fixed &operator=(const Fixed &other); // Copy assignment operator
     ~Fixed(void);
     
     int getRawBits(void) const;

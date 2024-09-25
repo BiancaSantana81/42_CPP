@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utilsTests.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 13:26:34 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/23 16:24:49 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/24 11:48:53 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ Fixed returnFixedByValue()
 void runFixedTests(Fixed &a, Fixed &b, Fixed &c)
 {
     std::cout << BRIGHT_MAGENTA "\n=== Test 2: Self-attribution ===" RESET << std::endl;
-    a = a;
+    Fixed *ptr = &a;
+    a = *ptr;
 
     std::cout << BRIGHT_MAGENTA "\n=== Test 3: Assignment chaining ===" RESET << std::endl;
     a.setRawBits(42);

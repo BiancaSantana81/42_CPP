@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 11:02:08 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/20 15:24:31 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/25 11:11:52 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main( void )
 {
-    std::cout << BRIGHT_MAGENTA"=== Test 1: Construction and Basic Assignment ===" RESET << std::endl;
+    std::cout << BRIGHT_MAGENTA "=== Test 1: Construction and Basic Assignment ===" RESET << std::endl;
     Fixed a;
     Fixed b( a );
     Fixed c;
