@@ -6,19 +6,19 @@
 #    By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 15:06:22 by bsantana          #+#    #+#              #
-#    Updated: 2024/09/25 15:06:27 by bsantana         ###   ########.fr        #
+#    Updated: 2024/09/25 15:09:40 by bsantana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 WHITE := \033[1;37m
 PINK := \033[1;35m  
 
-NAME = harlFilter
+NAME = ex00
 CC = c++
 FLAGS = -Werror -Wall -Wextra -std=c++98
 MAKEFLAGS += --silent
 
-SRCS = main.cpp Harl.cpp
+SRCS = main.cpp ClapTrap.cpp
 
 OBJS_DIR = objs
 OBJS = $(SRCS:%.cpp=$(OBJS_DIR)/%.o)
