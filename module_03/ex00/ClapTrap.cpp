@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 15:10:49 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/26 16:15:08 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/26 18:21:10 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ ClapTrap::~ClapTrap()
 
 ClapTrap::ClapTrap(const ClapTrap &other)
 {
-    //std::cout << "ClapTrap: Copy constructor called." << std::endl;
+    std::cout << "ClapTrap: Copy constructor called." << std::endl;
     *this = other;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 {
-    //std::cout << "Copy assignment operator called." << std::endl;
+    std::cout << "Copy assignment operator called." << std::endl;
     if (this != &other)
     {
         _name = other.getName();
@@ -124,6 +124,11 @@ void ClapTrap::beRepaired(unsigned int amount)
     if (this->_energyPoints <= 0)
     {
         std::cout << BRIGHT_RED "ClapTrap " << getName() << " has no energy left to repair!" RESET << std::endl;
+        return ;
+    }
+    if (this->_hitPoints <= 0)
+    {
+        std::cout << BRIGHT_RED "ClapTrap " << getName() << " died!!!" RESET << std::endl;
         return ;
     }
     this->_energyPoints--;
