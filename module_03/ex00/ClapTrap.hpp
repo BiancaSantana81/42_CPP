@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 15:10:45 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/25 18:10:20 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/26 16:11:56 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,22 +33,22 @@ class ClapTrap
 
     /*Constructors and Destructor*/
 
-    ClapTrap(std:: string name); // Construtor padrão
+    ClapTrap(); // Construtor padrão
     ~ClapTrap(); // Destrutor padrão
     ClapTrap(const ClapTrap &other); // Construtor de cópia
     ClapTrap &operator=(const ClapTrap &other); // Atribuição por cópia
 
     /* Getters */
     std::string getName() const;
-    int getHit() const;
-    int getEnergy() const;
-    int getDamage() const;
+    int getHitPoints() const;
+    int getEnergyPoints() const;
+    int getDamagePoints() const;
 
     /* Setters */
     void setName(std::string newName);
-    void setHit(int newHit);
-    void setEnergy(int newEnergy);
-    void setDamage(int newDamage);
+    void setHitPoints(int newHit);
+    void setEnergyPoints(int newEnergy);
+    void setDamagePoints(int newDamage);
 
     /* Functions game */
 
