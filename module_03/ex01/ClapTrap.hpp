@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 15:10:45 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/27 16:47:00 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/27 16:50:42 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,18 @@ class ClapTrap
     protected:
 
     std::string _name;
-    int         _hitPoints; // Pontos de vida (10)
-    int         _energyPoints; // Pontos de energia (10)
-    int         _attackDamage; // Dano de ataque (0)
+    int         _hitPoints;
+    int         _energyPoints;
+    int         _attackDamage;
 
     public:
 
     /*Constructors and Destructor*/
 
-    ClapTrap(std::string name); // Construtor padrão
-    ~ClapTrap(); // Destrutor padrão
-    ClapTrap(const ClapTrap &other); // Construtor de cópia
-    ClapTrap &operator=(const ClapTrap &other); // Atribuição por cópia
+    ClapTrap(std::string name);
+    ~ClapTrap();
+    ClapTrap(const ClapTrap &other);
+    ClapTrap &operator=(const ClapTrap &other);
 
     /* Getters */
     std::string getName() const;
