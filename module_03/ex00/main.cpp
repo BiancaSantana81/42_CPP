@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 15:09:55 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/26 18:20:52 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/27 12:08:28 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,8 @@ void seePoints(ClapTrap *clap)
 
 int main(void)
 {
-    ClapTrap clap1;
-    ClapTrap clap2;
-
-    clap1.setName("Daniel");
-    clap2.setName("Ricardo");
+    ClapTrap clap1 ("Daniel");
+    ClapTrap clap2 ("Ricardo");
 
     std::cout << BRIGHT_MAGENTA "=== Test 1: ClapTrap attacks with enough energy and hit points ===\n" RESET;
     clap1.attack(clap2.getName());
@@ -57,8 +54,7 @@ int main(void)
     clap2.beRepaired(5);
     seePoints(&clap2);
 
-    ClapTrap clap3;
-    clap3.setName("Bob");
+    ClapTrap clap3("Bob");
     std::cout << BRIGHT_MAGENTA "=== Test 7: ClapTrap Bob attacks until it runs out of energy ===\n" RESET;
     for (int i = 0; i < 11; i++)
         clap3.attack("Enemy");

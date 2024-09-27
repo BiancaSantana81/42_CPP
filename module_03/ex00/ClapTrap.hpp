@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 15:10:45 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/26 16:11:56 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/27 12:06:02 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class ClapTrap
 
     /*Constructors and Destructor*/
 
-    ClapTrap(); // Construtor padrão
+    ClapTrap(std::string name); // Construtor padrão
     ~ClapTrap(); // Destrutor padrão
     ClapTrap(const ClapTrap &other); // Construtor de cópia
     ClapTrap &operator=(const ClapTrap &other); // Atribuição por cópia
