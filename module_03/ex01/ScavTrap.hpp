@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 12:25:14 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/27 16:14:00 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/27 16:46:35 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,6 @@
 
 #include "string"
 #include "iostream"
-
-#define BRIGHT_RED    "\033[91m"
-#define BRIGHT_MAGENTA "\033[95m"
-#define BRIGHT_CYAN   "\033[96m"
-#define RESET   "\033[0m"
 
 #include "ClapTrap.hpp" 
 

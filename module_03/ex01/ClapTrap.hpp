@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 15:10:45 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/27 14:26:18 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/27 16:47:00 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #define BRIGHT_RED    "\033[91m"
 #define BRIGHT_MAGENTA "\033[95m"
 #define BRIGHT_CYAN   "\033[96m"
+#define BRIGHT_YELLOW "\033[93m"
 #define RESET   "\033[0m"
 
 class ClapTrap

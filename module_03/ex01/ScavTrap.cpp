@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 12:25:11 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/27 16:40:21 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/27 16:44:31 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,10 +84,8 @@ void ScavTrap::setDamagePoints(int newDamage)
     this->_attackDamage = newDamage;
 }
 
-ScavTrap::~ScavTrap()
-{
-    std::cout << BRIGHT_CYAN "ScavTrap: " RESET << _name << " Destructor called." << std::endl;
-}
+
+/* Functions game */
 
 void ScavTrap::attack(const std::string &target)
 {
@@ -106,7 +104,15 @@ void ScavTrap::attack(const std::string &target)
    }
 }
 
+
 void ScavTrap::guardGate()
 {
     std::cout << BRIGHT_CYAN "ScavTrap " RESET << this->getName() << " now he's got his guard up!" << std::endl;
+}
+
+/* DESTRUCTOR */
+
+ScavTrap::~ScavTrap()
+{
+    std::cout << BRIGHT_CYAN "ScavTrap: " RESET << _name << " Destructor called." << std::endl;
 }
