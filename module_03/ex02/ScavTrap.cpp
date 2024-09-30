@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 12:25:11 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/30 10:52:59 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/30 11:56:23 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &other)
 {
-	if (this != &other)
+	std::cout << "Copy assignment operator called." << std::endl;
+    if (this != &other)
 	{
 		this->setName(other.getName());
 		this->setHitPoints(other.getHitPoints());

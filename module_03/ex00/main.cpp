@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 15:09:55 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/27 12:08:28 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/30 11:52:01 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int main(void)
     clap1.attack(clap2.getName());
     seePoints(&clap1);
 
-    std::cout << BRIGHT_MAGENTA "=== Test 2: Daniel attacks Ricardo and deals 4 points of damage ===\n" RESET;
+    std::cout << BRIGHT_MAGENTA "=== Test 2: Daniel attacks Ricardo and deals 5 points of damage ===\n" RESET;
     clap1.setDamagePoints(5);
     clap1.attack(clap2.getName());
     clap2.takeDamage(clap1.getDamagePoints());
@@ -50,7 +50,7 @@ int main(void)
     clap2.attack("Another Enemy");
     seePoints(&clap2);
 
-    std::cout << BRIGHT_MAGENTA "=== Test 6: Ricardo tries to make amends after his death ===\n" RESET;
+    std::cout << BRIGHT_MAGENTA "=== Test 6: Ricardo tries repaired energy ===\n" RESET;
     clap2.beRepaired(5);
     seePoints(&clap2);
 

@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 17:01:24 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/30 11:17:03 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/30 11:57:33 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
+    std::cout << BRIGHT_RED "FragTrap: " RESET << _name << " Default constructor called." << std::endl;
     _hitPoints = 100;
     _energyPoints = 100;
     _attackDamage = 30;
-    std::cout << BRIGHT_RED "FragTrap: " RESET << _name << " Default constructor called." << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap &other): ClapTrap(other)
@@ -30,6 +30,7 @@ FragTrap::FragTrap(const FragTrap &other): ClapTrap(other)
 
 FragTrap &FragTrap::operator=(const FragTrap &other)
 {
+    std::cout << "Copy assignment operator called." << std::endl;
     if (this != &other)
 	{
 		this->setName(other.getName());

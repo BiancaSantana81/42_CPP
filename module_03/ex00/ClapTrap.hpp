@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 15:10:45 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/27 12:06:02 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/30 11:47:43 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,18 @@ class ClapTrap
     private:
 
     std::string _name;
-    int         _hitPoints; // Pontos de vida (10)
-    int         _energyPoints; // Pontos de energia (10)
-    int         _attackDamage; // Dano de ataque (0)
+    int         _hitPoints;
+    int         _energyPoints;
+    int         _attackDamage;
 
     public:
 
     /*Constructors and Destructor*/
 
-    ClapTrap(std::string name); // Construtor padrão
-    ~ClapTrap(); // Destrutor padrão
-    ClapTrap(const ClapTrap &other); // Construtor de cópia
-    ClapTrap &operator=(const ClapTrap &other); // Atribuição por cópia
+    ClapTrap(std::string name);
+    ~ClapTrap();
+    ClapTrap(const ClapTrap &other);
+    ClapTrap &operator=(const ClapTrap &other);
 
     /* Getters */
     std::string getName() const;
