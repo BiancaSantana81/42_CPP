@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 15:10:45 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/27 16:50:42 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/30 10:43:13 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 #define BRIGHT_MAGENTA "\033[95m"
 #define BRIGHT_CYAN   "\033[96m"
 #define BRIGHT_YELLOW "\033[93m"
+#define BRIGHT_GREEN  "\033[92m"
 #define RESET   "\033[0m"
 
 class ClapTrap

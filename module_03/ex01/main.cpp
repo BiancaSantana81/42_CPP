@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 15:09:55 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/27 16:47:59 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/30 10:43:26 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,16 @@ int main(void)
     ScavTrap scav1("João");
     ScavTrap scav2("Roberto");
 
+    std::cout << BRIGHT_GREEN "========= Initial player info =========\n" RESET << std::endl;
+    seePoints(&scav1);
+    seePoints(&scav2);
+    std::cout << BRIGHT_GREEN "=======================================" RESET << std::endl;
+
     std::cout << BRIGHT_YELLOW "=== Test 1: Scav João attack ===\n" RESET << std::endl;
     scav1.attack(scav2.getName());
     scav2.takeDamage(scav1.getDamagePoints());
     seePoints(&scav2);
+    seePoints(&scav1);
     
     std::cout << BRIGHT_YELLOW "=== Test 2: Roberto GuardMode ===" RESET << std::endl;
     scav2.guardGate();
