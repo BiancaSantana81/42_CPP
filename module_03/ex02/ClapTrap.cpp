@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 15:10:49 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/27 12:22:38 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/30 11:38:39 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,6 +131,7 @@ void ClapTrap::beRepaired(unsigned int amount)
         std::cout << BRIGHT_MAGENTA "ClapTrap " BRIGHT_RED << getName() << " died!!!" RESET << std::endl;
         return ;
     }
+    std::cout << BRIGHT_MAGENTA "ClapTrap " RESET << getName() << " repaired its energy by: " << amount << " points." << std::endl;
     this->_energyPoints--;
     this->_hitPoints += amount;
 }

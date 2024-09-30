@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 12:25:11 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/27 16:44:31 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/30 10:52:59 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 #include "ClapTrap.hpp" 
 
-/* CONSTRUCTORS */
+/* CONSTRUCTORS AND COPY ASSIGNMENT OPERATOR */
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
@@ -40,52 +40,7 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &other)
 	return *this;
 }
 
-/* GETTERS */
-
-std::string ScavTrap::getName() const
-{
-    return (this->_name);
-}
-
-int ScavTrap::getHitPoints() const
-{
-    return (this->_hitPoints);
-}
-
-int ScavTrap::getEnergyPoints() const
-{
-    return (this->_energyPoints);
-}
-
-int ScavTrap::getDamagePoints() const
-{
-   return (this->_attackDamage);
-}
-
-/* SETTERS */
-
-void ScavTrap::setName(std::string newName)
-{
-    this->_name = newName;
-}
-
-void ScavTrap::setHitPoints(int newHit)
-{
-    this->_hitPoints = newHit;
-}
-
-void ScavTrap::setEnergyPoints(int newEnergy)
-{
-    this->_energyPoints = newEnergy;
-}
-
-void ScavTrap::setDamagePoints(int newDamage)
-{
-    this->_attackDamage = newDamage;
-}
-
-
-/* Functions game */
+/* FUNCTIONS GAME */
 
 void ScavTrap::attack(const std::string &target)
 {
@@ -103,7 +58,6 @@ void ScavTrap::attack(const std::string &target)
         std::cout << BRIGHT_CYAN "Scav " RESET << getName() << " attacked! Causing " << this->getDamagePoints() << " points of damage to " << target << "." << std::endl;
    }
 }
-
 
 void ScavTrap::guardGate()
 {
