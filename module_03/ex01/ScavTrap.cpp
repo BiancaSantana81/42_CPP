@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 12:25:11 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/30 11:56:10 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/30 14:00:10 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,10 @@ void ScavTrap::attack(const std::string &target)
 
 void ScavTrap::guardGate()
 {
-    std::cout << BRIGHT_CYAN "ScavTrap " RESET << this->getName() << " now he's got his guard up!" << std::endl;
+    if (this->getHitPoints() > 0)
+        std::cout << BRIGHT_CYAN "ScavTrap " RESET << this->getName() << " now he's got his guard up!" << std::endl;
+    else
+        std::cout << BRIGHT_CYAN "ScavTrap " RESET << this->getName() << BRIGHT_RED " is dead, he can't ask for a truce!" RESET << std::endl;
 }
 
 /* DESTRUCTOR */

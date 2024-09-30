@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 15:10:49 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/30 11:38:39 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/30 13:34:57 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,17 @@
 
 ClapTrap::ClapTrap(std::string name): _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-    std::cout << BRIGHT_MAGENTA "ClapTrap: " RESET << _name << " Default constructor called." << std::endl;
+    std::cout << BRIGHT_MAGENTA "ClapTrap " RESET << _name << " Default constructor called." << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << BRIGHT_MAGENTA "ClapTrap: " RESET << _name << " Destructor called." << std::endl;
+    std::cout << BRIGHT_MAGENTA "ClapTrap " RESET << _name << " Destructor called." << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other)
 {
-    std::cout << "ClapTrap: Copy constructor called." << std::endl;
+    std::cout << "ClapTrap Copy constructor called." << std::endl;
     *this = other;
 }
 
@@ -91,11 +91,11 @@ void ClapTrap::setDamagePoints(int newDamage)
 void ClapTrap::attack(const std::string &target)
 {
     if (this->_energyPoints <= 0) {
-        std::cout << BRIGHT_MAGENTA "ClapTrap: " << getName() << BRIGHT_RED " You're out of energy points! Go and rest before entering combat." RESET << std::endl;
+        std::cout << BRIGHT_MAGENTA "ClapTrap " << getName() << BRIGHT_RED " You're out of energy points! Go and rest before entering combat." RESET << std::endl;
         return ;
    }
    if (this->_hitPoints <= 0) {
-        std::cout << BRIGHT_MAGENTA "ClapTrap: " << getName() << BRIGHT_RED " You're dead! Are you sure you want to keep fighting?" RESET << std::endl;
+        std::cout << BRIGHT_MAGENTA "ClapTrap " << getName() << BRIGHT_RED " You're dead! Are you sure you want to keep fighting?" RESET << std::endl;
         return ;
    }
    else
@@ -114,9 +114,9 @@ void ClapTrap::takeDamage(unsigned int amount)
     }
     else
         this->_hitPoints -= amount;
-    std::cout << BRIGHT_MAGENTA "ClapTrap: " RESET << this->_name << " takes " << amount << " points of damage!" << std::endl;
+    std::cout << BRIGHT_MAGENTA "ClapTrap " RESET << this->_name << " takes " << amount << " points of damage!" << std::endl;
     if (this->_hitPoints <= 0)
-        std::cout << BRIGHT_MAGENTA "ClapTrap: " RESET << this->_name << " has died!" << std::endl;
+        std::cout << BRIGHT_MAGENTA "ClapTrap " RESET << this->_name << " has died!" << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
