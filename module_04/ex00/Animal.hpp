@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 15:33:31 by bsantana          #+#    #+#             */
-/*   Updated: 2024/09/30 17:49:27 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/09/30 18:20:54 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ class Animal
     void setType(std:: string newType);
     
     /* function */
-    void makeSound();
+    virtual void makeSound();
 };
 
 #endif
