@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 14:15:01 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/01 15:05:38 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/01 17:22:52 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Cat: public Animal
     Cat &operator=(const Cat &other);
     virtual ~Cat(void);
 
-    virtual void makeSound() const;
+    void makeSound() const;
 };
 
 #endif

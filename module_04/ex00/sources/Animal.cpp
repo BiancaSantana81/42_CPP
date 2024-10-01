@@ -6,11 +6,11 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 15:33:27 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/01 16:47:00 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/01 17:14:59 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "../includes/Animal.hpp"
 
 /* CONSTRUCTORS */
 

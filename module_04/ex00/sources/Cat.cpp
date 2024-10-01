@@ -6,16 +6,16 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 14:24:27 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/01 17:03:53 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/01 17:29:17 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Cat.hpp"
+#include "../includes/Animal.hpp"
+#include "../includes/Cat.hpp"
 
 Cat::Cat(void) : Animal("Cat")
 {
-    std::cout << BRIGHT_YELLOW "Cat: constructor called!!" RESET << std::endl;
+    std::cout << BRIGHT_YELLOW "Cat: constructor called!" RESET << std::endl;
 }
 
 Cat::~Cat(void)

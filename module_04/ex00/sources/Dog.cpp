@@ -6,12 +6,12 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 14:24:17 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/01 17:03:07 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/01 17:15:38 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Dog.hpp"
+#include "../includes/Animal.hpp"
+#include "../includes/Dog.hpp"
 
 Dog::Dog(void): Animal("Dog")
 {
