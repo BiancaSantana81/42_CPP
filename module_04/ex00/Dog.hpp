@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 14:14:25 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/01 14:40:56 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/01 15:55:54 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Dog: public Animal
     Dog &operator=(const Dog &other);
     virtual ~Dog(void);
 
-    void makeSound() const;
+    virtual void makeSound() const;
 };
 
 #endif

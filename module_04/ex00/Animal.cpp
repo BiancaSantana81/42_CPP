@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 15:33:27 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/01 14:12:01 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/01 16:47:00 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /* CONSTRUCTORS */
 
-Animal::Animal(void)
+Animal::Animal(void) : _type("Animal")
 {
     std::cout << "Animal: Default constructor called." << std::endl;
 }
@@ -31,7 +31,7 @@ Animal::~Animal(void)
 
 Animal::Animal(const Animal &other)
 {
-    std::cout << "ClapTrap Copy constructor called." << std::endl;
+    std::cout << "Animal Copy constructor called." << std::endl;
     *this = other;
 }
 

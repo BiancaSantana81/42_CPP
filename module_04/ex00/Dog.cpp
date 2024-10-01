@@ -6,33 +6,32 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 14:24:17 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/01 15:35:24 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/01 17:03:07 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Dog.hpp"
 
-Dog::Dog(void)
+Dog::Dog(void): Animal("Dog")
 {
-    std::cout << "Dog: constructor called!!" << std::endl;
-    this->_type = "Dog";
+    std::cout << BRIGHT_BLUE "Dog: constructor called!" RESET << std::endl;
 }
 
 Dog::~Dog(void)
 {
-    std::cout << "Dog: destructor called!" << std::endl;
+    std::cout << BRIGHT_BLUE "Dog: destructor called!" RESET << std::endl;
 }
 
 Dog::Dog(const Dog &other)
 {
-    std::cout << "Dog: Copy constructor called." << std::endl;
+    std::cout << BRIGHT_BLUE "Dog: Copy constructor called." RESET << std::endl;
     *this = other;
 }
 
 Dog &Dog::operator=(const Dog &other)
 {
-    std::cout << "Dog: assignment operator called." << std::endl;
+    std::cout << BRIGHT_BLUE "Dog: assignment operator called." RESET << std::endl;
     if (this != &other)
         _type = other._type;
     else
