@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 11:40:24 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/02 16:01:37 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/02 17:04:04 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void Brain::setIdea(int index, const std::string &idea)
 void Brain::showIdeas() const
 {
     for (int i = 0; i < 100; i++)
-        std::cout << GREEN "Index " << i + 1<< "  "  RESET << _ideas[i] << std::endl;
+        std::cout << GREEN "Index " << i + 1 << "  " RESET << _ideas[i] << std::endl;
 }
 
 /* DESTRUCTOR */

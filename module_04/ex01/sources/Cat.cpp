@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 14:24:27 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/02 16:03:27 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/02 17:01:28 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 Cat::Cat(void) : Animal("Cat"), _brain(new Brain())
 {
     std::cout << BRIGHT_YELLOW "Cat: constructor called!" RESET << std::endl;
+    for (int i = 0;  i < 100; i++)
+         _brain->setIdea(i, "I want fish!");
 }
 
 Cat::~Cat(void)
