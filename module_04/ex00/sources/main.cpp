@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 17:54:35 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/01 18:24:57 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/01 18:48:42 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ int main(void)
     soundsAnimals();
     std::cout << BRIGHT_BLUE "********** cat tests   *************" RESET << std::endl;
     catSounds();
-    std::cout << BRIGHT_BLUE "************************************" RESET << std::endl;
+    std::cout << BRIGHT_BLUE "********** dog tests ***************" RESET << std::endl;
     dogSounds();
-    std::cout << BRIGHT_BLUE "************************************" RESET << std::endl;
+    std::cout << BRIGHT_BLUE "******* wrong animal tests  **********" RESET << std::endl;
     wrongAnimalSounds();
-    std::cout << BRIGHT_BLUE "************************************" RESET << std::endl;
+    std::cout << BRIGHT_BLUE "******* wrong wrong cat tests *******" RESET << std::endl;
     wrongCatSounds();
     return (0);
 }
@@ -98,7 +98,7 @@ static void wrongCatSounds(void)
 //     i->makeSound();
 //     j->makeSound();
 //     meta->makeSound();
-    
+
 //     delete meta;
 //     delete i;
 //     delete j;

@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 17:13:09 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/01 18:23:24 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/02 15:07:13 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,5 @@ WrongCat &WrongCat::operator=(const WrongCat &other)
 
 void WrongCat::makeSound(void) const
 {
-    std::cout << "heeeeeeey!" << std::endl;
+    std::cout << "$@#*&?!" << std::endl;
 }

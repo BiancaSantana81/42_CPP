@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 17:13:16 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/01 18:26:26 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/02 15:05:26 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ WrongAnimal::WrongAnimal(void): _type("WrongAnimal")
 
 WrongAnimal::WrongAnimal(std::string type): _type(type)
 {
-    std::cout << "WrongAnimal: " << this->_type << " default constructor called." << std::endl;
+    std::cout << BRIGHT_MAGENTA "WrongAnimal: " << this->_type << " default constructor called." RESET << std::endl;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal &other)
@@ -57,5 +57,5 @@ std::string WrongAnimal::getType() const
 
 void WrongAnimal::makeSound(void) const
 {
-    std::cout << BRIGHT_RED "The wrong animal!"  RESET << std::endl;
+    std::cout << BRIGHT_RED "moo?!"  RESET << std::endl;
 }
