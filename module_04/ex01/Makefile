@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+         #
+#    By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 15:06:22 by bsantana          #+#    #+#              #
-#    Updated: 2024/09/27 12:27:01 by bsantana         ###   ########.fr        #
+#    Updated: 2024/10/02 16:10:15 by bsantana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,10 +18,12 @@ CC = c++
 FLAGS = -Werror -Wall -Wextra -std=c++98
 MAKEFLAGS += --silent
 
-SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp
+SRCS_DIR = sources
+SRCS = sources/main.cpp sources/Animal.cpp sources/Cat.cpp sources/Dog.cpp sources/WrongAnimal.cpp sources/WrongCat.cpp sources/Brain.cpp \
+	   sources/tests.cpp
 
 OBJS_DIR = objs
-OBJS = $(SRCS:%.cpp=$(OBJS_DIR)/%.o)
+OBJS = $(SRCS:$(SRCS_DIR)/%.cpp=$(OBJS_DIR)/%.o)
 
 all: $(NAME)
 
@@ -33,7 +35,7 @@ $(NAME): $(OBJS)
 $(OBJS_DIR):
 	mkdir -p $(OBJS_DIR)
 
-$(OBJS_DIR)/%.o: %.cpp | $(OBJS_DIR)
+$(OBJS_DIR)/%.o: $(SRCS_DIR)/%.cpp | $(OBJS_DIR)
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
