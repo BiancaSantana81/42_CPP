@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 14:24:27 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/02 17:01:28 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/03 15:23:21 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Animal.hpp"
+#include "../includes/AAnimal.hpp"
 #include "../includes/Cat.hpp"
 #include "../includes/Brain.hpp"
 
-Cat::Cat(void) : Animal("Cat"), _brain(new Brain())
+Cat::Cat(void) : AAnimal("Cat"), _brain(new Brain())
 {
     std::cout << BRIGHT_YELLOW "Cat: constructor called!" RESET << std::endl;
     for (int i = 0;  i < 100; i++)
@@ -27,7 +27,7 @@ Cat::~Cat(void)
     delete _brain;
 }
 
-Cat::Cat(const Cat &other): Animal(other)
+Cat::Cat(const Cat &other): AAnimal(other)
 {
     std::cout << BRIGHT_YELLOW "Cat: Copy constructor called." RESET << std::endl;
     _brain = new Brain(*other._brain);

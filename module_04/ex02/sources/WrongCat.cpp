@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 17:13:09 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/02 15:06:54 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/03 15:28:11 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Animal.hpp"
+#include "../includes/AAnimal.hpp"
 #include "../includes/WrongAnimal.hpp"
 #include "../includes/WrongCat.hpp"
 
@@ -24,7 +24,7 @@ WrongCat::~WrongCat()
     std::cout << BRIGHT_MAGENTA "WrongCat: destructor called!" RESET << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat &other)
+WrongCat::WrongCat(const WrongCat &other) : WrongAnimal(other)
 {
     std::cout << BRIGHT_MAGENTA "WrongCat: Copy constructor called." RESET << std::endl;
     *this = other;

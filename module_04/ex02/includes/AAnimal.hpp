@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AAnimal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef AANIMAL_HPP
+#define AANIMAL_HPP
 
 #include <iostream>
 #include <string>
@@ -23,7 +23,7 @@
 #define BRIGHT_MAGENTA "\033[95m"
 #define RESET   "\033[0m"
 
-class Animal
+class AAnimal
 {
     protected:
 
@@ -32,18 +32,18 @@ class Animal
     public:
 
     /*Constructors and Destructor*/
-    Animal(void);
-    Animal(std::string type);
-    virtual ~Animal(void);
-    Animal(const Animal &other);
-    Animal &operator=(const Animal &other);
+    AAnimal(void);
+    AAnimal(std::string type);
+    virtual ~AAnimal(void);
+    AAnimal(const AAnimal &other);
+    AAnimal &operator=(const AAnimal &other);
     
     /* Getter and Setter */
     std::string getType() const;
     void setType(std:: string newType);
     
     /* function */
-    virtual void makeSound() const;
+    virtual void makeSound() const = 0;
 };
 
 #endif
