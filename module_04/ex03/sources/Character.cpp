@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:22:58 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/07 14:00:35 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/07 14:20:45 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,5 +109,31 @@ Character::~Character(void)
 {
     std::cout << "Character: Destructor called." << std::endl;
     for (int i = 0; i < MAX_STOCK; ++i)
-        delete _stock[i];
+    {
+        if (_stock[i] != NULL)
+        {
+            delete _stock[i];
+            _stock[i] = NULL;
+        }
+    }
 }
+
+
+// Character::~Character(void)
+// {
+//     std::cout << "Character: Destructor called." << std::endl;
+//     for (int i = 0; i < MAX_STOCK; ++i)
+//     {
+//         std::cout << "Deleting _stock[" << i << "]" << std::endl;
+//         if (_stock[i] != NULL)
+//         {
+//             std::cout << "_stock[" << i << "] is not NULL, deleting..." << std::endl;
+//             delete _stock[i];
+//             _stock[i] = NULL;
+//         }
+//         else
+//         {
+//             std::cout << "_stock[" << i << "] is NULL, skipping..." << std::endl;
+//         }
+//     }
+// }
