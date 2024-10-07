@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 16:58:07 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/07 12:46:09 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/07 15:50:01 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,14 @@
 
 class ICharacter;
 
+/* A classe AMateria representa uma matéria abstrata no sistema de jogo. 
+   Como uma classe abstrata, ela define a interface e o comportamento que 
+   todas as matérias concretas devem implementar. 
+   A classe armazena o tipo da matéria (_type) e inclui métodos virtuais 
+   para clonagem (clone) e uso (use), que devem ser implementados pelas 
+   classes derivadas.
+*/
+
 class AMateria
 {
     protected:
@@ -31,15 +39,16 @@ class AMateria
     public:
     
     // Construtores
-    AMateria(void); // Constructor sem atribuir type na inicialização;
-    AMateria(std::string const &type); // Construtor com tipo de matéria
-    AMateria(const AMateria &other); // Construtor de cópia
-    AMateria &operator=(const AMateria &other); // Operador de atribuição por cópia
+    AMateria(void);
+    AMateria(std::string const &type);
+    AMateria(const AMateria &other);
+    AMateria &operator=(const AMateria &other);
     
     //Getter and Setter
     std::string const &getType() const;
     void setType(std::string newType);
 
+    // Virtual functions
     virtual AMateria *clone() const = 0;
     virtual void use(ICharacter &target);
     
