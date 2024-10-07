@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 10:34:09 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/07 14:01:55 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/07 17:02:03 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 
 Ice::Ice(void): AMateria("Ice")
 {
-    std::cout << "Ice: Default constructor called." << std::endl;
+    return ;
 }
 
 Ice::Ice(const Ice &other): AMateria(other)
 {
-    std::cout << "Ice: Copy constructor called." << std::endl;
+    return ;
 }
 
 Ice &Ice::operator=(const Ice &other)
@@ -54,5 +54,5 @@ void Ice::use(ICharacter &target)
 
 Ice::~Ice(void)
 {
-    std::cout << "Ice: Destructor called." << std::endl;
+    return ;
 }

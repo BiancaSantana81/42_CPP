@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 10:33:42 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/07 14:01:34 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/07 17:01:48 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 
 Cure::Cure(void): AMateria("Cure")
 {
-    std::cout << "Cure: Default constructor called." << std::endl;
+    return ;
 }
 
 Cure::Cure(const Cure &other): AMateria(other)
 {
-    std::cout << "Cure: Copy constructor called." << std::endl;
+    return ;
 }
 
 Cure &Cure::operator=(const Cure &other)
@@ -54,5 +54,5 @@ void Cure::use(ICharacter &target)
 
 Cure::~Cure(void)
 {
-    std::cout << "Cure: Destructor called." << std::endl;
+    return ;
 }

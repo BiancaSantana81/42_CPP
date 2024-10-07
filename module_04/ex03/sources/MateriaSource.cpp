@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 14:39:34 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/07 16:03:50 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/07 17:03:59 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 
 MateriaSource::MateriaSource(void)
 {
-    std::cout << "MateriaSource: Default constructor called." << std::endl;
     for (int i = 0; i < 4; ++i)
         _materias[i] = NULL;
 }
@@ -51,39 +50,34 @@ MateriaSource &MateriaSource::operator=(MateriaSource const &other)
 
 void MateriaSource::learnMateria(AMateria *materia)
 {
-    if (!materia)
-    {
-        std::cout << "Cannot learn a null materia." << std::endl;
-        return ;
-    }
-    for (int i = 0; i < 4; ++i)
+    for (int i = 0; i < 4; i++)
     {
         if (_materias[i] == NULL)
         {
             _materias[i] = materia;
-            std::cout << "Materia learned in slot " << i << "." << std::endl;
             return ;
         }
     }
-    std::cout << "All materia slots are full, cannot learn more materias." << std::endl;
+    std::cout << "No empty slot to learn more materias." << std::endl;
 }
 
 AMateria *MateriaSource::createMateria(std::string const &type)
 {
-    for (int i = 0; i < 4; ++i)
+    for (int i = 0; i < 4; i++)
     {
         if (_materias[i] && _materias[i]->getType() == type)
+        {
             return (_materias[i]->clone());
+        }
     }
     std::cout << "Materia of type " << type << " not found." << std::endl;
-    return (0);
+    return NULL;
 }
 
 /* Destructor */
 
 MateriaSource::~MateriaSource(void)
 {
-    std::cout << "MateriaSource: Destructor called." << std::endl;
     for (int i = 0; i < 4; ++i)
     {
         if (_materias[i] != NULL)

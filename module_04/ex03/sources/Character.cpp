@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:22:58 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/07 16:29:10 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/07 17:09:27 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,12 @@
 
 Character::Character(void): _name("Unkown")
 {
-    std::cout << "Character: Default constructor called." << std::endl;
     for (int i = 0; i < MAX_STOCK; i++)
         _stock[i] = NULL;
 }
 
 Character::Character(std::string name): _name(name)
 {
-    std::cout << "Character: " << _name  << " constructor called." << std::endl;
     for (int i = 0; i < MAX_STOCK; i++)
         _stock[i] = NULL;
 }
@@ -36,7 +34,6 @@ Character::Character(Character const &other)
 
 Character &Character::operator=(Character const &other)
 {
-    std::cout << "Character: Copy assignment operator called." << std::endl;
     if (this != &other)
     {
         _name = other._name;
@@ -102,7 +99,6 @@ void Character::use(int idx, ICharacter& target)
 
 Character::~Character(void)
 {
-    std::cout << "Character: Destructor called." << std::endl;
     for (int i = 0; i < MAX_STOCK; ++i)
     {
         if (_stock[i] != NULL)
