@@ -6,7 +6,7 @@
 #    By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/03 16:27:26 by bsantana          #+#    #+#              #
-#    Updated: 2024/10/07 14:04:52 by bsantana         ###   ########.fr        #
+#    Updated: 2024/10/07 14:51:57 by bsantana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ FLAGS = -Werror -Wall -Wextra -std=c++98
 MAKEFLAGS += --silent
 
 SRCS_DIR = sources
-SRCS = sources/main.cpp sources/AMateria.cpp sources/Character.cpp sources/Cure.cpp sources/Ice.cpp
+SRCS = sources/main.cpp sources/AMateria.cpp sources/Character.cpp sources/Cure.cpp sources/Ice.cpp sources/MateriaSource.cpp
 
 OBJS_DIR = objs
 OBJS = $(SRCS:$(SRCS_DIR)/%.cpp=$(OBJS_DIR)/%.o)

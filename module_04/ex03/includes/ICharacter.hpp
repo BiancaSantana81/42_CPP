@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:22:44 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/07 11:40:08 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/07 15:12:50 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,14 @@
 #include <string>
 
 
-/* Declaração antecipada da classe AMateria para evitar dependência circular.
-Isso permite que a interface ICharacter use ponteiros para AMateria
-sem a necessidade de incluir o cabeçalho de AMateria, prevenindo assim
-problemas de compilação causados por ciclos de inclusão. */
+/* A classe ICharacter é abstrata e tem como finalidade assegurar que todos os personagens criados no jogo
+sigam um modelo padrão. Ao declarar essa classe como abstrata e permitir o polimorfismo nas classes filhas,
+garantimos a padronização e a consistência para todos os personagens, facilitando a implementação de diferentes tipos
+de personagens que compartilham comportamentos comuns.
+*/
 
-class AMateria;
+
+class AMateria; // Declaração antecipada da classe AMateria para evitar dependência circular.
 
 class ICharacter
 {

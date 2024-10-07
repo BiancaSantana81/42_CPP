@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:40:30 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/07 12:37:01 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/07 15:36:10 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,10 @@
 
 #define MAX_STOCK 4
 
-
-// Classe Character implementa a interface ICharacter. 
-// Ela gerencia um estoque de até 4 matérias (AMateria) e 
-// fornece métodos para equipar, desequipar e usar essas matérias 
-// em alvos (ICharacter). A classe também armazena o nome do 
-// personagem, que é definido no construtor.
-
+/* A classe Character implementa um novo personagem seguindo o modelo da classe abstrata ICharacter.
+Nela, o personagem adquire um nome e pode ter um estoque de até 4 matérias (AMateria), que podem ser 
+equipadas ou desapegadas ou utilizadas através dos métodos equip, unequip e use.
+*/
 
 class Character: public ICharacter
 {
@@ -51,12 +48,11 @@ class Character: public ICharacter
     // Virtual functions
 
     void equip(AMateria *m);
-    void unequip(int curr);
-    void use(int curr, ICharacter &target);
+    void unequip(int idx);
+    void use(int idx, ICharacter &target);
 
     // Destructor
     ~Character(void);
-    
 };
 
 #endif
