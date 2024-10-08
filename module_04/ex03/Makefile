@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+         #
+#    By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/03 16:27:26 by bsantana          #+#    #+#              #
-#    Updated: 2024/10/07 14:51:57 by bsantana         ###   ########.fr        #
+#    Updated: 2024/10/08 15:40:04 by bsantana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ FLAGS = -Werror -Wall -Wextra -std=c++98
 MAKEFLAGS += --silent
 
 SRCS_DIR = sources
-SRCS = sources/main.cpp sources/AMateria.cpp sources/Character.cpp sources/Cure.cpp sources/Ice.cpp sources/MateriaSource.cpp
+SRCS = sources/main.cpp sources/AMateria.cpp sources/Character.cpp sources/Cure.cpp sources/Ice.cpp sources/MateriaSource.cpp \
+       tests/tests.cpp tests/Gem.cpp tests/Future.cpp tests/Electro.cpp
 
 OBJS_DIR = objs
 OBJS = $(SRCS:$(SRCS_DIR)/%.cpp=$(OBJS_DIR)/%.o)

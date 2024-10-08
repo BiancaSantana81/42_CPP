@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 14:39:34 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/08 13:29:52 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/08 13:48:53 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void MateriaSource::learnMateria(AMateria *materia)
             return ;
         }
     }
-    std::cout << "No empty slot to learn more materias." << std::endl;
+    std::cout << BRIGHT_RED "No empty slot to learn more materias." RESET << std::endl;
 }
 
 AMateria *MateriaSource::createMateria(std::string const &type)
@@ -74,7 +74,7 @@ AMateria *MateriaSource::createMateria(std::string const &type)
             return (_materias[i]->clone());
     }
     std::cout << BRIGHT_RED "Error: Materia of type " << type << " not found!" RESET << std::endl;
-    return NULL;
+    return (0);
 }
 
 /* Destructor */
@@ -90,4 +90,3 @@ MateriaSource::~MateriaSource(void)
         }
     }
 }
-

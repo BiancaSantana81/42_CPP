@@ -1,75 +1,80 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Character.cpp                                      :+:      :+:    :+:   */
+/*   Gem.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 11:22:58 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/08 13:50:50 by bsantana         ###   ########.fr       */
+/*   Created: 2024/10/08 14:05:07 by bsantana          #+#    #+#             */
+/*   Updated: 2024/10/08 16:48:17 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Character.hpp"
+#include "Gem.hpp"
 
-/* CONSTRUCTORS */
-
-Character::Character(void): _name("weird guy")
+Gem::Gem(void): _name("Crystal Gem")
 {
-    for (int i = 0; i < MAX_STOCK; i++)
+    for (int i = 0; i < 4; i++)
         _stock[i] = NULL;
 }
 
-Character::Character(std::string name): _name(name)
+Gem::Gem(std::string name): _name(name)
 {
-    for (int i = 0; i < MAX_STOCK; i++)
+    std::cout << "I'm " << _name << "!" <<std::endl;
+    for (int i = 0; i < 4; i++)
         _stock[i] = NULL;
 }
 
-Character::Character(Character const &other)
+Gem::Gem(Gem const &other)
 {
-    std::cout << "Character: Copy constructor called." << std::endl;
+    std::cout << "Gem: Copy constructor called." << std::endl;
     *this = other;
 }
 
-Character &Character::operator=(Character const &other)
+Gem &Gem::operator=(Gem const &other)
 {
     if (this != &other)
     {
         _name = other._name;
-        for (int i = 0; i < MAX_STOCK; ++i)
+        std::cout << _stock << std::endl;
+        for (int i = 0; i < 4; ++i)
         {
-            if (_stock[i])
-                delete _stock[i];
+            //std::cout << "after alocation: " << _stock[i] << std::endl;
+            // if (_stock[i] != NULL)
+            //     delete _stock[i];
             if (other._stock[i])
                 _stock[i] = other._stock[i]->clone();
             else
                 _stock[i] = NULL;
+            //std::cout << "before alocation: " << _stock[i] << std::endl;
         }
     }
+    //std::cout << "allocation stock: " << this << std::endl;
     return (*this);
 }
 
 /* GETTER AND SETTER */
 
-std::string const & Character::getName(void) const
+std::string const & Gem::getName(void) const
 {
     return (_name);
 }
 
-void Character::setName(std::string newName)
+void Gem::setName(std::string newName)
 {
     _name = newName;
 }
 
-void Character::equip(AMateria* m)
+/* Functions with behaviour defined in Gem */
+
+void Gem::equip(AMateria* m)
 {
     if (m == NULL)
     {
         std::cout << BRIGHT_RED "Cannot equip a null materia!" RESET << std::endl;
         return ;
     }
-    for (int i = 0; i < MAX_STOCK; ++i)
+    for (int i = 0; i < 4; ++i)
     {
         if (_stock[i] == NULL)
         {
@@ -80,26 +85,26 @@ void Character::equip(AMateria* m)
     std::cout << BRIGHT_RED "Stock is full! Cannot equip more materia." RESET << std::endl;
 }
 
-void Character::unequip(int idx)
+void Gem::unequip(int idx)
 {
-    if (idx < 0 || idx >= MAX_STOCK)
+    if (idx < 0 || idx >= 4)
         return ;
     std::cout << _name << " unequipped " << _stock[idx]->getType() << "." << std::endl;
     _stock[idx] = NULL;
 }
 
-void Character::use(int idx, ICharacter& target)
+void Gem::use(int idx, ICharacter& target)
 {
-    if (idx < 0 || idx >= MAX_STOCK || _stock[idx] == NULL)
+    if (idx < 0 || idx >= 4 || _stock[idx] == NULL)
         return ;
     _stock[idx]->use(target);
 }
 
 /* DESTRUCTOR */
 
-Character::~Character(void)
+Gem::~Gem(void)
 {
-    for (int i = 0; i < MAX_STOCK; ++i)
+    for (int i = 0; i < 4; ++i)
     {
         if (_stock[i] != NULL)
         {
