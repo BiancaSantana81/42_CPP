@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 10:33:42 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/07 17:01:48 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/08 13:29:19 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 /* CONSTRUCTORS */
 
-Cure::Cure(void): AMateria("Cure")
+Cure::Cure(void): AMateria("cure")
 {
     return ;
 }

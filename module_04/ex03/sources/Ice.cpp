@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 10:34:09 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/07 17:02:03 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/08 13:29:24 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 /* CONSTRUCTORS */
 
-Ice::Ice(void): AMateria("Ice")
+Ice::Ice(void): AMateria("ice")
 {
     return ;
 }

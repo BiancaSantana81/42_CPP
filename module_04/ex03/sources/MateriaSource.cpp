@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 14:39:34 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/07 17:03:59 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/08 13:29:52 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,11 @@ MateriaSource &MateriaSource::operator=(MateriaSource const &other)
 
 void MateriaSource::learnMateria(AMateria *materia)
 {
+    if (materia == NULL)
+    {
+        std::cout << BRIGHT_RED "Error: tried to learn a null materia!"  RESET << std::endl;
+        return ;
+    }
     for (int i = 0; i < 4; i++)
     {
         if (_materias[i] == NULL)
@@ -65,12 +70,10 @@ AMateria *MateriaSource::createMateria(std::string const &type)
 {
     for (int i = 0; i < 4; i++)
     {
-        if (_materias[i] && _materias[i]->getType() == type)
-        {
+        if (_materias[i] != NULL && _materias[i]->getType() == type)
             return (_materias[i]->clone());
-        }
     }
-    std::cout << "Materia of type " << type << " not found." << std::endl;
+    std::cout << BRIGHT_RED "Error: Materia of type " << type << " not found!" RESET << std::endl;
     return NULL;
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 16:27:50 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/07 17:14:08 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/08 13:28:57 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main(void)
 
     // Não esta conseguindo equipar na bolsa de 'me' os elementos
     tmp = src->createMateria("ice");
-    std::cout << tmp << std::endl;
+    //std::cout << tmp << std::endl;
     me->equip(tmp);
     tmp = src->createMateria("cure");
     me->equip(tmp);

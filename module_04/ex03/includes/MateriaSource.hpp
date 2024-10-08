@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 14:32:02 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/07 16:07:12 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/08 12:01:21 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MATERIASOURCE_HPP
-#define MATERIALSOURCE_HPP
+#define MATERIASOURCE_HPP
 
 /*
    A classe concreta MateriaSource é responsável pela gestão e criação de novas matérias para os personagens. 
