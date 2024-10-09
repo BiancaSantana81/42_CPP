@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 16:08:32 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/02 16:55:20 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/09 17:12:10 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,13 @@ void showDogIdeas()
     if (Dog* dog = dynamic_cast<Dog*>(animal))
         dog->printIdeas();
     delete animal;
+}
+
+void deepCopy(void)
+{
+    Dog basic;
+    {
+        Dog tmp = basic;
+        tmp.printIdeas();
+    }
 }
