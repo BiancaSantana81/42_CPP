@@ -6,7 +6,7 @@
 #    By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 15:06:22 by bsantana          #+#    #+#              #
-#    Updated: 2024/10/01 18:22:04 by bsantana         ###   ########.fr        #
+#    Updated: 2024/10/09 14:45:38 by bsantana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ FLAGS = -Werror -Wall -Wextra -std=c++98
 MAKEFLAGS += --silent
 
 SRCS_DIR = sources
-SRCS = sources/main.cpp sources/Animal.cpp sources/Cat.cpp sources/Dog.cpp sources/WrongAnimal.cpp sources/WrongCat.cpp
+SRCS = sources/main.cpp sources/tests.cpp sources/Animal.cpp sources/Cat.cpp sources/Dog.cpp sources/WrongAnimal.cpp sources/WrongCat.cpp
 
 OBJS_DIR = objs
 OBJS = $(SRCS:$(SRCS_DIR)/%.cpp=$(OBJS_DIR)/%.o)
