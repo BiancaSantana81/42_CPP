@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:40:30 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/07 15:36:10 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/09 13:35:04 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 
 #include "ICharacter.hpp"
 #include "AMateria.hpp"
@@ -32,6 +33,7 @@ class Character: public ICharacter
 
     AMateria *_stock[MAX_STOCK];
     std::string _name;
+    std::vector<AMateria*> _unequipped; 
 
     public:
 
@@ -50,6 +52,9 @@ class Character: public ICharacter
     void equip(AMateria *m);
     void unequip(int idx);
     void use(int idx, ICharacter &target);
+
+     /*extra function: handle management of unequipped intes*/
+    void reequip(std::string const &type, int stockIdx) = 0;
 
     // Destructor
     ~Character(void);

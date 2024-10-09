@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:22:44 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/07 15:54:03 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/09 13:33:18 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,9 @@ class ICharacter
     virtual void equip(AMateria* m) = 0;
     virtual void unequip(int idx) = 0;
     virtual void use(int idx, ICharacter& target) = 0;
+
+    /*extra function: handle management of unequipped intes*/
+    virtual void reequip(std::string const &type, int stockIdx) = 0;
 };
 
 #endif

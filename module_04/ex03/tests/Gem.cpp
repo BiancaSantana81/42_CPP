@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 14:05:07 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/08 16:48:17 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/09 13:47:58 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,20 +36,14 @@ Gem &Gem::operator=(Gem const &other)
     if (this != &other)
     {
         _name = other._name;
-        std::cout << _stock << std::endl;
-        for (int i = 0; i < 4; ++i)
+        for (int i = 0; i < 4; i++)
         {
-            //std::cout << "after alocation: " << _stock[i] << std::endl;
-            // if (_stock[i] != NULL)
-            //     delete _stock[i];
             if (other._stock[i])
                 _stock[i] = other._stock[i]->clone();
             else
                 _stock[i] = NULL;
-            //std::cout << "before alocation: " << _stock[i] << std::endl;
         }
     }
-    //std::cout << "allocation stock: " << this << std::endl;
     return (*this);
 }
 
@@ -82,7 +76,8 @@ void Gem::equip(AMateria* m)
             return ;
         }
     }
-    std::cout << BRIGHT_RED "Stock is full! Cannot equip more materia." RESET << std::endl;
+    _unequipped.push_back(m);
+    std::cout << BRIGHT_RED << _name << " could not equip " << m->getType() << " because the bag is full!" RESET << std::endl;
 }
 
 void Gem::unequip(int idx)
@@ -90,7 +85,27 @@ void Gem::unequip(int idx)
     if (idx < 0 || idx >= 4)
         return ;
     std::cout << _name << " unequipped " << _stock[idx]->getType() << "." << std::endl;
+    _unequipped.push_back(_stock[idx]);
     _stock[idx] = NULL;
+}
+
+void Gem::reequip(std::string const &type, int stockIdx)
+{
+    if (stockIdx < 0 || stockIdx >= 4 || _stock[stockIdx] != NULL)
+    {
+        std::cout << BRIGHT_RED " Error: the bag is full or there is already an item in this position! " RESET << std::endl;
+        return ;
+    }
+    for (size_t i = 0; i < _unequipped.size(); i++)
+    {
+        if (_unequipped[i]->getType() == type)
+        {
+            _stock[stockIdx] = _unequipped[i];
+            _unequipped.erase(_unequipped.begin() + i);
+            std::cout << "Materia: " << type << " re-equipped in the slot " << stockIdx << "." << std::endl;
+            return ;
+        }
+    }
 }
 
 void Gem::use(int idx, ICharacter& target)
@@ -112,4 +127,6 @@ Gem::~Gem(void)
             _stock[i] = NULL;
         }
     }
+    for (size_t i = 0; i < _unequipped.size(); i++)
+        delete _unequipped[i];
 }

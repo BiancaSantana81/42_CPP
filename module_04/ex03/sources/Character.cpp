@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:22:58 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/08 13:50:50 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/09 13:49:05 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void Character::equip(AMateria* m)
         std::cout << BRIGHT_RED "Cannot equip a null materia!" RESET << std::endl;
         return ;
     }
-    for (int i = 0; i < MAX_STOCK; ++i)
+    for (int i = 0; i < 4; ++i)
     {
         if (_stock[i] == NULL)
         {
@@ -77,7 +77,8 @@ void Character::equip(AMateria* m)
             return ;
         }
     }
-    std::cout << BRIGHT_RED "Stock is full! Cannot equip more materia." RESET << std::endl;
+    _unequipped.push_back(m);
+    std::cout << BRIGHT_RED << _name << " could not equip " << m->getType() << " because the bag is full!" RESET << std::endl;
 }
 
 void Character::unequip(int idx)
@@ -86,6 +87,25 @@ void Character::unequip(int idx)
         return ;
     std::cout << _name << " unequipped " << _stock[idx]->getType() << "." << std::endl;
     _stock[idx] = NULL;
+}
+
+void Character::reequip(std::string const &type, int stockIdx)
+{
+    if (stockIdx < 0 || stockIdx >= 4 || _stock[stockIdx] != NULL)
+    {
+        std::cout << BRIGHT_RED " Error: the bag is full or there is already an item in this position! " RESET << std::endl;
+        return ;
+    }
+    for (size_t i = 0; i < _unequipped.size(); i++)
+    {
+        if (_unequipped[i]->getType() == type)
+        {
+            _stock[stockIdx] = _unequipped[i];
+            _unequipped.erase(_unequipped.begin() + i);
+            std::cout << "Materia" << type << " re-equipped in the slot " << stockIdx << "." << std::endl;
+            return ;
+        }
+    }
 }
 
 void Character::use(int idx, ICharacter& target)
