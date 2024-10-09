@@ -6,15 +6,15 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 16:27:50 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/08 13:54:11 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/09 14:23:20 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Character.hpp"
-#include "../includes/Cure.hpp"
-#include "../includes/Ice.hpp"
-#include "../includes/IMateriaSource.hpp"
-#include "../includes/MateriaSource.hpp"
+#include "includes/Character.hpp"
+#include "includes/Cure.hpp"
+#include "includes/Ice.hpp"
+#include "includes/IMateriaSource.hpp"
+#include "includes/MateriaSource.hpp"
 
 /* Mandatory Tests */
 // int main(void)

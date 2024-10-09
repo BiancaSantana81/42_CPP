@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 14:05:10 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/09 11:52:34 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/09 13:55:49 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Gem: public ICharacter
 
     AMateria *_stock[4];
     std::string _name;
-    std::vector<AMateria*> _unequipped; // vector de matérias desequipadas durante o programa
+    std::vector<AMateria*> _unequipped; // vector of material released by the programme
 
     public:
 

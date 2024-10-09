@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 14:32:02 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/08 12:01:21 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/09 14:05:48 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #define MATERIASOURCE_HPP
 
 /*
-   A classe concreta MateriaSource é responsável pela gestão e criação de novas matérias para os personagens. 
-   Ela mantém um armazenamento de até quatro matérias, fornecendo implementações específicas para os métodos 
-   learnMateria e createMateria.
+   The MateriaSource concrete class is responsible for managing and creating new materials for characters. 
+   It stores up to four materials, providing specific implementations for the 
+   learnMateria and createMateria methods.
 */
 
 #include "IMateriaSource.hpp"

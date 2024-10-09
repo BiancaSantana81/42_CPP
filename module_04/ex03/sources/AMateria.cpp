@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 16:58:10 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/07 16:59:11 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/09 14:02:19 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ void	AMateria::use(ICharacter &target)
 {
 	(void)target;
 }
-
 
 /* DESTRUCTOR */
 

@@ -6,7 +6,7 @@
 #    By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/03 16:27:26 by bsantana          #+#    #+#              #
-#    Updated: 2024/10/08 15:40:04 by bsantana         ###   ########.fr        #
+#    Updated: 2024/10/09 14:27:28 by bsantana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,12 +18,12 @@ CC = c++
 FLAGS = -Werror -Wall -Wextra -std=c++98
 MAKEFLAGS += --silent
 
-SRCS_DIR = sources
-SRCS = sources/main.cpp sources/AMateria.cpp sources/Character.cpp sources/Cure.cpp sources/Ice.cpp sources/MateriaSource.cpp \
-       tests/tests.cpp tests/Gem.cpp tests/Future.cpp tests/Electro.cpp
+SRCS = main.cpp sources/AMateria.cpp sources/Character.cpp sources/Cure.cpp sources/Ice.cpp sources/MateriaSource.cpp \
+       tests.cpp tests/Gem.cpp tests/Future.cpp tests/Electro.cpp
 
 OBJS_DIR = objs
-OBJS = $(SRCS:$(SRCS_DIR)/%.cpp=$(OBJS_DIR)/%.o)
+OBJS = $(SRCS:.cpp=.o)
+OBJS := $(addprefix $(OBJS_DIR)/, $(notdir $(OBJS)))
 
 all: $(NAME)
 
@@ -35,11 +35,18 @@ $(NAME): $(OBJS)
 $(OBJS_DIR):
 	mkdir -p $(OBJS_DIR)
 
-$(OBJS_DIR)/%.o: $(SRCS_DIR)/%.cpp | $(OBJS_DIR)
+$(OBJS_DIR)/%.o: %.cpp | $(OBJS_DIR)
+	$(CC) $(FLAGS) -c $< -o $@
+
+$(OBJS_DIR)/%.o: sources/%.cpp | $(OBJS_DIR)
+	$(CC) $(FLAGS) -c $< -o $@
+
+$(OBJS_DIR)/%.o: tests/%.cpp | $(OBJS_DIR)
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	@rm -rf $(OBJS_DIR)
+	@rm -rf $(OBJS_DIR)/*.o
+	@rm -rf objs
 
 fclean: clean
 	@rm -f $(NAME)

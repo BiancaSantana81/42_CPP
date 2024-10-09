@@ -6,23 +6,23 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:22:44 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/09 13:33:18 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/09 14:06:19 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_HPP
 #define ICHARACTER_HPP
 
-/* A classe ICharacter é abstrata e tem como finalidade assegurar que todos os personagens criados no jogo
-sigam um modelo padrão. Ao declarar essa classe como abstrata e permitir o polimorfismo nas classes filhas,
-garantimos a padronização e a consistência para todos os personagens, facilitando a implementação de diferentes tipos
-de personagens que compartilham comportamentos comuns.
+/* The ICharacter class is abstract and its purpose is to ensure that all the characters created in the game
+follow a standard model. By declaring this class as abstract and allowing polymorphism in child classes,
+we guarantee standardisation and consistency for all characters, making it easier to implement different types of
+of characters that share common behaviours.
 */
 
 #include <iostream>
 #include <string>
 
-class AMateria; // Declaração antecipada da classe AMateria para evitar dependência circular.
+class AMateria; // Early declaration of the AMateria class to avoid circular dependency.
 
 class ICharacter
 {

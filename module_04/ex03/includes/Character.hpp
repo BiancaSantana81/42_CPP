@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:40:30 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/09 13:35:04 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/09 14:07:00 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@
 
 #define MAX_STOCK 4
 
-/* A classe Character implementa um novo personagem seguindo o modelo da classe abstrata ICharacter.
-Nela, o personagem adquire um nome e pode ter um estoque de até 4 matérias (AMateria), que podem ser 
-equipadas ou desapegadas ou utilizadas através dos métodos equip, unequip e use.
+/* The Character class implements a new character modelled on the ICharacter abstract class.
+In it, the character acquires a name and can have a stock of up to 4 materials (AMateria), which can be 
+equipped or detached or used via the equip, unequip and use methods.
 */
 
 class Character: public ICharacter
@@ -54,7 +54,7 @@ class Character: public ICharacter
     void use(int idx, ICharacter &target);
 
      /*extra function: handle management of unequipped intes*/
-    void reequip(std::string const &type, int stockIdx) = 0;
+    void reequip(std::string const &type, int stockIdx);
 
     // Destructor
     ~Character(void);
