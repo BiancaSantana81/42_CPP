@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 13:22:25 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/10 17:50:51 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/10 18:13:45 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade): _name(name), _grade(grade)
     if (grade < 1)
         throw GradeTooLowExeception();
     else if (grade > 150)
-        throw GradeTooHighException();
+        throw GradeTooHighExeception();
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &other)
@@ -67,7 +67,7 @@ void Bureaucrat::setGrade(int newGrade)
 
 /* ERROR MESSAGES */
 
-const char *Bureaucrat::GradeTooHighException::message(void) const throw()
+const char *Bureaucrat::GradeTooHighExeception::message(void) const throw()
 {
     return ("Grade is too high!");
 }

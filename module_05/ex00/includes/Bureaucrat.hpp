@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 13:22:21 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/10 17:50:16 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/10 18:10:09 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ class Bureaucrat
 
     //operadores de incremento e decremento para a nota do burocrata
 
-    // Execptions
+    // Execeptions
 
-    class GradeTooHighException: public std::exception
+    class GradeTooHighExeception: public std::exception
     {
         public:
         virtual const char *message() const throw();
