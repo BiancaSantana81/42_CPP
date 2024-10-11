@@ -3,23 +3,22 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+         #
+#    By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/10/09 17:39:57 by bsantana          #+#    #+#              #
-#    Updated: 2024/10/09 17:39:59 by bsantana         ###   ########.fr        #
+#    Created: 2024/10/09 17:40:05 by bsantana          #+#    #+#              #
+#    Updated: 2024/10/11 09:39:28 by bsantana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 WHITE := \033[1;37m
 PINK := \033[1;35m  
 
-NAME = ex03
+NAME = ex00
 CC = c++
 FLAGS = -Werror -Wall -Wextra -std=c++98
 MAKEFLAGS += --silent
 
-SRCS = main.cpp sources/AMateria.cpp sources/Character.cpp sources/Cure.cpp sources/Ice.cpp sources/MateriaSource.cpp \
-       tests.cpp tests/Gem.cpp tests/Future.cpp tests/Electro.cpp
+SRCS = main.cpp tests.cpp sources/Bureaucrat.cpp 
 
 OBJS_DIR = objs
 OBJS = $(SRCS:.cpp=.o)
