@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 13:17:16 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/11 15:31:55 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/11 16:38:04 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,12 +77,17 @@ bool Form::getIsSigned(void) const
 
 const char* Form::GradeTooHighException::what(void) const throw()
 {
-    return ("This grade is too high! Our best employee is level 1.");
+    return ("Error: The grade required to sign this form is too high! Only our top employee (grade 1) can handle this.");
 }
 
 const char* Form::GradeTooLowException::what(void) const throw()
 {
-    return ("This level is too low! Our intern is at level 150.");
+    return ("Error: The grade required to sign this form is too low! Interns only manage to reach grade 150.");
+}
+
+const char* Form::FormAlreadySignedException::what(void) const throw()
+{
+    return ("Error: The form has already been signed!");
 }
 
 /* METHODS */
@@ -90,7 +95,10 @@ const char* Form::GradeTooLowException::what(void) const throw()
 void Form::beSigned(const Bureaucrat &bureaucrat)
 {
     if (bureaucrat.getGrade() > _gradeSign) {
-        GradeTooLowException();
+        throw GradeTooLowException();
+    }
+    if (_isSigned) {
+        throw FormAlreadySignedException();
     }
     _isSigned = true;
 }

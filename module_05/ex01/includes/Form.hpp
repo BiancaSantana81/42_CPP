@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 13:17:12 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/11 15:33:13 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/11 16:26:42 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,12 @@ class Form
     };
 
     class GradeTooLowException : public std::exception
+    {
+        public:
+        virtual const char *what() const throw();
+    };
+
+    class FormAlreadySignedException : public std::exception
     {
         public:
         virtual const char *what() const throw();
