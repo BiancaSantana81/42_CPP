@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 13:22:21 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/11 09:44:23 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/11 11:15:16 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,26 +39,29 @@ class Bureaucrat
     Bureaucrat(const Bureaucrat &other); // construtor de cópia
     Bureaucrat &operator=(const Bureaucrat &other); // atribuição por cópia
 
-    // getters and setters
+    // getters
     std::string getName(void) const;
     int getGrade(void) const;
-    void setGrade(int newGrade);
 
-    //operadores de incremento e decremento para a nota do burocrata
+    //up or down the grade
+    void upGrade(void);
+    void downGrade(void);
 
     // Execeptions
 
     class GradeTooHighException: public std::exception
     {
         public:
-        virtual const char *message() const throw();
+        virtual const char *what() const throw();
     };
 
     class GradeTooLowException: public std::exception
     {
         public:
-        virtual const char *message()const throw();
+        virtual const char *what()const throw();
     };
 };
+
+std::ostream &operator<<(std::ostream &osStream, Bureaucrat const &that);
 
 #endif
