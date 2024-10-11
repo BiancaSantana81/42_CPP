@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 13:22:21 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/11 11:15:16 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/11 13:33:53 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Bureaucrat
 
     public:
 
-    // Constructors 
+    // constructors 
 
     Bureaucrat(void); // construtor padrão 
     Bureaucrat(std::string name, int grade); // construtor padrão com inicialização de nome 
@@ -43,11 +43,11 @@ class Bureaucrat
     std::string getName(void) const;
     int getGrade(void) const;
 
-    //up or down the grade
+    // up or down the grade
     void upGrade(void);
     void downGrade(void);
 
-    // Execeptions
+    // execeptions
 
     class GradeTooHighException: public std::exception
     {

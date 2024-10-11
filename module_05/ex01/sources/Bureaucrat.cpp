@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 13:22:25 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/11 12:00:40 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/11 14:23:30 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void Bureaucrat::downGrade(void)
     _grade++;
 }
 
-/* ERROR MESSAGES */
+/* ERROR MESSAGES EXCEPTIONS */
 
 const char *Bureaucrat::GradeTooHighException::what(void) const throw()
 {
