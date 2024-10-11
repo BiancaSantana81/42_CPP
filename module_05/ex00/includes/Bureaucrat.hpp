@@ -3,15 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 13:22:21 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/10 18:10:09 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/11 09:44:23 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
+
+#define BRIGHT_YELLOW "\033[93m"
+#define BRIGHT_CYAN   "\033[96m"
+#define BRIGHT_RED    "\033[91m"
+#define RESET   "\033[0m"
 
 #include <iostream>
 #include <ctime>
@@ -43,13 +48,13 @@ class Bureaucrat
 
     // Execeptions
 
-    class GradeTooHighExeception: public std::exception
+    class GradeTooHighException: public std::exception
     {
         public:
         virtual const char *message() const throw();
     };
 
-    class GradeTooLowExeception: public std::exception
+    class GradeTooLowException: public std::exception
     {
         public:
         virtual const char *message()const throw();

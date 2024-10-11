@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 13:22:25 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/10 18:13:45 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/11 09:48:44 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,12 @@ Bureaucrat::Bureaucrat(void): _name("random annoying"), _grade(150)
 Bureaucrat::Bureaucrat(std::string name, int grade): _name(name), _grade(grade)
 {
     std::cout << _name << " is ready to be bureaucratic!" << std::endl;
-    if (grade < 1)
-        throw GradeTooLowExeception();
-    else if (grade > 150)
-        throw GradeTooHighExeception();
+    if (grade < 1) {
+        throw GradeTooLowException();
+    }
+    else if (grade > 150) {
+        throw GradeTooHighException();
+    }
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &other)
@@ -67,12 +69,12 @@ void Bureaucrat::setGrade(int newGrade)
 
 /* ERROR MESSAGES */
 
-const char *Bureaucrat::GradeTooHighExeception::message(void) const throw()
+const char *Bureaucrat::GradeTooHighException::message(void) const throw()
 {
     return ("Grade is too high!");
 }
 
-const char *Bureaucrat::GradeTooLowExeception::message(void) const throw()
+const char *Bureaucrat::GradeTooLowException::message(void) const throw()
 {
     return ("Grade is too low!");
 }

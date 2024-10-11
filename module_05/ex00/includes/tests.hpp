@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   tests.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/10 14:08:04 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/11 09:39:10 by bsantana         ###   ########.fr       */
+/*   Created: 2024/10/11 09:35:45 by bsantana          #+#    #+#             */
+/*   Updated: 2024/10/11 09:38:10 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/Bureaucrat.hpp"
-#include "includes/tests.hpp"
+#ifndef TESTS_HPP
+#define TESTS_HPP
 
-int main(void)
-{
-    invalidSituations();
-    return (0);
-}
+/* Invalid situations */
+
+void invalidSituations(void);
+void lowerGradeEntry(void);
+void highGradeEntry(void);
+
+#endif
