@@ -6,11 +6,12 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 13:22:25 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/11 14:23:30 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/11 15:37:06 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Bureaucrat.hpp"
+#include "../includes/Form.hpp"
 
 /* CONSTRUCTORS */
 
@@ -74,6 +75,19 @@ void Bureaucrat::downGrade(void)
         throw GradeTooLowException();
     }
     _grade++;
+}
+
+/* Method: check that the bureaucrat has signed the form */
+
+void Bureaucrat::signForm(Form &form) const
+{
+    try {
+        form.beSigned(*this);
+        std::cout << _name << " signed " << form.getName() << std::endl;
+    } catch (const std::exception &e) {
+        std::cout << _name << " could not sign " << form.getName() 
+                  << " why " << e.what() << std::endl;
+    }
 }
 
 /* ERROR MESSAGES EXCEPTIONS */

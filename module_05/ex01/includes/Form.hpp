@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 13:17:12 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/11 14:39:44 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/11 15:33:13 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class Form
     // constructors
 
     Form(void);
-    Form(std::string &name, int gradeRequired, int gradeSign);
+    Form(std::string name, int gradeRequired, int gradeSign);
     Form(const Form &other);
     Form &operator=(const Form &other);
     ~Form(void);
@@ -66,7 +66,6 @@ class Form
     // method
     
     void        beSigned(const Bureaucrat &bureaucrat);
-    
 };
 
 // overload operator Form

@@ -6,11 +6,12 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 13:17:16 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/11 14:44:49 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/11 15:31:55 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Form.hpp"
+#include "../includes/Bureaucrat.hpp"
 
 /* CONSTRUCTORS */
 
@@ -19,7 +20,7 @@ Form::Form(void): _name("standard form"), _gradeRequired(150), _gradeSign(1), _i
     std::cout << "Form: " << _name << " ready for the bureaucrats!" << std::endl;
 }
 
-Form::Form(std::string &name, int gradeRequired, int gradeSign):
+Form::Form(std::string name, int gradeRequired, int gradeSign):
     _name(name), _gradeRequired(gradeRequired), _gradeSign(gradeSign), _isSigned(false)
 {
     if (_gradeRequired < 1 || _gradeSign < 1) {
@@ -84,8 +85,15 @@ const char* Form::GradeTooLowException::what(void) const throw()
     return ("This level is too low! Our intern is at level 150.");
 }
 
-/* METHOD */
+/* METHODS */
 
+void Form::beSigned(const Bureaucrat &bureaucrat)
+{
+    if (bureaucrat.getGrade() > _gradeSign) {
+        GradeTooLowException();
+    }
+    _isSigned = true;
+}
 
 // overload operator Form
 

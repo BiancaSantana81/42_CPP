@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 13:22:21 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/11 13:33:53 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/11 15:34:14 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 #include <iostream>
 #include <ctime>
 #include <string>
+
+class Form;
 
 class Bureaucrat
 {
@@ -46,6 +48,9 @@ class Bureaucrat
     // up or down the grade
     void upGrade(void);
     void downGrade(void);
+
+    // new method - check that the bureaucrat has signed the form
+    void        signForm(Form &form) const;
 
     // execeptions
 

@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 14:08:04 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/11 14:43:51 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/11 15:28:35 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,10 @@
 
 int main(void)
 {
-    Form bored;
+    Form bored("contrato", 10, 1);
+    Bureaucrat valid("John", 1);
+    
+    bored.beSigned(valid);
     std::cout << bored << std::endl;
     return (0);
 }
