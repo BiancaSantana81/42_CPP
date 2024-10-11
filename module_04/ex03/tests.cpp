@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tests.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 13:51:43 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/09 14:23:28 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/11 09:14:03 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int main(void)
 
     std::cout << CYAN "==== Test 1: Creating a new character ===" RESET << std::endl;
     ICharacter *newPeople = new Gem("Garnet");
-    (void)newPeople;
     
     // Creating a learning bag for the character
 
