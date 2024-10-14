@@ -6,7 +6,7 @@
 #    By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/09 17:40:05 by bsantana          #+#    #+#              #
-#    Updated: 2024/10/14 15:22:51 by bsantana         ###   ########.fr        #
+#    Updated: 2024/10/14 16:45:33 by bsantana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ FLAGS = -Werror -Wall -Wextra -std=c++98
 MAKEFLAGS += --silent
 
 SRCS = main.cpp sources/Bureaucrat.cpp sources/AForm.cpp \
-		PresidentialPardonForm.cpp
+		PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 
 OBJS_DIR = objs
 OBJS = $(SRCS:.cpp=.o)

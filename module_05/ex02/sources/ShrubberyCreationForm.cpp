@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 11:54:48 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/14 15:05:29 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/14 17:12:38 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,14 +64,14 @@ ShrubberyCreationForm::~ShrubberyCreationForm(void)
 
 static void build_tree(std::string target)
 {
-    std::ifstream treeFile("./ex02/treeFile.txt");
-    std::ofstream outfile(target);
+    std::ifstream treeFile("./treeFile.txt");
 
     if (!treeFile)
     {
         std::cout  << "Error opening file Tree.txt " << target << std::endl;
         return ;
     }
+    std::ofstream outfile(target.c_str());
     if (!outfile)
     {
         std::cout  << "Error creating file " << target << std::endl;

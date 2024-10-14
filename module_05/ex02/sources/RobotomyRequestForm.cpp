@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 11:33:26 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/14 11:53:07 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/14 16:52:40 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void        RobotomyRequestForm::execute(Bureaucrat const & executor) const
     }
 
     std::cout << "tec tec tec..." << std::endl;
-    srand(time(NULL)); // chamar dentro do main???
+    //srand(time(NULL)); // chamar dentro do main???
 
     if (std::rand() % 2 == 0)
          std::cout << _target << " has been successfully robotomized!" << std::endl;

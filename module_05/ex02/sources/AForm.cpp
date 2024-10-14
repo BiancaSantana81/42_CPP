@@ -77,12 +77,12 @@ bool AForm::getIsSigned(void) const
 
 const char* AForm::GradeTooHighException::what(void) const throw()
 {
-    return ("Error: The grade Exec to sign this Aform is too high! Only our top employee (grade 1) can handle this.");
+    return (" the grade_exec to sign this Aform is too high! Only our top employee (grade 1) can handle this.");
 }
 
 const char* AForm::GradeTooLowException::what(void) const throw()
 {
-    return ("Error: The grade Exec to sign this Aform is too low! Interns only manage to reach grade 150.");
+    return (" the grade_exec to sign this Aform is too low!");
 }
 
 const char* AForm::AFormAlreadySignedException::what(void) const throw()

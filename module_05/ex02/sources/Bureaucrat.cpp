@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 13:22:25 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/14 15:28:11 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/14 16:38:10 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,14 +90,16 @@ void Bureaucrat::signForm(AForm &form) const
     }
 }
 
+/* Method: get the bureaucrat to execute the form (if possible) */
+
 void Bureaucrat::executeForm(AForm const &form)
 {
     try {
         form.execute(*this);
-        std::cout << _name << " executou o forms: " << form.getName() << "." << std::endl;
+        std::cout << _name << "  executed the form: " << form.getName() << "." << std::endl;
     } catch (const std::exception &e) {
-        std::cout << _name << " could not execute "<< form.getName() 
-                  << " why " << e.what() << std::endl;
+        std::cout << BRIGHT_RED << _name << " could not execute "<< form.getName() 
+                  << " why " << e.what() << RESET << std::endl;
     }
 }
 
