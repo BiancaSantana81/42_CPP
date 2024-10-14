@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 11:33:26 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/14 11:40:27 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/14 11:53:07 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /* Constructors */
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target)
-: AForm("RobotomyRequestForm", 5, 25),_target(target)
+: AForm("RobotomyRequestForm", 72, 45),_target(target)
 {
     std::cout  << "RobotomyRequestForm is available. Main target: "
     << _target << "." << std::endl;
@@ -49,6 +49,14 @@ void        RobotomyRequestForm::execute(Bureaucrat const & executor) const
     if (executor.getGrade() > getGradeExec()) {
         throw GradeTooLowException();
     }
+
+    std::cout << "tec tec tec..." << std::endl;
+    srand(time(NULL)); // chamar dentro do main???
+
+    if (std::rand() % 2 == 0)
+         std::cout << _target << " has been successfully robotomized!" << std::endl;
+    else
+        std::cout << "The robotomy of " << _target << " failed miserably." << std::endl;
 }
 
 /* Destructor */
