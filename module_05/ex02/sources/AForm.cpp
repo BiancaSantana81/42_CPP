@@ -87,7 +87,7 @@ const char* AForm::GradeTooLowException::what(void) const throw()
 
 const char* AForm::AFormAlreadySignedException::what(void) const throw()
 {
-    return ("Error: The Aform has already been signed!");
+    return (" the signature is wrong!");
 }
 
 /* METHODS */

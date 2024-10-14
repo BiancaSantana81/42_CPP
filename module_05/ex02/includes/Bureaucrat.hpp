@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 13:22:21 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/11 15:34:14 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/14 15:20:57 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 #include <ctime>
 #include <string>
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -48,9 +48,10 @@ class Bureaucrat
     // up or down the grade
     void upGrade(void);
     void downGrade(void);
+    void signForm(AForm &form) const;
 
-    // new method - check that the bureaucrat has signed the form
-    void        signForm(Form &form) const;
+    /* new method: checks that the bureaucrat has executed the orders on a form */
+    void executeForm(AForm const & form);
 
     // execeptions
 

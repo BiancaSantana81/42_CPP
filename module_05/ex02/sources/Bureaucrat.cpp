@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 13:22:25 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/11 15:47:52 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/14 15:28:11 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Bureaucrat.hpp"
-#include "../includes/Form.hpp"
+#include "../includes/AForm.hpp"
 
 /* CONSTRUCTORS */
 
@@ -79,13 +79,24 @@ void Bureaucrat::downGrade(void)
 
 /* Method: check that the bureaucrat has signed the form */
 
-void Bureaucrat::signForm(Form &form) const
+void Bureaucrat::signForm(AForm &form) const
 {
     try {
         form.beSigned(*this);
         std::cout << _name << " signed " << form.getName() << "." << std::endl;
     } catch (const std::exception &e) {
         std::cout << _name << BRIGHT_RED " could not sign " RESET << form.getName() 
+                  << " why " << e.what() << std::endl;
+    }
+}
+
+void Bureaucrat::executeForm(AForm const &form)
+{
+    try {
+        form.execute(*this);
+        std::cout << _name << " executou o forms: " << form.getName() << "." << std::endl;
+    } catch (const std::exception &e) {
+        std::cout << _name << " could not execute "<< form.getName() 
                   << " why " << e.what() << std::endl;
     }
 }
