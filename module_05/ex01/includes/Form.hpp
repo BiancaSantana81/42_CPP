@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 13:17:12 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/11 16:26:42 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/14 11:19:08 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Form
     private:
 
     const std::string _name;
-    const int        _gradeRequired;
+    const int        _gradeExec;
     const int        _gradeSign;
     bool             _isSigned;
 
@@ -37,7 +37,7 @@ class Form
     // constructors
 
     Form(void);
-    Form(std::string name, int gradeRequired, int gradeSign);
+    Form(std::string name, int gradeExec, int gradeSign);
     Form(const Form &other);
     Form &operator=(const Form &other);
     ~Form(void);
@@ -45,7 +45,7 @@ class Form
     // getters
 
     std::string getName(void) const;
-    int         getGradeRequired(void) const;
+    int         getGradeExec(void) const;
     int         getGradeSign(void) const;
     bool        getIsSigned(void) const;
 

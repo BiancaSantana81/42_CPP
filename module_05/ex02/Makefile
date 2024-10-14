@@ -3,22 +3,23 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+         #
+#    By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/09 17:40:05 by bsantana          #+#    #+#              #
-#    Updated: 2024/10/11 14:35:12 by bsantana         ###   ########.fr        #
+#    Updated: 2024/10/14 10:36:59 by bsantana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 WHITE := \033[1;37m
 PINK := \033[1;35m  
 
-NAME = ex00
+NAME = ex01
 CC = c++
 FLAGS = -Werror -Wall -Wextra -std=c++98
 MAKEFLAGS += --silent
 
-SRCS = main.cpp sources/Bureaucrat.cpp sources/Form.cpp
+SRCS = main.cpp sources/Bureaucrat.cpp sources/AForm.cpp \
+		PresidentialPardonForm.cpp
 
 OBJS_DIR = objs
 OBJS = $(SRCS:.cpp=.o)

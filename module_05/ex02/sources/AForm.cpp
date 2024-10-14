@@ -15,18 +15,18 @@
 
 /* CONSTRUCTORS */
 
-AForm::AForm(void): _name("standard form"), _gradeRequired(150), _gradeSign(1), _isSigned(false)
+AForm::AForm(void): _name("standard form"), _gradeExec(150), _gradeSign(1), _isSigned(false)
 {
     std::cout << "AForm: " << _name << " ready for the bureaucrats!" << std::endl;
 }
 
-AForm::AForm(std::string name, int gradeRequired, int gradeSign):
-    _name(name), _gradeRequired(gradeRequired), _gradeSign(gradeSign), _isSigned(false)
+AForm::AForm(std::string name, int gradeExec, int gradeSign):
+    _name(name), _gradeExec(gradeExec), _gradeSign(gradeSign), _isSigned(false)
 {
-    if (_gradeRequired < 1 || _gradeSign < 1) {
+    if (_gradeExec < 1 || _gradeSign < 1) {
         throw GradeTooHighException();
     }
-    else if (_gradeRequired > 150 || _gradeSign > 150) {
+    else if (_gradeExec > 150 || _gradeSign > 150) {
         throw GradeTooLowException();
     }
     std::cout << "AForm: " << _name << " ready for the bureaucrats!" << std::endl;
@@ -34,7 +34,7 @@ AForm::AForm(std::string name, int gradeRequired, int gradeSign):
 
 AForm::AForm(const AForm &other) :
     _name(other._name), 
-    _gradeRequired(other._gradeRequired), 
+    _gradeExec(other._gradeExec), 
     _gradeSign(other._gradeSign), 
     _isSigned(other._isSigned)
 {
@@ -58,9 +58,9 @@ std::string AForm::getName(void) const
 {
     return (_name);
 }
-int AForm::getGradeRequired(void) const
+int AForm::getGradeExec(void) const
 {
-    return (_gradeRequired);
+    return (_gradeExec);
 }
 
 int AForm::getGradeSign(void) const
@@ -77,12 +77,12 @@ bool AForm::getIsSigned(void) const
 
 const char* AForm::GradeTooHighException::what(void) const throw()
 {
-    return ("Error: The grade required to sign this Aform is too high! Only our top employee (grade 1) can handle this.");
+    return ("Error: The grade Exec to sign this Aform is too high! Only our top employee (grade 1) can handle this.");
 }
 
 const char* AForm::GradeTooLowException::what(void) const throw()
 {
-    return ("Error: The grade required to sign this Aform is too low! Interns only manage to reach grade 150.");
+    return ("Error: The grade Exec to sign this Aform is too low! Interns only manage to reach grade 150.");
 }
 
 const char* AForm::AFormAlreadySignedException::what(void) const throw()
@@ -108,7 +108,7 @@ void AForm::beSigned(const Bureaucrat &bureaucrat)
 std::ostream &operator<<(std::ostream &osStream, const AForm &that)
 {
     osStream << BRIGHT_YELLOW "AForm_name: "  RESET << that.getName() 
-             <<  BRIGHT_YELLOW ", grade_required: " RESET << that.getGradeRequired()
+             <<  BRIGHT_YELLOW ", grade_exec: " RESET << that.getGradeExec()
              <<  BRIGHT_YELLOW ", grade_sign: " RESET << that.getGradeSign()
              <<  BRIGHT_YELLOW ", signed: " RESET ;
 

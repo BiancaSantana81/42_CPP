@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 13:17:12 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/14 10:22:30 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/14 11:23:23 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class AForm
     private:
 
     const std::string _name;
-    const int        _gradeRequired;
+    const int        _gradeExec;
     const int        _gradeSign;
     bool             _isSigned;
 
@@ -37,7 +37,7 @@ class AForm
     // constructors
 
     AForm(void);
-    AForm(std::string name, int gradeRequired, int gradeSign);
+    AForm(std::string name, int gradeExec, int gradeSign);
     AForm(const AForm &other);
     AForm &operator=(const AForm &other);
     virtual ~AForm(void);
@@ -45,7 +45,7 @@ class AForm
     // getters
 
     std::string getName(void) const;
-    int         getGradeRequired(void) const;
+    int         getGradeExec(void) const;
     int         getGradeSign(void) const;
     bool        getIsSigned(void) const;
 

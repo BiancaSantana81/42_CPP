@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 14:08:04 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/14 10:09:22 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/14 10:25:55 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ void invalidSituations(void)
 
 int main(void)
 {
+
     return 0;
 }
