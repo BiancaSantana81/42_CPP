@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 11:54:37 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/14 11:56:55 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/14 14:48:14 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 #include <cstdlib>
 #include <ctime> 
+#include <fstream>
 
 class ShrubberyCreationForm : public AForm
 {
