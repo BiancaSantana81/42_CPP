@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 14:08:04 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/15 11:36:11 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/15 11:42:45 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ void invalidSituations(void)
 
     nobody.makeForm("noName", "home");
 }
-
 
 int main(void)
 {

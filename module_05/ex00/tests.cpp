@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tests.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 09:34:45 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/11 12:06:24 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/15 11:47:49 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void invalidSituations(void)
     Bureaucrat invalid5("Carla", 50);
     std::cout << invalid5 << std::endl;
 
-    for (; invalid5.getGrade() >= 1; ) {
+    for (; invalid5.getGrade() >= 1;) {
         invalid5.upGrade();
     }
 
