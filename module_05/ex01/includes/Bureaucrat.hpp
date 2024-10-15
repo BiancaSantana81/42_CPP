@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 13:22:21 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/11 15:34:14 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/15 09:45:02 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,11 @@ class Bureaucrat
 
     // constructors 
 
-    Bureaucrat(void); // construtor padrão 
-    Bureaucrat(std::string name, int grade); // construtor padrão com inicialização de nome 
-    ~Bureaucrat(void); // destrutor
-    Bureaucrat(const Bureaucrat &other); // construtor de cópia
-    Bureaucrat &operator=(const Bureaucrat &other); // atribuição por cópia
+    Bureaucrat(void);
+    Bureaucrat(std::string name, int grade);
+    ~Bureaucrat(void);
+    Bureaucrat(const Bureaucrat &other);
+    Bureaucrat &operator=(const Bureaucrat &other);
 
     // getters
     std::string getName(void) const;

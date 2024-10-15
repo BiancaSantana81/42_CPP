@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 13:22:25 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/11 15:47:52 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/15 09:44:33 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,9 +102,7 @@ const char *Bureaucrat::GradeTooLowException::what(void) const throw()
     return ("The lowest possible grade is 150!");
 }
 
-/* Ao sobrecarregar o operador '<<' para a classe Bureaucrat, permitimos que o objeto 'burocrata' seja impresso diretamente com 'std::cout << burocrata'.
-   Isso exibe o nome e o grau do Bureaucrat conforme implementado na função de sobrecarga.
-*/
+/* overload operator for bureaucrat */
 
 std::ostream &operator<<(std::ostream &osStream, Bureaucrat const &that)
 {

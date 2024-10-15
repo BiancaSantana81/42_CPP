@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 14:08:04 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/14 17:25:44 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/15 09:38:51 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ void validSituations(void)
 
     std::cout << BRIGHT_CYAN "====== Test 3: ShrubberyCreationForm ======  " RESET << std::endl;
     try {
-        ShrubberyCreationForm target1("target1");
-        amanda.signForm(target1);
-        amanda.executeForm(target1);
+        ShrubberyCreationForm home("home");
+        amanda.signForm(home);
+        amanda.executeForm(home);
     }  catch (const std::exception &e) {
         std::cout << e.what() << std::endl;
     }
@@ -61,13 +61,11 @@ void testCopyConstructor(void)
     std::cout << BRIGHT_YELLOW "===================== Test: Copy Constructor =====================" RESET << std::endl;
     ShrubberyCreationForm original("Garden");
 
-    // Testando o construtor de cópia
     std::cout << BRIGHT_CYAN "====== Test 1: Testando construtor de cópia  ======  " RESET << std::endl;
     ShrubberyCreationForm copy(original);
     std::cout << "Original: " << std::endl << original << std::endl;
     std::cout << "Copy: " << std::endl << copy << std::endl;
 
-    // Testando atribuição
     std::cout << BRIGHT_CYAN "====== Test 2: Testando atribuição de cópia  ======  " RESET << std::endl;
     RobotomyRequestForm robot1("Old Target");
     RobotomyRequestForm robot2("New Target");
