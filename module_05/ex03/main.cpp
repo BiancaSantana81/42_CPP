@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 14:08:04 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/15 09:38:51 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/15 11:36:11 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,98 +15,56 @@
 #include "includes/PresidentialPardonForm.hpp"
 #include "includes/RobotomyRequestForm.hpp"
 #include "includes/ShrubberyCreationForm.hpp"
+#include "includes/Intern.hpp"
 
 void validSituations(void)
 {
-    std::cout << BRIGHT_YELLOW "===================== valid situations =====================" RESET << std::endl;
-    Bureaucrat amanda("Amanda", 1);
+    std::cout << BRIGHT_YELLOW "====== valid situations tests ======  " RESET << std::endl;
+    Intern nobody;
 
-    std::cout << BRIGHT_CYAN "====== Test 1: Robotomy ======  " RESET << std::endl;
+    std::cout << BRIGHT_CYAN "====== Test 1: create a presidential pardon ======  " RESET << std::endl;
+    AForm *base;
 
-    srand(time(NULL));
+    base = nobody.makeForm("presidential pardon", "sorry");
 
-    try {
-        RobotomyRequestForm forms("forms");
-        amanda.signForm(forms);
-    
-        amanda.executeForm(forms);
-        amanda.executeForm(forms);
-        amanda.executeForm(forms);
-        amanda.executeForm(forms);
-    } catch (const std::exception &e) {
-        std::cout << e.what() << std::endl;
-    }
+    std::cout << BRIGHT_CYAN "====== Test 2: create a robotomy request ======  " RESET << std::endl;
+    AForm *base1;
 
-    std::cout << BRIGHT_CYAN "====== Test 2: PresidentialRequestForm ======  " RESET << std::endl;
-    try {
-        PresidentialPardonForm john("John");
-        amanda.signForm(john);
-        amanda.executeForm(john);
-    } catch (const std::exception &e) {
-        std::cout << e.what() << std::endl;
-    }
+    base1 = nobody.makeForm("robotomy request", "robo");
 
-    std::cout << BRIGHT_CYAN "====== Test 3: ShrubberyCreationForm ======  " RESET << std::endl;
-    try {
-        ShrubberyCreationForm home("home");
-        amanda.signForm(home);
-        amanda.executeForm(home);
-    }  catch (const std::exception &e) {
-        std::cout << e.what() << std::endl;
-    }
-}
+    std::cout << BRIGHT_CYAN "====== Test 3: create a  shubbery creation ======  " RESET << std::endl;
+    AForm *base2;
 
-void testCopyConstructor(void)
-{
-    std::cout << BRIGHT_YELLOW "===================== Test: Copy Constructor =====================" RESET << std::endl;
-    ShrubberyCreationForm original("Garden");
+    base2 = nobody.makeForm("shubbery creation", "home");
 
-    std::cout << BRIGHT_CYAN "====== Test 1: Testando construtor de cópia  ======  " RESET << std::endl;
-    ShrubberyCreationForm copy(original);
-    std::cout << "Original: " << std::endl << original << std::endl;
-    std::cout << "Copy: " << std::endl << copy << std::endl;
-
-    std::cout << BRIGHT_CYAN "====== Test 2: Testando atribuição de cópia  ======  " RESET << std::endl;
-    RobotomyRequestForm robot1("Old Target");
-    RobotomyRequestForm robot2("New Target");
-    robot1 = robot2;
-    std::cout << "Robot1 after assignment: " << robot1 << std::endl;
-    std::cout << "Robot2 after assignment: " << robot2 << std::endl;
-    std::cout << BRIGHT_CYAN "=====================================================================  " RESET << std::endl;
+    std::cout << BRIGHT_CYAN " ----------------- clean memory ------------------  " RESET << std::endl;
+    delete base;
+    delete base1;
+    delete base2;
 }
 
 void invalidSituations(void)
 {
-    std::cout << BRIGHT_YELLOW "===================== Invalid situations =====================" RESET << std::endl;
+    std::cout << BRIGHT_YELLOW "====== invalid situations tests ======  " RESET << std::endl;
+    Intern nobody;
 
-    std::cout << BRIGHT_CYAN "====== Test 1: Tentar executar um formulário sem assinatura ======  " RESET << std::endl;
-
-    try {
-        Bureaucrat angela("Angela", 1);
-        PresidentialPardonForm sorry("sorry");
-
-        angela.executeForm(sorry);
-    } catch (const std::exception &e) {
-        std::cout << e.what() << std::endl;
-    }
-    std::cout << BRIGHT_CYAN "====== Test 2: Tentar executar um formulário com nota baixa para exec ======  " RESET << std::endl;
-    try {
-        Bureaucrat angela("Angela", 1);
-        Bureaucrat marcela("Marcela", 150);
-        PresidentialPardonForm sorry("sorry");
-        sorry.beSigned(angela);
-
-        marcela.executeForm(sorry);
-    } catch (const std::exception &e) {
-        std::cout << e.what() << std::endl;
-    }
-
+    nobody.makeForm("noName", "home");
 }
+
 
 int main(void)
 {
-    invalidSituations();
     validSituations();
-    testCopyConstructor();
+    invalidSituations();
     return (0);
 }
+
+// int main(void)
+// {
+//     Intern someRandomIntern;
+//     AForm* rrf;
+    
+//     rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+//     delete rrf;
+//     return (0);
+// }
