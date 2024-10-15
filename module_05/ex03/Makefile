@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/10/09 17:39:30 by bsantana          #+#    #+#              #
-#    Updated: 2024/10/09 17:39:32 by bsantana         ###   ########.fr        #
+#    Created: 2024/10/09 17:40:05 by bsantana          #+#    #+#              #
+#    Updated: 2024/10/15 09:50:33 by bsantana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,8 @@ CC = c++
 FLAGS = -Werror -Wall -Wextra -std=c++98
 MAKEFLAGS += --silent
 
-SRCS = main.cpp sources/AMateria.cpp sources/Character.cpp sources/Cure.cpp sources/Ice.cpp sources/MateriaSource.cpp \
-       tests.cpp tests/Gem.cpp tests/Future.cpp tests/Electro.cpp
+SRCS = main.cpp sources/Bureaucrat.cpp sources/AForm.cpp \
+		PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 
 OBJS_DIR = objs
 OBJS = $(SRCS:.cpp=.o)
