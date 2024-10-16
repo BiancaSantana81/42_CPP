@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 15:52:52 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/16 17:30:32 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/16 17:51:11 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,31 @@ int main(void)
     std::cout << "Pointer value after convert: " << deserializedPtr << std::endl;
     std::cout  << deserializedPtr->phrase << std::endl;
 
-    std::cout << BRIGHT_CYAN " ===== Test 4: Testing with nullptr ===== " RESET << std::endl;
+    std::cout << BRIGHT_CYAN " ===== Test 4: Testing with null ===== " RESET << std::endl;
     Data *nothingHere = NULL;
 
-    std::cout << "Pointer value after convert: " << nothingHere << std::endl;
+    std::cout << "Pointer value before convert: " << nothingHere << std::endl;
 
     uintptr_t raw2 = Serializer::serialize(nothingHere);
-    std::cout << "Pointer value before convert: " << raw2 << std::endl;
 
-    std::cout << nothingHere->phrase << std::endl; // segmentation fault: we cannot access an invalid memory value
+    std::cout << "Pointer value after convert: " << raw2 << std::endl;
+
+    //std::cout << nothingHere->phrase << std::endl; // segmentation fault: we cannot access an invalid memory value
+
+    std::cout << BRIGHT_CYAN "\n===== Test 5: Testing invalid pointer ====" RESET << std::endl;
+    Data *invalidPtr = reinterpret_cast<Data*>(0xdeadbeef);
+
+    std::cout << "Pointer value before convert: " << invalidPtr << std::endl;
+
+    uintptr_t rawInvalid = Serializer::serialize(invalidPtr);
+
+    std::cout << "Pointer value after convert: " << rawInvalid << std::endl;
+    
+    Data *deserializedInvalidPtr = Serializer::deserialize(rawInvalid);
+
+    std::cout << "Pointer value after serializer: " << deserializedInvalidPtr << std::endl;
+
+    //invalidPtr->phrase = "Error: this pointer is invalid."; // segmentation fault: this memory address is invalid.
 
     return (0);
 }
