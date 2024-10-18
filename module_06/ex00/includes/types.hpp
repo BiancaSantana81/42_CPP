@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 14:01:43 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/18 16:00:08 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/18 17:26:34 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include "ScalarConveter.hpp"
 #include <sstream>
+#include <limits>
 
 enum ECases
 {
