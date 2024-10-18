@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConveter.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 11:20:03 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/16 11:29:49 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/18 14:16:08 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 #include <iostream>
 #include <string>
 
+#include "types.hpp"
+
 class ScalarConveter
 {
     private:
-
-    public:
 
     // constructors
 
@@ -28,6 +28,8 @@ class ScalarConveter
     ScalarConveter(const ScalarConveter &other); // construtor de cópia
     ScalarConveter &operator=(const ScalarConveter &other); // atribuição por cópia
     ~ScalarConveter(void); // destrutor padrão
+
+    public:
 
     /* method: convert a string in another type */
     static void convert(std::string input);
