@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 09:47:45 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/18 10:35:27 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/18 11:03:32 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,34 @@
 
 int main(void)
 {
-    for (int i = 0; i < 5; ++i) {
+    int num_tests = 6;
+    
+    std::cout << BRIGHT_CYAN " ======= Testing with Base instance ======= " RESET << std::endl;
+    for (int i = 0; i < num_tests; ++i)
+    {
         Base* instance = generate();
-        identify(instance);
-        identify(*instance); 
-        delete instance;  // Libera a memória alocada
+    
+        if (instance)
+        {
+            // Identifying via pointer
+            identify(instance);
+            // Identifying via reference
+            identify(*instance); 
+            
+            delete instance;  
+        }
+        else
+            std::cout << "Failed to generate instance." << std::endl;
     }
-    return 0;
+    
+    std::cout << BRIGHT_CYAN "======= Testing with Base instance ======= " RESET << std::endl;
+
+    Base *base_instance = new Base();
+
+    identify(base_instance);
+    identify(*base_instance);
+
+    delete base_instance;
+    
+    return (0);
 }
