@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 11:20:06 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/18 15:28:52 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/18 16:27:47 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,8 @@ void ScalarConveter::convert(std::string input)
     else if (end != std::string::npos)
         input = input.substr(0, end + 1); // Se só houver espaços no final
     
-    /* 2: function for detect type */
     ECases type = detectType(input);
-    convertType(type);
+    convertType(type, input);
 }
 
 /* DESTRUCTOR */

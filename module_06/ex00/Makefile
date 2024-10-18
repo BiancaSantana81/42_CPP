@@ -6,7 +6,7 @@
 #    By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/09 17:40:05 by bsantana          #+#    #+#              #
-#    Updated: 2024/10/18 14:04:11 by bsantana         ###   ########.fr        #
+#    Updated: 2024/10/18 16:00:58 by bsantana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CC = c++
 FLAGS = -Werror -Wall -Wextra -std=c++98
 MAKEFLAGS += --silent
 
-SRCS = main.cpp sources/ScalarConveter.cpp sources/detectType.cpp
+SRCS = main.cpp sources/ScalarConveter.cpp sources/detectType.cpp sources/convertType.cpp
 
 OBJS_DIR = objs
 OBJS = $(SRCS:.cpp=.o)

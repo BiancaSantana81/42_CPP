@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 14:00:13 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/18 15:26:41 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/18 16:28:28 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,6 @@ ECases detectType(const std::string &input)
        return (DOUBLE);
     else if (isPseudoLiteral(input))
         return (PSEUDO_LITERAL);
-    else
-        std::cout << "unknown type" << std::endl;
     return (MEGA_IMPOSSIBLE);
 }
 
@@ -48,7 +46,7 @@ static bool isInt(const std::string &input)
     std:: istringstream iss(input);
     int number;
 
-    iss >> number; // tenta converter para número se falha ou tem caracteres diferntes retorna falso
+    iss >> number;
     if (iss.fail() || !iss.eof()) 
         return (false);
     return (true);
