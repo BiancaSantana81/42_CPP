@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 15:32:20 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/18 16:30:57 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/18 16:41:30 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void typeChar(std::string input);
 static void typeInt(std::string input);
 static void typeFloat(std::string input);
 static void typeDouble(std::string input);
-// static void typePseudoLiteral(std::string input);
+static void typePseudoLiteral(std::string input);
 static void convertToChar(double num);
 
 void convertType(ECases type, std::string input)
@@ -37,10 +37,10 @@ void convertType(ECases type, std::string input)
             typeDouble(input);
             break ;
         case PSEUDO_LITERAL:
-            //typePseudoLiteral(input);
+            typePseudoLiteral(input);
             break ;
         case MEGA_IMPOSSIBLE:
-            std::cout << "(mega_impossible) unknown type" << std::endl;
+            std::cout << " unknown type." << std::endl;
             break ;
     }
 }
@@ -97,15 +97,33 @@ static void typeDouble(std::string input)
 
 static void convertToChar(double num)
 {
-    if (num < 0 || num > 127) {
+    if (num < 0 || num > 127)
         std::cout << "off limits: impossible to convert to char." << std::endl;
-    } else {
+    else
+    {
         char c = static_cast<char>(num);
         std::cout << "char: '" << c << "'" << std::endl;
     }
 }
 
-// static void typePseudoLiteral(std::string input)
-// {
+static void typePseudoLiteral(std::string input)
+{
+    std::cout << "off limits: impossible to convert to char." << std::endl;
+    std::cout << "off limits: impossible to convert to int." << std::endl;
     
-// }
+    if (input == "+inff" || input == "+inf")
+    {
+        std::cout << "float: +inff" << std::endl;
+        std::cout << "float: +inf" << std::endl;
+    }
+    else if (input == "-inff" || input == "-inf")
+    {
+        std::cout << "float: -inff" << std::endl;
+        std::cout << "float: -inf" << std::endl;
+    }
+    else
+    {
+        std::cout << "float: nanf" << std::endl;
+        std::cout << "double: nan" << std::endl;
+    }
+}
