@@ -6,34 +6,45 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 17:07:02 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/19 17:07:42 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/19 17:39:10 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Array.hpp"
 #include <iostream>
 
-int main() {
+#define BRIGHT_CYAN   "\033[96m"
+#define RESET   "\033[0m"
+
+int main(void)
+{
     try {
-        std::cout << "=== Testando Array Vazio ===" << std::endl;
-        Array<int> emptyArray;
-        std::cout << "Tamanho: " << emptyArray.size() << std::endl;
+        std::cout << BRIGHT_CYAN "=== Test 1: Empty Array ===" RESET << std::endl;
+    Array<int> emptyArray;
+    std::cout << "size of the array: " << emptyArray.size() << std::endl;
+    
+    std::cout << BRIGHT_CYAN "=== Test 2: Array [5] elements ===" RESET << std::endl;
+    Array<int> fiveElements(5);
+    std::cout << "size of the array: " << fiveElements.size() << std::endl;
+    for (unsigned int i = 0; i < fiveElements.size(); i++)
+        std::cout << "Element " << i << ": " << fiveElements[i] << std::endl;
 
-        std::cout << "\n=== Testando Array de 5 Elementos ===" << std::endl;
-        Array<int> intArray(5);
-        for (unsigned int i = 0; i < intArray.size(); ++i) {
-            std::cout << "Elemento " << i << ": " << intArray[i] << std::endl;
-        }
+    std::cout << BRIGHT_CYAN "=== Test 3: Modifying the values of fiveArray ===" RESET << std::endl; // COM ERRO NO VALGRIND
+    
+    fiveElements[0] = 1;
+    fiveElements[1] = 2;
+    fiveElements[2] = 3;
+    fiveElements[3] = 4;
+    fiveElements[4] = 5;
 
-        std::cout << "\n=== Modificando Elemento ===" << std::endl;
-        intArray[2] = 42;
-        std::cout << "Elemento 2: " << intArray[2] << std::endl;
+    for (unsigned int i = 0; i <fiveElements.size(); i++)
+        std::cout << "Element " << i << ": " << fiveElements[i] << std::endl;
 
-        std::cout << "\n=== Teste de Índice Fora dos Limites ===" << std::endl;
-        std::cout << intArray[10] << std::endl;  // Deve lançar exceção
+    std::cout << BRIGHT_CYAN "=== Test 4: Invalid acess in index ===" RESET << std::endl;
+    std:: cout << fiveElements[10] << std::endl;
+    
     } catch (const std::exception& e) {
-        std::cerr << "Exceção: " << e.what() << std::endl;
+         std::cerr << "Exceção: " << e.what() << std::endl;
     }
-
-    return 0;
+    return (0);
 }

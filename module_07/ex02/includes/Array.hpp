@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 16:26:34 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/19 17:13:12 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/19 17:31:29 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ class Array
     // métodos
 
     T &operator[](unsigned int index);
-    //const T& operator[](unsigned int index);
     unsigned int size() const;
     
     // destrutor
