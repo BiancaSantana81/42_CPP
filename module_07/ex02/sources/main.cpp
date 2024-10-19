@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 17:07:02 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/19 17:39:10 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/19 17:45:46 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int main(void)
     for (unsigned int i = 0; i < fiveElements.size(); i++)
         std::cout << "Element " << i << ": " << fiveElements[i] << std::endl;
 
-    std::cout << BRIGHT_CYAN "=== Test 3: Modifying the values of fiveArray ===" RESET << std::endl; // COM ERRO NO VALGRIND
+    std::cout << BRIGHT_CYAN "=== Test 3: Modifying the values of fiveArray ===" RESET << std::endl;
     
     fiveElements[0] = 1;
     fiveElements[1] = 2;

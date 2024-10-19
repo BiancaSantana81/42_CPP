@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 16:26:34 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/19 17:31:29 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/19 17:40:19 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ class Array
 
     // constructors
     
-    Array(void); // construtor padrão
-    Array(unsigned int n); // construtor parametrizado
-    Array(const Array &other); // construtor de cópia
-    Array &operator=(Array const &other); // atribuição por cópia
+    Array(void);
+    Array(unsigned int n);
+    Array(const Array &other);
+    Array &operator=(Array const &other);
     
     // métodos
 
