@@ -3,18 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Array.tpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 16:39:51 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/19 17:38:32 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/21 17:30:47 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ARRAY_TPP
-#define ARRAY_TPP
-
-#include <iostream>
-#include <exception>
+#include "Array.hpp"
 
 /* CONSTRUCTORS */
 
@@ -74,5 +70,3 @@ Array<T>::~Array(void)
 {
     delete[] _elements;
 }
-
-#endif
