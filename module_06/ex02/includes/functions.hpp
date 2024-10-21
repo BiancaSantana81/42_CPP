@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 09:01:11 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/21 11:05:34 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/21 11:17:25 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,21 +23,21 @@
 #include <stdexcept> 
 
 /* 
-   O polimorfismo ocorre em tempo de execução, permitindo que uma interface comum 
-   (como um ponteiro ou referência para a classe base) manipule objetos de diferentes 
-   classes derivadas.
+   Polymorphism occurs at runtime, allowing a common interface 
+   (such as a pointer or reference to the base class) to manipulate objects of different 
+   derived classes.
 
-   Ao declarar objetos como ponteiros ou referências para a classe base, o compilador 
-   sabe apenas que eles pertencem à hierarquia da classe base. No entanto, a identificação 
-   do tipo específico da classe derivada ocorre somente em tempo de execução.
+   When declaring objects as pointers or references to the base class, the compiler 
+   only knows that they belong to the base class hierarchy. However, identifying 
+   the specific type of the derived class only occurs at runtime.
 
-   O uso de dynamic_cast permite converter de forma segura um ponteiro ou referência 
-   da classe base para um tipo derivado durante a execução. Se a conversão falhar, 
-   dynamic_cast retorna um ponteiro nulo (para ponteiros) ou lança uma exceção  std::exception 
-   (para referências).
+   The use of dynamic_cast makes it possible to safely convert a pointer or reference 
+   from the base class to a derived type during execution. If the conversion fails, 
+   dynamic_cast returns a null pointer (for pointers) or throws a std::exception 
+   exception (for references).
 
-   No contexto da função identify, usamos dynamic_cast para identificar o tipo real 
-   do objeto apontado por um ponteiro ou referência para a classe base (durante a execução).
+   In the context of the identify function, we use dynamic_cast to identify the actual type 
+   of the object pointed to by a pointer or reference to the base class (during execution).
 */
 
 Base * generate(void);
