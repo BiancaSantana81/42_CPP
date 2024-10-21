@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   convertType.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 15:32:20 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/18 18:22:26 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/21 10:11:41 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,9 @@ static void typeChar(std::string input)
     char c = input[0];
 
     std::cout << "char: '" << c << "'" << std::endl;
-    std::cout << "int: " << static_cast<int>(c) << std::endl;
-    std::cout << "float: " << static_cast<float>(c) << "f" << std::endl;
-    std::cout << "double: " << static_cast<double>(c) << std::endl;
+    std::cout << "int: '" << static_cast<int>(c) << "'" << std::endl;
+    std::cout << "float: '" << static_cast<float>(c) << "f'" << std::endl;
+    std::cout << "double: '" << static_cast<double>(c) << "'" << std::endl;
 }
 
 static void typeInt(std::string input)
@@ -74,9 +74,9 @@ static void typeInt(std::string input)
     iss >> num;
     
     rangeChar(static_cast<double>(num));
-    std::cout << "int: " << num << std::endl;
-    std::cout << "float: " << static_cast<float>(num) << "f" << std::endl;
-	std::cout << "double: " << static_cast<double>(num) << std::endl;
+    std::cout << "int: '" << num << "'" << std::endl;
+    std::cout << "float: " << static_cast<float>(num) << "f'" << std::endl;
+	std::cout << "double: " << static_cast<double>(num) << "'" << std::endl;
     
 }
 
@@ -89,8 +89,8 @@ static void typeFloat(std::string input)
     
     rangeChar(static_cast<double>(num));
     rangeInt(static_cast<int>(num), static_cast<double>(num));
-    std::cout << "float: " << num << std::endl;
-	std::cout << "double: " << static_cast<double>(num) << std::endl;
+    std::cout << "float: '" << num << "'" << std::endl;
+	std::cout << "double: '" << static_cast<double>(num) << "'" << std::endl;
 }
 
 static void typeDouble(std::string input)
@@ -103,7 +103,7 @@ static void typeDouble(std::string input)
     rangeChar(num);
     rangeInt(static_cast<int>(num), static_cast<double>(num));
     rangeFloat(static_cast<float>(num), static_cast<double>(num));
-    std::cout << "double: " << num << std::endl;
+    std::cout << "double: '" << num << "'" << std::endl;
 }
 
 static void typePseudoLiteral(std::string input)
@@ -144,7 +144,7 @@ static void rangeInt(int num, double d)
     if (d < std::numeric_limits<int>::min() || d > std::numeric_limits<int>::max())
         std::cout << "off limits: impossible to convert to int." << std::endl;
     else
-        std::cout << "int: " << num << std::endl;
+        std::cout << "int: '" << num << "'" << std::endl;
 }
 
 static void rangeFloat(float num, double d)
@@ -152,5 +152,5 @@ static void rangeFloat(float num, double d)
     if (d < std::numeric_limits<float>::min() || d > std::numeric_limits<float>::max())
         std::cout << "off limits: impossible to convert to float." << std::endl;
     else
-        std::cout << "float: " << num << std::endl;
+        std::cout << "float: '" << num << "'" << std::endl;
 }

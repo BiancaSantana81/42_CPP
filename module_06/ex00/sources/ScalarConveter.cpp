@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConveter.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 11:20:06 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/18 16:27:47 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/21 10:22:41 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,13 @@ void ScalarConveter::convert(std::string input)
     size_t end = input.find_last_not_of(" \t");
 
     if (start != std::string::npos && end != std::string::npos)
-        input = input.substr(start, end - start + 1); // Limita a string ao intervalo encontrado
+        input = input.substr(start, end - start + 1);
     else if (start != std::string::npos)
-        input = input.substr(start); // Se só houver espaços no começo
+        input = input.substr(start);
     else if (end != std::string::npos)
-        input = input.substr(0, end + 1); // Se só houver espaços no final
+        input = input.substr(0, end + 1);
     
+    /*2: identifies the type and converts the input */
     ECases type = detectType(input);
     convertType(type, input);
 }

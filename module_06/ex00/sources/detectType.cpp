@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   detectType.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 14:00:13 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/18 17:53:51 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/21 10:05:52 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static bool isFloat(const std::string &input)
 {
     if (input[input.size() - 1] != 'f')
         return false;
-    
+
     int dotCount = 0;
     for (unsigned int i = 0; i < input.length(); i++) {
         if (input[i] == '.')
@@ -70,7 +70,7 @@ static bool isFloat(const std::string &input)
 
     iss >> number;
     if (iss.fail() || iss.eof())
-        return (false);    
+        return (false);
     return (true);
 }
 
@@ -78,7 +78,7 @@ static bool isDouble(const std::string &input)
 {
     if (input[input.size() - 1] == 'f')
         return false;
-    
+
     int dotCount = 0;
     for (unsigned int i = 0; i < input.length(); i++) {
         if (input[i] == '.')
