@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 09:47:45 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/18 11:03:32 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/21 11:08:16 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main(void)
 {
     int num_tests = 6;
     
-    std::cout << BRIGHT_CYAN " ======= Testing with Base instance ======= " RESET << std::endl;
+    std::cout << BRIGHT_CYAN " ======= Test 1: identifying randomly generated classes ======= " RESET << std::endl;
     for (int i = 0; i < num_tests; ++i)
     {
         Base* instance = generate();
@@ -38,7 +38,7 @@ int main(void)
             std::cout << "Failed to generate instance." << std::endl;
     }
     
-    std::cout << BRIGHT_CYAN "======= Testing with Base instance ======= " RESET << std::endl;
+    std::cout << BRIGHT_CYAN "======= Test 2: unidentifiable type (Base type class) ======= " RESET << std::endl;
 
     Base *base_instance = new Base();
 

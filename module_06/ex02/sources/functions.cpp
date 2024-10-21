@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   functions.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 09:03:07 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/18 10:48:46 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/21 11:12:40 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,20 +56,23 @@ void identify(Base* p)
 void identify(Base& p)
 {
     try {
-        dynamic_cast<A&>(p);
+        A& a = dynamic_cast<A&>(p);
         std::cout << "return: A (with reference)." << std::endl;
-        return;
-    } catch (std::exception &e) {}
-
-    try {
-        dynamic_cast<B&>(p);
-        std::cout << "return: B (with reference)." << std::endl;
+        (void)a;
         return ;
     } catch (std::exception &e) {}
 
     try {
-        dynamic_cast<C&>(p);
+        B& b = dynamic_cast<B&>(p);
+        std::cout << "return: B (with reference)." << std::endl;
+        (void)b;
+        return ;
+    } catch (std::exception &e) {}
+
+    try {
+        C& c = dynamic_cast<C&>(p);
         std::cout << "return: C (with reference)." << std::endl;
+        (void)c;
         return ;
     } catch (std::exception &e) {}
 

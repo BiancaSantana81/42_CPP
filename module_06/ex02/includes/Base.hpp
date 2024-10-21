@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 08:47:48 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/18 09:51:37 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/21 10:51:51 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Base
     public:
 
         virtual ~Base();
-        
+
 };
 
 #endif
