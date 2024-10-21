@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 13:32:20 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/16 16:49:43 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/21 10:32:55 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@
 
 #include "Data.hpp"
 
-// Ao tornar os construtores e o destrutor privados, garantimos que a classe não possa ser instanciada ou copiada.
-// Isso força o uso da classe apenas como um agrupamento de métodos estáticos.
+// By making the constructors and destructor private, we ensure that the class cannot be instantiated or copied.
+// This forces the class to be used only as a collection of static methods.
 
 class Serializer
 {
     private:
 
-    // Construtores e destrutor privados para evitar criação de instâncias
+    // Private constructors and destructors to avoid creating instances
 
     Serializer(void);
     Serializer(const Serializer &other);
@@ -39,7 +39,7 @@ class Serializer
 
     public:
 
-    // Métodos estáticos para manipular dados sem instância
+    // Static methods for manipulating data without an instance
 
     static uintptr_t serialize(Data* ptr);
     static Data* deserialize(uintptr_t raw);

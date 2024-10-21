@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 15:52:52 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/16 17:51:11 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/21 10:40:21 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,16 @@ int main(void)
     Data types; 
     Data *ptr = &types;
 
-    types.phrase = "We're converting the pointer value, not its content, okay?!";
+    types.phrase = "heeeeey?!";
 
     std::cout << BRIGHT_CYAN "===== Test 1: Print original pointer value ====" RESET << std::endl;
 
-    std::cout << "Pointer value before convert: " << ptr << std::endl;
-    uintptr_t raw = Serializer::serialize(&types);
+    std::cout << "Pointer value before convert (original pointer): " << ptr << std::endl;
+    std::cout << "Original value:" << ptr->phrase << std::endl;
 
     std::cout << BRIGHT_CYAN  "===== Test 2: Convert value in int with serializer  ====" RESET  << std::endl;
-    std::cout << "Serialized (pointer) value: " << raw << std::endl;
+    uintptr_t raw = Serializer::serialize(&types);
+    std::cout << "Serialized (pointer) value - after convert: " << raw << std::endl;
 
     std::cout << BRIGHT_CYAN  "===== Test 3: Convert value in pointer with deserializer  ====" RESET << std::endl;
     Data* deserializedPtr = Serializer::deserialize(raw);
@@ -41,7 +42,7 @@ int main(void)
 
     uintptr_t raw2 = Serializer::serialize(nothingHere);
 
-    std::cout << "Pointer value after convert: " << raw2 << std::endl;
+    std::cout << "Serialized (pointer) value - after convert: " << raw2 << std::endl;
 
     //std::cout << nothingHere->phrase << std::endl; // segmentation fault: we cannot access an invalid memory value
 
@@ -52,7 +53,7 @@ int main(void)
 
     uintptr_t rawInvalid = Serializer::serialize(invalidPtr);
 
-    std::cout << "Pointer value after convert: " << rawInvalid << std::endl;
+    std::cout << "Serialized (pointer) value - after convert: " << rawInvalid << std::endl;
     
     Data *deserializedInvalidPtr = Serializer::deserialize(rawInvalid);
 
