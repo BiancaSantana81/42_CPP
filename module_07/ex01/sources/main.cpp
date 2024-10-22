@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 13:10:55 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/19 13:56:37 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/22 10:23:46 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,21 @@ int main(void)
 
     std::cout << BRIGHT_YELLOW "modified array: " RESET;
     iter(charArray, sizeChar, printMatrix);
+    std::cout << std::endl;
+
+    std::cout << BRIGHT_RED " =============== TEST 3: WITH CHAR FLOAT =============== " RESET << std::endl;
+
+    float floatArray[5] = {1.1f, 1.2f, 1.3f, 1.4f, 1.5f};
+    int sizeFloat = 5;
+
+    std::cout << BRIGHT_YELLOW "original char array: " RESET;
+    iter(floatArray, sizeFloat, printMatrix);
+    std::cout << std::endl;
+
+    iter(floatArray, sizeFloat, static_cast<void(*)(float&)>(incrementMatrix));
+
+    std::cout << BRIGHT_YELLOW "modified array: " RESET;
+    iter(floatArray, sizeFloat, printMatrix);
     std::cout << std::endl;
 
     return (0);

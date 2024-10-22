@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 12:13:51 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/19 13:05:26 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/22 10:06:14 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ int main(void)
     std::cout << "max(x, y) = " << ::max(x, y) << std::endl;
 
     ::swap(x, y);
+
     std::cout << BRIGHT_YELLOW "after swap: " RESET  << std::endl;
     std::cout << "x = " << x << " y = " << y << std::endl;
     std::cout << "min(x, y) = " << ::min(x, y) << std::endl;
@@ -58,7 +59,7 @@ int main(void)
     std::cout << "max(s1, s2) = " << ::max(s1, s2) << std::endl;
 
     ::swap(s1, s2);
-    
+
     std::cout << BRIGHT_YELLOW "After swap: s1 = " RESET << s1 << ", s2 = " << s2 << std::endl;
 
     std::cout << BRIGHT_RED " =============== TEST 4: WHIT EQUAL VALUES =============== " RESET << std::endl;
