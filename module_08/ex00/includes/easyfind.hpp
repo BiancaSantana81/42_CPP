@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 17:12:49 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/23 13:02:09 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/23 13:33:56 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <iostream>
 #include <algorithm>
 #include <iterator>
+
+// colors
 
 #define BRIGHT_RED    "\033[91m"
 #define BRIGHT_GREEN  "\033[92m"
@@ -44,6 +46,8 @@ T *begin(T (&container)[N]);
 
 template <typename T, size_t N>
 T *end(T (&container)[N]);
+
+// extra: print values in the cointainer
 
 template <typename T>
 void printContainer(const T& container);
