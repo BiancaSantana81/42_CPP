@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:44:59 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/23 17:51:28 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/23 17:54:12 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ int main(void)
     smallContainer();
     biggerContainer();
     duplicateNumbersTest();
-    
+
+    return (0);
 }
 
 static void basicTests(void)
