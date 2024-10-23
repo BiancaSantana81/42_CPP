@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:45:07 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/23 16:55:04 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/23 17:06:30 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int Span::shortestSpan(void)
     std::sort(sortedNumber.begin(), sortedNumber.end());
     
     int minSpan = INT_MAX;
-    for (int i = 1; i < sortedNumber[i]; i++)
+    for (int i = 1; i < sortedNumber.size(); i++)
     {
         int diff = sortedNumber[i] - sortedNumber[i - 1];
         minSpan = std::min(minSpan, diff);
@@ -69,8 +69,22 @@ int Span::longestSpan(void)
     return (maxValue - minValue);
 }
 
-/* extra: */
-//void Span::fillContainer();
+/* extra: adding several values to the container at the same time. */
+void Span::fillContainer(int values[], size_t size)
+{
+    if (size + _numbers.size() > _maxSize)
+    {
+        std::cerr << "Cannot add all elements: container will overflow!" << std::endl;
+        return ;
+    }
+
+    try {
+        for (int i = 0; i < size; i++)
+            addNumber(values[i]);
+    } catch (const std::exception &e) {
+        std::cerr << e.what() << std::endl;
+    }
+}
 
 /* personalized error messages for executions */
 
