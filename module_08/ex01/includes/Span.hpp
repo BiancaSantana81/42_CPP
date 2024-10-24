@@ -3,25 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:45:03 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/23 17:52:45 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/24 10:50:37 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SPAN_HPP
-#define SPAN_CPP
+#define SPAN_HPP
 
 #include <iostream>
 #include <string>
-#include <vector>
 #include <exception>
-#include <iterator>
-#include <climits>
+#include <limits>
+#include <cstdlib> // for generate random values in the 10,000 container tests
+#include <ctime> // for generate random values in the 10,000 container tests
+
+// containers and algorithm libraries
+
 #include <algorithm>
-#include <cstdlib>
-#include <ctime>
+#include <iterator>
+#include <vector>
 
 // colors
 
@@ -37,7 +40,7 @@
 class Span
 {
     private:
-    
+
     unsigned int    _maxSize;
     std::vector<int> _numbers;
 
@@ -61,7 +64,7 @@ class Span
 
     // destructor
     ~Span(void);
-    
+
 };
 
 // virtualize what to customize error messages for executions
@@ -69,14 +72,14 @@ class Span
 class SpanFullException : public std::exception
 {
     public:
-    
+
     virtual const char *what() const throw ();
 };
 
 class NotEnoughNumbersException : public std::exception
 {
     public:
-    
+
     virtual const char *what() const throw ();
 };
 

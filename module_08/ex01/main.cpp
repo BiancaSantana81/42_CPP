@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:44:59 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/23 17:54:12 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/24 10:26:56 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static void basicTests(void)
     std::cout << BRIGHT_MAGENTA "basic tests (with five values) " RESET << std::endl;
     try {
         Span test1(5);
-    
+
         test1.addNumber(3);
         test1.addNumber(6);
         test1.addNumber(17);
@@ -60,7 +60,7 @@ static void smallContainer(void)
     
         test2.shortestSpan();
         test2.longestSpan();
-        
+
     } catch (const std::exception &e) {
         std::cout << BRIGHT_RED << e.what() << RESET << std::endl;
     }
@@ -70,11 +70,13 @@ static void biggerContainer(void)
 {
     try {
         Span test3(10000);
-        
+
+        int randomNumbers[10000];
         srand(static_cast<unsigned int>(time(NULL)));
-        for (size_t i = 0; i < 10000; ++i) {
-            test3.addNumber(rand() % 100000);
-        }
+        for (size_t i = 0; i < 10000; ++i)
+            randomNumbers[i] = rand() % 100000;
+
+        test3.fillContainer(randomNumbers, 10000);
 
         std::cout << "Shortest Span: " << test3.shortestSpan() << std::endl;
         std::cout << "Longest Span: " << test3.longestSpan() << std::endl;
@@ -92,7 +94,7 @@ static void duplicateNumbersTest(void)
         test4.addNumber(5);
         test4.addNumber(5);
         test4.addNumber(5);
-        
+
         std::cout << BRIGHT_GREEN "Shortest Span: " RESET << test4.shortestSpan() << std::endl;
         std::cout << BRIGHT_GREEN "Longest Span: " RESET << test4.longestSpan() << std::endl;
 
