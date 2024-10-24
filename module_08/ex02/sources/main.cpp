@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 18:39:59 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/23 19:17:47 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/24 11:29:31 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static void basicTests(void)
 
     ++it;
     --it;
-    
+
     std::cout << BRIGHT_GREEN "browsing the elements of the stack... " RESET << std::endl;
     while (it != ite)
     {
