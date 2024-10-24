@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 17:12:52 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/24 10:04:30 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/24 10:10:11 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,30 +32,12 @@ typename T::iterator easyfind(T &container, int number)
 }
 
 /*
-    Returns a pointer to the start of the container (array or STL).
-*/
-template <typename T, size_t N>
-T *begin(T (&container)[N])
-{
-    return (container);
-}
-
-/*
-    Returns a pointer to the end of the container (array or STL).
-*/
-template <typename T, size_t N>
-T *end(T (&container)[N])
-{
-    return (container + N);
-}
-
-/*
     Browse the container (array or STL) and print its values.
 */
+
 template <typename T>
 void printContainer(const T& container)
 {
-    for (typename T::const_iterator it = container.begin(); it != container.end(); ++it)
-        std::cout << *it << " ";
+    std::copy(container.begin(), container.end(), std::ostream_iterator<typename T::value_type>(std::cout, " "));
     std::cout << std::endl;
 }

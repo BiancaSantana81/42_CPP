@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 17:12:44 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/24 10:05:21 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/24 10:09:34 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ int main(void)
 
     // adding values to containers..."
 
-    std::vector<int> vectorContainer(begin(arrayValues), end(arrayValues));
-    std::deque<int> dequeContainer(begin(arrayValues), end(arrayValues));
-    std::list<int> listContainer(begin(arrayValues), end(arrayValues));
+    std::vector<int> vectorContainer(arrayValues, arrayValues + 5);
+    std::deque<int> dequeContainer(arrayValues, arrayValues + 5);
+    std::list<int> listContainer(arrayValues, arrayValues + 5);
 
     // printing values to containers...
 

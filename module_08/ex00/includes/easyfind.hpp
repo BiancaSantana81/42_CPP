@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 17:12:49 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/24 10:04:42 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/24 10:09:58 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,6 @@
 
 template <typename T>
 typename T::iterator easyfind(T &container, int number);
-
-// extras: point to start and end of container
-
-template <typename T, size_t N>
-T *begin(T (&container)[N]);
-
-template <typename T, size_t N>
-T *end(T (&container)[N]);
 
 // extra: print values in the cointainer
 
