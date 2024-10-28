@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 12:41:19 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/28 15:43:38 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/28 17:16:08 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ void BitcoinExchange::populatingContainer(std::ifstream &file)
 
     std::getline(file, line);
     removeSpaces(line);
-    if (line != "date,exchange_rate" && line != "date | value")
-            throw std::runtime_error("Invalid header format");
+    if (line != "date | value")
+            throw std::runtime_error("Invalid header! Insert: date | value");
     while (std::getline(file, line))
     {   
         if (line.empty())

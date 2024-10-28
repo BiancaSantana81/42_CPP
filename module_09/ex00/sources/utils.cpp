@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 15:15:13 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/28 17:03:56 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/28 17:11:59 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ float validateValue(std::string value_str)
 void formatData(std::string line)
 {
     removeSpaces(line);
-    size_t separator_pos = line.find_first_of(",|");
+    size_t separator_pos = line.find_first_of("|");
     if (separator_pos == std::string::npos)
         throw std::runtime_error("Invalid line format: " + line);
 
