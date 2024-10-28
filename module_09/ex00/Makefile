@@ -6,19 +6,19 @@
 #    By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/09 17:40:05 by bsantana          #+#    #+#              #
-#    Updated: 2024/10/19 13:08:42 by bsantana         ###   ########.fr        #
+#    Updated: 2024/10/28 12:31:16 by bsantana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 WHITE := \033[1;37m
 PINK := \033[1;35m  
 
-NAME = ex00
+NAME = btc
 CC = c++
 FLAGS = -Werror -Wall -Wextra -std=c++98
 MAKEFLAGS += --silent
 
-SRCS = sources/main.cpp
+SRCS = sources/main.cpp sources/init.cpp
 
 OBJS_DIR = objs
 OBJS = $(SRCS:.cpp=.o)
