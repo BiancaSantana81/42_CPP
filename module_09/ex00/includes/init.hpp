@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 11:30:19 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/28 17:10:39 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/28 17:39:06 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,5 @@ int runProgram(const std::string &filename);
 void removeSpaces(std::string &line);
 void validateDate(std::string date);
 float validateValue(std::string value_str);
-void formatData(std::string line);
 
 #endif

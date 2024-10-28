@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 12:41:19 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/28 17:16:08 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/28 17:51:47 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,32 @@ void BitcoinExchange::populatingContainer(std::ifstream &file)
         if (line.empty())
         continue ;
         formatData(line);
+    }
+}
+
+void BitcoinExchange::formatData(std::string line)
+{
+    removeSpaces(line);
+    size_t separator_pos = line.find_first_of("|");
+    if (separator_pos == std::string::npos)
+        throw std::runtime_error("Invalid line format: " + line);
+
+    std::string date = line.substr(0, separator_pos);
+    std::string value_str = line.substr(separator_pos + 1);
+
+    removeSpaces(date);
+    removeSpaces(value_str);
+
+    validateDate(date);
+    float value = validateValue(value_str);
+    
+    _data[date] = value; // inserindo valores com base em chave valor no contêiner _data
+}
+
+void BitcoinExchange::printData() const
+{
+    for (std::map<std::string, float>::const_iterator it = _data.begin(); it != _data.end(); ++it) {
+        std::cout << it->first << " => " << it->second << std::endl;
     }
 }
 

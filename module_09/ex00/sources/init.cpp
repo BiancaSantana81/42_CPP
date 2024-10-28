@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 11:30:06 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/28 17:10:56 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/28 17:45:42 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ int runProgram(const std::string &filename)
 
     try {
         data.populatingContainer(file);
+        data.printData();
         
     } catch (const std::runtime_error &e) {
         std::cout << BRIGHT_RED "Exception: " << e.what() << std::endl;

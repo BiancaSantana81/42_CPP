@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 15:15:13 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/28 17:11:59 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/28 17:36:44 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,25 +67,6 @@ float validateValue(std::string value_str)
     if (!(iss >> value) || value < 0 || value > 1000)
         throw std::runtime_error("Invalid value: " + value_str);
     return (value);
-}
-
-void formatData(std::string line)
-{
-    removeSpaces(line);
-    size_t separator_pos = line.find_first_of("|");
-    if (separator_pos == std::string::npos)
-        throw std::runtime_error("Invalid line format: " + line);
-
-    std::string date = line.substr(0, separator_pos);
-    std::string value_str = line.substr(separator_pos + 1);
-
-    removeSpaces(date);
-    removeSpaces(value_str);
-
-    validateDate(date);
-    float value = validateValue(value_str);
-
-    std::cout << "Valid line: Date = " << date << ", Value = " << value << std::endl;
 }
 
 static bool isValidMonth(ssize_t month)
