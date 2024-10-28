@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 11:30:06 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/28 12:35:37 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/28 15:09:12 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,20 @@ int runProgram(const std::string &filename)
 {
     std::ifstream file(filename.c_str());
 
-    if (file.fail() || file.is_open() == false)
+    if (!file)
     {
         std::cout << BRIGHT_RED "Error opening file! Try again with a valid file." << std::endl;
         return (1);
     }
 
-    std::cout << "File opened successfully!" << std::endl;
+    BitcoinExchange data;
+
+    try {
+        data.populatingContainer(file);
+        
+    } catch (const std::runtime_error &e) {
+        std::cout << BRIGHT_RED "Exception: " << e.what() << std::endl;
+        return (1);
+    }
     return (0);
 }
-
