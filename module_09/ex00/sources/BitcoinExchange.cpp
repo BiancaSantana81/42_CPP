@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 12:41:19 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/28 17:51:47 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/28 18:45:08 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,15 +63,11 @@ void BitcoinExchange::formatData(std::string line)
 
     validateDate(date);
     float value = validateValue(value_str);
-    
-    _data[date] = value; // inserindo valores com base em chave valor no contêiner _data
 }
 
-void BitcoinExchange::printData() const
+void BitcoinExchange::loadCSV()
 {
-    for (std::map<std::string, float>::const_iterator it = _data.begin(); it != _data.end(); ++it) {
-        std::cout << it->first << " => " << it->second << std::endl;
-    }
+    // carregar dados da base data.CSV
 }
 
 /* DESTRUCTOR */

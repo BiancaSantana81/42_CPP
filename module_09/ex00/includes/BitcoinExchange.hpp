@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 12:41:16 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/28 17:50:12 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/28 18:14:23 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,7 @@ class BitcoinExchange
 
     void formatData(std::string line);
     void populatingContainer(std::ifstream &file);
-
-    void printData() const;
+    void loadCSV(std::string path);
 };
 
 #endif
