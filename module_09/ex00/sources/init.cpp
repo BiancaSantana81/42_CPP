@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 11:30:06 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/29 18:15:48 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/29 18:22:18 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,9 @@ int runProgram(const std::string &filename)
     BitcoinExchange exchange;
 
     try {
-        exchange.loadingData(file);
         exchange.populatingContainer("data.csv");
+        exchange.loadingData(file);
         exchange.printData();
-
     } catch (const std::runtime_error &e) {
         std::cout << BRIGHT_RED "Exception: " << e.what() << std::endl;
         return (1);

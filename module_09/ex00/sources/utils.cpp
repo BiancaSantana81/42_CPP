@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 15:15:13 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/28 17:36:44 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/29 19:02:55 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,20 @@ float validateValue(std::string value_str)
     
     if (!(iss >> value) || value < 0 || value > 1000)
         throw std::runtime_error("Invalid value: " + value_str);
+    return (value);
+}
+
+// ARRUMAR NA FUNÇÃO DE PREENCHER CONTAINER
+
+float stringToFloat(const std::string &valueStr)
+{
+    std::istringstream iss(valueStr);
+    float value;
+
+    iss >> value;
+    if (iss.fail()) {
+        throw std::runtime_error("Invalid float value: " + valueStr);
+    }
     return (value);
 }
 

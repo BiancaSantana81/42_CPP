@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 12:41:19 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/29 18:16:04 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/29 18:23:22 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,17 +66,6 @@ void BitcoinExchange::formatData(std::string line)
     (void)value; // para de utlizar assim
 }
 
-
-float stringToFloat(const std::string &valueStr) {
-    std::istringstream iss(valueStr);
-    float value;
-    iss >> value;
-    if (iss.fail()) {
-        throw std::runtime_error("Invalid float value: " + valueStr);
-    }
-    return value;
-}
-
 int BitcoinExchange::populatingContainer(std::string csv)
 {
     std::ifstream file(csv.c_str());
@@ -104,7 +93,7 @@ int BitcoinExchange::populatingContainer(std::string csv)
         removeSpaces(date);
         removeSpaces(valueStr);
 
-        float exchange_value = stringToFloat(valueStr);
+        float exchange_value = validateValue(valueStr);
         _data[date] = exchange_value;
     }
     return (0);
