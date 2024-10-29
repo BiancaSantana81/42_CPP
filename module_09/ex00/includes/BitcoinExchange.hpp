@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 12:41:16 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/28 18:14:23 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/29 18:12:01 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,12 @@ class BitcoinExchange
     // methods
 
     void formatData(std::string line);
-    void populatingContainer(std::ifstream &file);
-    void loadCSV(std::string path);
+    void loadingData(std::ifstream &file);
+    int  populatingContainer(std::string csv);
+
+
+    // EXCLUIR AO FINAL DO EXERCÍCIO
+    void    printData() const;
 };
 
 #endif

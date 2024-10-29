@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 12:41:19 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/28 18:45:08 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/10/29 18:16:04 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &other)
 
 // METHODS
 
-void BitcoinExchange::populatingContainer(std::ifstream &file)
+void BitcoinExchange::loadingData(std::ifstream &file)
 {
     std::string line;
 
@@ -56,20 +56,76 @@ void BitcoinExchange::formatData(std::string line)
         throw std::runtime_error("Invalid line format: " + line);
 
     std::string date = line.substr(0, separator_pos);
-    std::string value_str = line.substr(separator_pos + 1);
+    std::string valueStr = line.substr(separator_pos + 1);
 
     removeSpaces(date);
-    removeSpaces(value_str);
+    removeSpaces(valueStr);
 
     validateDate(date);
-    float value = validateValue(value_str);
+    float value = validateValue(valueStr);
+    (void)value; // para de utlizar assim
 }
 
-void BitcoinExchange::loadCSV()
+
+float stringToFloat(const std::string &valueStr) {
+    std::istringstream iss(valueStr);
+    float value;
+    iss >> value;
+    if (iss.fail()) {
+        throw std::runtime_error("Invalid float value: " + valueStr);
+    }
+    return value;
+}
+
+int BitcoinExchange::populatingContainer(std::string csv)
 {
-    // carregar dados da base data.CSV
+    std::ifstream file(csv.c_str());
+
+    if (!file) {
+        throw std::runtime_error("Error opening file! Try again with a valid data.csv.");
+    }
+
+    std::string line;
+    std::getline(file, line);
+    removeSpaces(line);
+    if (line != "date,exchange_rate") {
+        throw std::runtime_error("Invalid header! Insert: date,exchange_rate ");
+    }
+
+    while (std::getline(file, line))
+    {
+        size_t separator_pos = line.find(",");
+        if (separator_pos == std::string::npos)
+            throw std::runtime_error("Invalid line format: " + line);
+    
+        std::string date = line.substr(0, separator_pos);
+        std::string valueStr = line.substr(separator_pos + 1);
+
+        removeSpaces(date);
+        removeSpaces(valueStr);
+
+        float exchange_value = stringToFloat(valueStr);
+        _data[date] = exchange_value;
+    }
+    return (0);
 }
 
 /* DESTRUCTOR */
 
 BitcoinExchange::~BitcoinExchange() {}
+
+// EXCLUIR DEPOIS
+
+void BitcoinExchange::printData() const {
+    if (_data.empty()) {
+        std::cout << "No data available in the container." << std::endl;
+        return;
+    }
+
+    std::cout << "Date       | Exchange Rate" << std::endl;
+    std::cout << "--------------------------" << std::endl;
+    
+    for (std::map<std::string, float>::const_iterator it = _data.begin(); it != _data.end(); ++it) {
+        std::cout << it->first << " | " << it->second << std::endl;
+    }
+}
