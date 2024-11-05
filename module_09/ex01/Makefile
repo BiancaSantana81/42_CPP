@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+         #
+#    By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/09 17:40:05 by bsantana          #+#    #+#              #
-#    Updated: 2024/10/19 13:08:42 by bsantana         ###   ########.fr        #
+#    Updated: 2024/11/05 14:32:31 by bsantana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 WHITE := \033[1;37m
 PINK := \033[1;35m  
 
-NAME = ex00
+NAME = RPN
 CC = c++
 FLAGS = -Werror -Wall -Wextra -std=c++98
 MAKEFLAGS += --silent
