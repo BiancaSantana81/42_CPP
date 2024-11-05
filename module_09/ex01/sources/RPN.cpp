@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:33:52 by bsantana          #+#    #+#             */
-/*   Updated: 2024/11/05 16:58:46 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/11/05 17:56:28 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,20 @@ void RPN::calculate(std::string input)
         if (isNumber(token))
         {
             number = convertNumber(token);
-            std::cout << "número atual: "<< number << std::endl;
+            _values.push(number);
         }
         else if (isOperator(token))
-            std::cout << "operador: " << token << std::endl;
+        {
+            if (_values.size() < 2)
+                return ;
+        }
+
+        int a = _values.top();
+        _values.pop();
+
+        int b = _values.top();
+        _values.pop();
+        // continuar com construção da calculate para RPN
     }
 }
 
