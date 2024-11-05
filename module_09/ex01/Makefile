@@ -6,7 +6,7 @@
 #    By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/09 17:40:05 by bsantana          #+#    #+#              #
-#    Updated: 2024/11/05 14:32:31 by bsantana         ###   ########.fr        #
+#    Updated: 2024/11/05 15:31:00 by bsantana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CC = c++
 FLAGS = -Werror -Wall -Wextra -std=c++98
 MAKEFLAGS += --silent
 
-SRCS = sources/main.cpp
+SRCS = sources/main.cpp sources/RPN.cpp
 
 OBJS_DIR = objs
 OBJS = $(SRCS:.cpp=.o)
