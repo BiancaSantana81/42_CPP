@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 12:41:19 by bsantana          #+#    #+#             */
-/*   Updated: 2024/10/29 18:23:22 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/11/05 10:52:40 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ int BitcoinExchange::populatingContainer(std::string csv)
         removeSpaces(date);
         removeSpaces(valueStr);
 
-        float exchange_value = validateValue(valueStr);
+        float exchange_value = stringToFloat(valueStr);
         _data[date] = exchange_value;
     }
     return (0);
