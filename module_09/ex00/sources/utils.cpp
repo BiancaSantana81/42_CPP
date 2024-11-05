@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 15:15:13 by bsantana          #+#    #+#             */
-/*   Updated: 2024/11/05 10:54:02 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/11/05 11:30:54 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,12 @@ float validateValue(std::string value_str)
     float value;
     std::istringstream iss(value_str);
     
-    if (!(iss >> value) || value < 0 || value > 1000)
-        throw std::runtime_error("Invalid value: " + value_str);
+    if (!(iss >> value))
+        throw std::runtime_error("invalid");
+    if (value < 0)
+        throw std::runtime_error("negative");
+    if (value > 1000)
+        throw std::runtime_error("too large");
     return (value);
 }
 
