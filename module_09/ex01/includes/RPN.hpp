@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:33:55 by bsantana          #+#    #+#             */
-/*   Updated: 2024/11/05 16:53:51 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/11/06 11:17:25 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,14 @@
 #define RPN_HPP
 
 #include <iostream>
+#include <climits>
 #include <string>
 #include <sstream>
 #include <stack>
+
+#define BRIGHT_MAGENTA "\033[95m"
+#define BRIGHT_RED    "\033[91m"
+#define RESET   "\033[0m"
 
 class RPN
 {
@@ -43,6 +48,5 @@ class RPN
     int convertNumber(std::string token);
 
 };
-
 
 #endif
