@@ -6,13 +6,13 @@
 /*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 14:25:39 by bsantana          #+#    #+#             */
-/*   Updated: 2024/11/06 15:17:43 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/11/06 16:57:17 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/parsing.hpp"
+#include "../includes/PmergeMe.hpp"
 
-bool validNumber(std::string input, int* uniqueNumbers, int& size)
+bool PmergeMe::validNumber(std::string input)
 {
     long number;
     std::istringstream iss(input);
@@ -33,36 +33,43 @@ bool validNumber(std::string input, int* uniqueNumbers, int& size)
 
     int intNumber = static_cast<int>(number);
 
-    for (int i = 0; i < size; i++)
+    for (std::deque<int>::iterator it = _dequeContainer.begin(); it != _dequeContainer.end(); ++it)
     {
-        if (uniqueNumbers[i] == intNumber)
+        if (*it == intNumber)
         {
             std::cout << BRIGHT_RED "Error: Duplicate number found: " RESET << intNumber << std::endl;
-            return (false);
+            return false;
         }
     }
 
-    uniqueNumbers[size] = intNumber;
-    size++;
+    _dequeContainer.push_back(intNumber);
+    _vectorContainer.push_back(intNumber);
 
     return (true);
 }
 
-bool parsing(int argc, char **argv)
+void PmergeMe::printValues(void)
+{
+    std::cout << BRIGHT_MAGENTA "unordered values: " RESET;
+    for (size_t i = 0; i < _vectorContainer.size(); i++)
+        std::cout << _vectorContainer[i] << " ";
+    std::cout << std::endl;
+}
+
+bool PmergeMe::parsing(int argc, char **argv)
 {
     if (argc == 1 || argc > 3001)
     {
         std::cout << BRIGHT_RED "Error: number of invalid arguments." RESET << std::endl;
         return(false);
     }
-
-    int uniqueNumbers[3000];
-    int size = 0;
     
     for (int i = 1; i < argc; i++)
     {
-        if (!validNumber(argv[i], uniqueNumbers, size))
+        if (!validNumber(argv[i]))
             return (false);
     }
+    
+    printValues();  
     return (true);
 }
