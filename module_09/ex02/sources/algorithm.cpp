@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 11:37:17 by bsantana          #+#    #+#             */
-/*   Updated: 2024/11/08 17:07:05 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/11/08 17:26:03 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,52 +148,6 @@ void PmergeMe::generateJacobsthalSequence(unsigned int sizeContainer)
 
 /* 3.2 Inserir valores ordenados com base nos indexes gerados por Jacobsthal */
 
-// void PmergeMe::generateJacobsthalIndex(unsigned int sizeMaxValues)
-// {
-//     // Inicializa o primeiro valor da sequência de índices
-//     _jacobsthalIndex.push_back(_jacobsthalSequence.front());
-    
-//     // Loop para continuar adicionando índices até alcançar o tamanho desejado
-//     while (_jacobsthalIndex.size() < sizeMaxValues)
-//     {
-//         // Remove o primeiro elemento já processado da sequência de Jacobsthal
-//         _jacobsthalSequence.erase(_jacobsthalSequence.begin());
-
-//         if (!_jacobsthalSequence.empty())
-//         {
-//             int last = _jacobsthalIndex.back();  // Último índice adicionado
-//             int next = _jacobsthalSequence.front();  // Próximo valor da sequência
-
-//             // Verifica se o próximo valor está no intervalo adequado
-//             if (next > last && next < static_cast<int>(sizeMaxValues))
-//             {
-//                 _jacobsthalIndex.push_back(next);
-                
-//                 // Loop para adicionar valores decrescentes se o próximo for maior que o último
-//                 while (next > last && _jacobsthalIndex.size() < sizeMaxValues)
-//                 {
-//                     // Evita adicionar duplicatas verificando se "next" já está em "_jacobsthalIndex"
-//                     if (std::find(_jacobsthalIndex.begin(), _jacobsthalIndex.end(), next) == _jacobsthalIndex.end())
-//                         _jacobsthalIndex.push_back(next);
-
-//                     next--;  // Decrementa para verificar o próximo valor decrescente
-//                 }
-//             }
-//         }
-//         else
-//         {
-//             // Se não há mais valores na sequência de Jacobsthal, preenche os índices restantes
-//             int missing = sizeMaxValues - _jacobsthalIndex.size();
-//             while (_jacobsthalIndex.size() < sizeMaxValues && missing > 0)
-//             {
-//                 _jacobsthalIndex.push_back(_jacobsthalIndex.back() + 1);
-//                 missing--;
-//             }
-//         }
-//     }
-// }
-
-
 void PmergeMe::generateJacobsthalIndex(unsigned int sizeMaxValues)
 {
     _jacobsthalIndex.clear();
@@ -222,10 +176,9 @@ void PmergeMe::generateJacobsthalIndex(unsigned int sizeMaxValues)
         else
         {
             int missing = sizeMaxValues - 1;
-            while (missing > 0)
+            while ( _jacobsthalIndex.size() < sizeMaxValues && missing > 0)
             {
-                _jacobsthalIndex.push_back(_jacobsthalIndex.back() + 1);
-                missing--;
+                _jacobsthalIndex.push_back(missing--);
             }
         }
     }
