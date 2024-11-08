@@ -6,11 +6,13 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 11:37:17 by bsantana          #+#    #+#             */
-/*   Updated: 2024/11/08 15:38:58 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/11/08 17:07:05 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/PmergeMe.hpp"
+
+#include <algorithm>
 
 /* =============== ALGORITHM FOR DEQUE ============== */
 
@@ -52,6 +54,8 @@ void PmergeMe::sortVector(int argc, char **argv)
     for (int i = 1; i < argc; i++)
         _vectorContainer.push_back(atoi(argv[i]));
 
+    printValues(_vectorContainer, "After: ");
+
     clock_t start = clock();
 
     std::vector<int> minValues;
@@ -65,11 +69,12 @@ void PmergeMe::sortVector(int argc, char **argv)
     clock_t end = clock();
     double elapsed = double(end - start) / CLOCKS_PER_SEC;
 
+    printValues(_vectorContainer, "Before: ");
+
     std::cout << "Time to process a range of " <<
     BRIGHT_YELLOW <<_vectorContainer.size() << RESET << " elements with " <<
     BRIGHT_GREEN "vector: " RESET << elapsed << "s" << std::endl;
 
-    //printValues(_vectorContainer, "Vector after sort: ");
 }
 
 /*2. Separar os valores em dois vetores -> min e max */
@@ -78,60 +83,23 @@ void PmergeMe::separateValues(std::vector<int> &minValues, std::vector<int> &max
 {
     int size = _vectorContainer.size();
 
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i < size; i += 2)
     {
-        // encontrar maior valor em um par de dois elementos
-        if (i + 1 < size && _vectorContainer[i] > _vectorContainer[i + 1])
+        if (i + 1 < size)
         {
-            // criar variáveis para armazenar os valores
-            int minVal = _vectorContainer[i + 1];
-            int maxVal = _vectorContainer[i];
+            int minVal = (_vectorContainer[i] < _vectorContainer[i + 1]) ? _vectorContainer[i] : _vectorContainer[i + 1];
+            int maxVal = (_vectorContainer[i] > _vectorContainer[i + 1]) ? _vectorContainer[i] : _vectorContainer[i + 1];
 
-            bool insertedMin = false;
-            for (std::vector<int>::iterator it = minValues.begin(); it != minValues.end(); ++it)
-            {
-                // se a posição atual for maior que o valor mínimo, insira o valor mínimo na posição atual
-                if (*it > minVal)
-                {
-                    minValues.insert(it, minVal);
-                    insertedMin = true;
-                    break ;
-                }
-            }
-            // se não houver uma posição maior que o valor mínimo, insira o valor mínimo no final
-            if (!insertedMin)
-                minValues.push_back(minVal);
+            std::vector<int>::iterator minPos = std::lower_bound(minValues.begin(), minValues.end(), minVal);
+            minValues.insert(minPos, minVal);
 
-            bool insertedMax = false;
-            for (std::vector<int>::iterator it = maxValues.begin(); it != maxValues.end(); ++it)
-            {
-                if (*it > maxVal)
-                {
-                    maxValues.insert(it, maxVal);
-                    insertedMax = true;
-                    break ;
-                }
-            }
-            if (!insertedMax)
-                maxValues.push_back(maxVal);
-
-            i++;
+            std::vector<int>::iterator maxPos = std::lower_bound(maxValues.begin(), maxValues.end(), maxVal);
+            maxValues.insert(maxPos, maxVal);
         }
         else
         {
-            int val = _vectorContainer[i];
-            bool insertedMax = false;
-            for (std::vector<int>::iterator it = maxValues.begin(); it != maxValues.end(); ++it)
-            {
-                if (*it > val)
-                {
-                    maxValues.insert(it, val);
-                    insertedMax = true;
-                    break ;
-                }
-            }
-            if (!insertedMax)
-                maxValues.push_back(val);
+            std::vector<int>::iterator pos = std::lower_bound(minValues.begin(), minValues.end(), _vectorContainer[i]);
+            minValues.insert(pos, _vectorContainer[i]);
         }
     }
 }
@@ -140,12 +108,23 @@ void PmergeMe::separateValues(std::vector<int> &minValues, std::vector<int> &max
 
 void PmergeMe::insertValues(std::vector<int> &minValues, std::vector<int> &maxValues)
 {
-    generateIndexJacobsthal(_vectorContainer.size());
+    generateJacobsthalSequence(maxValues.size());
+    generateJacobsthalIndex(maxValues.size());
+
+    for (std::vector<int>::iterator it = _jacobsthalIndex.begin(); it != _jacobsthalIndex.end(); ++it)
+    {
+        if (*it < static_cast<int>(maxValues.size()))
+        {
+            int value = maxValues[*it];
+            std::vector<int>::iterator pos = std::upper_bound(minValues.begin(), minValues.end(), value);
+            minValues.insert(pos, value);
+        }
+    }
 }
 
 /* 3.1 Gerar indíces de Jacobsthal para inserir os valores ordenados */
 
-void PmergeMe::generateIndexJacobsthal(unsigned int sizeContainer)
+void PmergeMe::generateJacobsthalSequence(unsigned int sizeContainer)
 {
     _jacobsthalSequence.clear();
 
@@ -169,3 +148,85 @@ void PmergeMe::generateIndexJacobsthal(unsigned int sizeContainer)
 
 /* 3.2 Inserir valores ordenados com base nos indexes gerados por Jacobsthal */
 
+// void PmergeMe::generateJacobsthalIndex(unsigned int sizeMaxValues)
+// {
+//     // Inicializa o primeiro valor da sequência de índices
+//     _jacobsthalIndex.push_back(_jacobsthalSequence.front());
+    
+//     // Loop para continuar adicionando índices até alcançar o tamanho desejado
+//     while (_jacobsthalIndex.size() < sizeMaxValues)
+//     {
+//         // Remove o primeiro elemento já processado da sequência de Jacobsthal
+//         _jacobsthalSequence.erase(_jacobsthalSequence.begin());
+
+//         if (!_jacobsthalSequence.empty())
+//         {
+//             int last = _jacobsthalIndex.back();  // Último índice adicionado
+//             int next = _jacobsthalSequence.front();  // Próximo valor da sequência
+
+//             // Verifica se o próximo valor está no intervalo adequado
+//             if (next > last && next < static_cast<int>(sizeMaxValues))
+//             {
+//                 _jacobsthalIndex.push_back(next);
+                
+//                 // Loop para adicionar valores decrescentes se o próximo for maior que o último
+//                 while (next > last && _jacobsthalIndex.size() < sizeMaxValues)
+//                 {
+//                     // Evita adicionar duplicatas verificando se "next" já está em "_jacobsthalIndex"
+//                     if (std::find(_jacobsthalIndex.begin(), _jacobsthalIndex.end(), next) == _jacobsthalIndex.end())
+//                         _jacobsthalIndex.push_back(next);
+
+//                     next--;  // Decrementa para verificar o próximo valor decrescente
+//                 }
+//             }
+//         }
+//         else
+//         {
+//             // Se não há mais valores na sequência de Jacobsthal, preenche os índices restantes
+//             int missing = sizeMaxValues - _jacobsthalIndex.size();
+//             while (_jacobsthalIndex.size() < sizeMaxValues && missing > 0)
+//             {
+//                 _jacobsthalIndex.push_back(_jacobsthalIndex.back() + 1);
+//                 missing--;
+//             }
+//         }
+//     }
+// }
+
+
+void PmergeMe::generateJacobsthalIndex(unsigned int sizeMaxValues)
+{
+    _jacobsthalIndex.clear();
+    _jacobsthalIndex.push_back(_jacobsthalSequence.front());
+
+    while (_jacobsthalIndex.size() < sizeMaxValues)
+    {
+        _jacobsthalSequence.erase(_jacobsthalSequence.begin());
+
+        if (!_jacobsthalSequence.empty())
+        {
+            int last = _jacobsthalIndex.back();
+            int next = _jacobsthalSequence.front();
+
+            if (next > last && next < static_cast<int>(sizeMaxValues))
+            {
+                _jacobsthalIndex.push_back(next);
+
+                while (--next > last && _jacobsthalIndex.size() < sizeMaxValues)
+                {
+                    if (std::find(_jacobsthalIndex.begin(), _jacobsthalIndex.end(), next) == _jacobsthalIndex.end())
+                        _jacobsthalIndex.push_back(next);
+                }
+            }
+        }
+        else
+        {
+            int missing = sizeMaxValues - 1;
+            while (missing > 0)
+            {
+                _jacobsthalIndex.push_back(_jacobsthalIndex.back() + 1);
+                missing--;
+            }
+        }
+    }
+}

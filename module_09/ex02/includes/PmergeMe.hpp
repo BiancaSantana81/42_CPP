@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 13:59:55 by bsantana          #+#    #+#             */
-/*   Updated: 2024/11/08 15:21:08 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/11/08 15:58:32 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ class PmergeMe
     std::deque<int> _dequeContainer; // escolha do container deque
     std::vector<int> _vectorContainer; // escolha do container vector
     std::vector<int> _jacobsthalSequence; // sequência de Jacobsthal
+    std::vector<int> _jacobsthalIndex; // índice da sequência de Jacobsthal
 
     public:
 
@@ -59,7 +60,8 @@ class PmergeMe
 
     // Jacobsthal sequence
 
-    void generateIndexJacobsthal(unsigned int sizeContainer);
+    void generateJacobsthalSequence(unsigned int sizeContainer);
+    void generateJacobsthalIndex(unsigned int sizeMaxValues);
 };
 
 template <typename T>
