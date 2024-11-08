@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 14:25:39 by bsantana          #+#    #+#             */
-/*   Updated: 2024/11/06 16:57:17 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/11/08 11:36:24 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,19 +41,7 @@ bool PmergeMe::validNumber(std::string input)
             return false;
         }
     }
-
-    _dequeContainer.push_back(intNumber);
-    _vectorContainer.push_back(intNumber);
-
     return (true);
-}
-
-void PmergeMe::printValues(void)
-{
-    std::cout << BRIGHT_MAGENTA "unordered values: " RESET;
-    for (size_t i = 0; i < _vectorContainer.size(); i++)
-        std::cout << _vectorContainer[i] << " ";
-    std::cout << std::endl;
 }
 
 bool PmergeMe::parsing(int argc, char **argv)
@@ -69,7 +57,6 @@ bool PmergeMe::parsing(int argc, char **argv)
         if (!validNumber(argv[i]))
             return (false);
     }
-    
-    printValues();  
+
     return (true);
 }

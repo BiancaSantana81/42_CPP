@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 13:59:55 by bsantana          #+#    #+#             */
-/*   Updated: 2024/11/06 16:40:24 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/11/08 13:01:01 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include <cstdlib>
 #include <limits>
 
 #include <vector>
@@ -45,8 +46,23 @@ class PmergeMe
     bool parsing(int argc, char **argv);
     bool validNumber(std::string input);
 
-    // printar valores ordenados
-    void printValues(void);
+    // métodos para inicialização dos containers e algoritmos de ordenação
+    void sortDeque(int argc, char **argv);
+    void sortVector(int argc, char **argv);
+
+    // métodos para separação dos valores dos containers
+    void separateValues(std::vector<int> &minValues , std::vector<int> &maxValues);
 };
+
+template <typename T>
+void printValues(const T& container, std::string status)
+{
+    std::cout << BRIGHT_MAGENTA << status << RESET;
+    for (typename T::const_iterator it = container.begin(); it != container.end(); ++it)
+    {
+        std::cout << *it << " ";
+    }
+    std::cout << std::endl;
+}
 
 #endif
