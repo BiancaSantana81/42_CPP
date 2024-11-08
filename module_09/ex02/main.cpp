@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 14:00:33 by bsantana          #+#    #+#             */
-/*   Updated: 2024/11/08 11:35:51 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/11/08 17:43:23 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int main(int argc, char **argv)
     if (!init.parsing(argc, argv))
         return (1);
 
-    init.sortDeque(argc, argv);
     init.sortVector(argc, argv);
+    init.sortDeque(argc, argv);
 
     return (0);
 }

@@ -6,13 +6,11 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 11:37:17 by bsantana          #+#    #+#             */
-/*   Updated: 2024/11/08 17:26:03 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/11/08 17:48:01 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/PmergeMe.hpp"
-
-#include <algorithm>
 
 /* =============== ALGORITHM FOR DEQUE ============== */
 
@@ -23,31 +21,70 @@ void PmergeMe::sortDeque(int argc, char **argv)
     for (int i = 1; i < argc; i++)
         _dequeContainer.push_back(atoi(argv[i]));
 
-    //printValues(_dequeContainer, "Before sort: ");
+    clock_t start = clock();
 
-    //clock_t start = clock();
+    std::deque<int> minValues;
+    std::deque<int> maxValues;
 
-    // sort the deque container
+    separateValues(minValues, maxValues);
+    insertValues(minValues, maxValues);
 
-    // clock_t end = clock();
-    // double elapsed = double(end - start) / CLOCKS_PER_SEC;
+    clock_t end = clock();
+    double elapsed = double(end - start) / CLOCKS_PER_SEC;
 
-    // std::cout << "Time to process a range of " <<
-    // BRIGHT_YELLOW <<_dequeContainer.size() << RESET << " elements with " <<
-    // BRIGHT_GREEN "deque: " RESET << elapsed << "s" << std::endl;
-
-    //printValues(_dequeContainer, "Deque after sort: ");
+    std::cout << "Time to process a range of " <<
+    BRIGHT_YELLOW <<_dequeContainer.size() << RESET << " elements with " <<
+    BRIGHT_GREEN "deque: " RESET << elapsed << "s" << std::endl;
 }
 
-/* 2. sort the deque container */
+/*2. Separar os valores em dois vetores -> min e max */
 
+void PmergeMe::separateValues(std::deque<int> &minValues, std::deque<int> &maxValues)
+{
+    int size = _vectorContainer.size();
+
+    for (int i = 0; i < size; i += 2)
+    {
+        if (i + 1 < size)
+        {
+            int minVal = (_vectorContainer[i] < _vectorContainer[i + 1]) ? _vectorContainer[i] : _vectorContainer[i + 1];
+            int maxVal = (_vectorContainer[i] > _vectorContainer[i + 1]) ? _vectorContainer[i] : _vectorContainer[i + 1];
+
+            std::deque<int>::iterator minPos = std::lower_bound(minValues.begin(), minValues.end(), minVal);
+            minValues.insert(minPos, minVal);
+
+            std::deque<int>::iterator maxPos = std::lower_bound(maxValues.begin(), maxValues.end(), maxVal);
+            maxValues.insert(maxPos, maxVal);
+        }
+        else
+        {
+            std::deque<int>::iterator pos = std::lower_bound(minValues.begin(), minValues.end(), _vectorContainer[i]);
+            minValues.insert(pos, _vectorContainer[i]);
+        }
+    }
+}
+
+/* 3. merge das duas listas -> min e max */
+
+void PmergeMe::insertValues(std::deque<int> &minValues, std::deque<int> &maxValues)
+{
+    generateJacobsthalSequence(maxValues.size());
+    generateJacobsthalIndex(maxValues.size());
+
+    for (std::vector<int>::iterator it = _jacobsthalIndex.begin(); it != _jacobsthalIndex.end(); ++it)
+    {
+        if (*it < static_cast<int>(maxValues.size()))
+        {
+            int value = maxValues[*it];
+            std::deque<int>::iterator pos = std::upper_bound(minValues.begin(), minValues.end(), value);
+            minValues.insert(pos, value);
+        }
+    }
+}
 
 /* =============== ALGORITHM FOR VECTOR ============== */
 
-/*1. Inserir valores na deque;
-* 2. Separar os valores em dois vetores -> min e max;
-* 3. Contagem de tempo para ordenação dos vetores;
-*/
+/* 1. insert values from argv into the vector container and cout time to process sorted vector */
 
 void PmergeMe::sortVector(int argc, char **argv)
 {
@@ -122,7 +159,9 @@ void PmergeMe::insertValues(std::vector<int> &minValues, std::vector<int> &maxVa
     }
 }
 
-/* 3.1 Gerar indíces de Jacobsthal para inserir os valores ordenados */
+/* =============== JACOBSTHAL ALGORITHM ============== */
+
+/* 1. Gerar sequência de Jacobsthal para contêiner */
 
 void PmergeMe::generateJacobsthalSequence(unsigned int sizeContainer)
 {
@@ -146,7 +185,7 @@ void PmergeMe::generateJacobsthalSequence(unsigned int sizeContainer)
     }
 }
 
-/* 3.2 Inserir valores ordenados com base nos indexes gerados por Jacobsthal */
+/* 2. Gerar índice da sequência de Jacobsthal */
 
 void PmergeMe::generateJacobsthalIndex(unsigned int sizeMaxValues)
 {
@@ -177,9 +216,7 @@ void PmergeMe::generateJacobsthalIndex(unsigned int sizeMaxValues)
         {
             int missing = sizeMaxValues - 1;
             while ( _jacobsthalIndex.size() < sizeMaxValues && missing > 0)
-            {
                 _jacobsthalIndex.push_back(missing--);
-            }
         }
     }
 }

@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 13:59:55 by bsantana          #+#    #+#             */
-/*   Updated: 2024/11/08 15:58:32 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/11/08 17:48:17 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include <cstdlib>
 #include <limits>
 
+#include <algorithm>
 #include <vector>
 #include <deque>
 
@@ -53,10 +54,12 @@ class PmergeMe
     void sortVector(int argc, char **argv);
 
     // métodos para separação dos valores dos containers
-    void separateValues(std::vector<int> &minValues , std::vector<int> &maxValues);
+    void separateValues(std::vector<int> &minValues , std::vector<int> &maxValues); // for vector
+    void separateValues(std::deque<int> &minValues, std::deque<int> &maxValues); // for deque
 
     // métodos para inserção dos valores ordenados
-    void insertValues(std::vector<int> &minValues, std::vector<int> &maxValues);
+    void insertValues(std::vector<int> &minValues, std::vector<int> &maxValues); // for vector
+    void insertValues(std::deque<int> &minValues, std::deque<int> &maxValues); // for deque
 
     // Jacobsthal sequence
 
