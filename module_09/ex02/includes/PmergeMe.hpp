@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 13:59:55 by bsantana          #+#    #+#             */
-/*   Updated: 2024/11/08 17:48:17 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/11/08 17:52:35 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,17 +49,17 @@ class PmergeMe
     bool parsing(int argc, char **argv);
     bool validNumber(std::string input);
 
-    // métodos para inicialização dos containers e algoritmos de ordenação
+    // métodos para inicialização dos containers e ordenação com deque
+
     void sortDeque(int argc, char **argv);
+    void separateValues(std::vector<int> &minValues , std::vector<int> &maxValues);
+    void insertValues(std::vector<int> &minValues, std::vector<int> &maxValues);
+
+    // métodos para inicialização dos containers e ordenação com vector
+
     void sortVector(int argc, char **argv);
-
-    // métodos para separação dos valores dos containers
-    void separateValues(std::vector<int> &minValues , std::vector<int> &maxValues); // for vector
-    void separateValues(std::deque<int> &minValues, std::deque<int> &maxValues); // for deque
-
-    // métodos para inserção dos valores ordenados
-    void insertValues(std::vector<int> &minValues, std::vector<int> &maxValues); // for vector
-    void insertValues(std::deque<int> &minValues, std::deque<int> &maxValues); // for deque
+    void separateValues(std::deque<int> &minValues, std::deque<int> &maxValues);
+    void insertValues(std::deque<int> &minValues, std::deque<int> &maxValues);
 
     // Jacobsthal sequence
 
