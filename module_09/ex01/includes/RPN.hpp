@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:33:55 by bsantana          #+#    #+#             */
-/*   Updated: 2024/11/11 11:09:28 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/11/11 18:06:33 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ class RPN
     private:
 
     /*
-        Esta classe utiliza o container `stack` para armazenar valores, 
-        facilitando o cálculo de uma expressão em Notação Polonesa Reversa (RPN).
-        A escolha do `stack` permite acesso rápido ao elemento no topo, 
-        ideal para a retirada dos operandos mais recentes, o que simplifica 
-        a implementação do algoritmo de RPN ao seguir o fluxo natural da pilha 
-        (último a entrar, primeiro a sair - LIFO).
+        This class uses the `stack` container to store values, 
+        making it easier to calculate an expression in Reverse Polish Notation (RPN).
+        The choice of `stack` allows quick access to the element at the top, 
+        ideal for recalling the most recent operands, which simplifies 
+        the implementation of the RPN algorithm by following the natural flow of the stack 
+        (last in, first out - LIFO).
     */
 
     std::stack<int> _values;

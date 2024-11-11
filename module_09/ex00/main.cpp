@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 11:24:53 by bsantana          #+#    #+#             */
-/*   Updated: 2024/11/11 10:45:38 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/11/11 17:59:33 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,12 @@
 
 int main(int argc, char **argv)
 {
-    if (!parsing(argc, argv))
+    if (argc != 2)
+    {
+        std::cout << BRIGHT_RED "Error! You should test with:" << BRIGHT_YELLOW " ./btc file" RESET << std::endl;
         return (1);
+    }
+
     runProgram(std::string(argv[1]));
     return (0);
 }

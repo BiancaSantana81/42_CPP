@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:33:52 by bsantana          #+#    #+#             */
-/*   Updated: 2024/11/11 11:10:47 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/11/11 18:51:17 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,10 @@ RPN &RPN::operator=(const RPN &other)
 void RPN::calculate(std::string input)
 {
     if (!validInput(input))
-        std::cout << BRIGHT_RED "Error." RESET << std::endl;
+    {
+        std::cout << BRIGHT_RED "Error: Invalid characters in input." RESET << std::endl;
+        return ;
+    }
 
     std::istringstream iss(input);
     std::string token;
@@ -48,7 +51,7 @@ void RPN::calculate(std::string input)
         else if (isOperator(token))
         {
             if (_values.size() < 2)
-                return ;
+                continue ;
         
             int b = _values.top();
             _values.pop();
@@ -64,6 +67,7 @@ void RPN::calculate(std::string input)
             _values.push(result);
         }
     }
+
     if (_values.size() == 1)
         std::cout << BRIGHT_MAGENTA "Result: " RESET << _values.top() << std::endl;
     else
@@ -84,7 +88,7 @@ int RPN::performingOperation(std::string token, int a, int b)
     {
         if (b == 0)
         {
-            std::cout << BRIGHT_RED "Error: Divisão por zero." RESET << std::endl;
+            std::cout << BRIGHT_RED "Error:  Division by zero." RESET << std::endl;
             return (INT_MIN);
         }
     result = a / b;
@@ -99,7 +103,7 @@ bool RPN::validInput(std::string input)
 
     while (iss >> token)
     {
-        if (!isOperator(token) && isNumber(token) == false)
+        if (!isOperator(token) && !isNumber(token))
             return (false);
     }
     return (true);

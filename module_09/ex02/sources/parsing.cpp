@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 14:25:39 by bsantana          #+#    #+#             */
-/*   Updated: 2024/11/11 11:46:48 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/11/11 18:14:06 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,34 +47,8 @@ bool PmergeMe::validNumber(std::string input)
         std::cout << BRIGHT_RED "Error: value outside the INT range: " RESET << number << std::endl;
         return (false);
     }
-
-    int intNumber = static_cast<int>(number);
-
-    for (std::deque<int>::iterator it = _dequeContainer.begin(); it != _dequeContainer.end(); ++it)
-    {
-        if (*it == intNumber)
-        {
-            std::cout << BRIGHT_RED "Error: Duplicate number found: " RESET << intNumber << std::endl;
-            return (false);
-        }
-    }
     return (true);
 }
-
-// bool PmergeMe::isSorted(std::vector<int> &container)
-// {
-//     for (size_t i = 0; i < container.size(); i++)
-//     {
-//         //if (container[i] < container[i + 1])
-
-//         if (container[i] < container[i - 1])
-//         {
-//             std::cout << BRIGHT_RED "Error: the container is already sorted! " RESET << std::endl;
-//             return (false);
-//         }
-//     }
-//     return (true);
-// }
 
 bool PmergeMe::isSorted(std::vector<int> &container)
 {

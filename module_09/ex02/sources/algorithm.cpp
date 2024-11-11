@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 11:37:17 by bsantana          #+#    #+#             */
-/*   Updated: 2024/11/11 11:47:41 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/11/11 18:14:50 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void PmergeMe::sortDeque(int argc, char **argv)
 
     std::cout << "Time to process a range of " <<
     BRIGHT_YELLOW <<_dequeContainer.size() << RESET << " elements with " <<
-    BRIGHT_GREEN "deque: " RESET << elapsed << "s" << std::endl;
+    BRIGHT_GREEN "deque: " RESET << std::fixed << std::setprecision(6) << elapsed << "s" << std::endl;
 }
 
 /* 2. separate the values of dequeContainer into two deques (min and max), add values in order */
@@ -116,7 +116,7 @@ void PmergeMe::sortVector(int argc, char **argv)
 
     std::cout << "Time to process a range of " <<
     BRIGHT_YELLOW <<_vectorContainer.size() << RESET << " elements with " <<
-    BRIGHT_GREEN "vector: " RESET << elapsed << "s" << std::endl;
+    BRIGHT_GREEN "vector: " RESET << std::fixed << std::setprecision(6) << elapsed << "s" << std::endl;
 
 }
 

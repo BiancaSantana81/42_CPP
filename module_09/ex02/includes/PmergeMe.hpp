@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 13:59:55 by bsantana          #+#    #+#             */
-/*   Updated: 2024/11/11 11:32:58 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/11/11 18:10:27 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <sstream>
 #include <cstdlib>
 #include <limits>
+#include <iomanip>
 
 #include <algorithm>
 #include <vector>

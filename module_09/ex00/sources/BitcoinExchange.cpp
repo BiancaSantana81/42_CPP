@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 12:41:19 by bsantana          #+#    #+#             */
-/*   Updated: 2024/11/11 10:53:41 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/11/11 18:02:33 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -198,7 +198,7 @@ void BitcoinExchange::convertValue(const std::string &date, float value)
     }
 
     float convertedValue = value * closest_it->second;
-    std::cout << date << " => " << value << " = " << convertedValue << std::endl;
+    std::cout << date << " => " << value << " = " << std::fixed << std::setprecision(2) << convertedValue << std::endl;
 }
 
 /* DESTRUCTOR */
