@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RPN.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:33:52 by bsantana          #+#    #+#             */
-/*   Updated: 2024/11/06 11:18:40 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/11/11 11:10:47 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,28 +25,6 @@ RPN &RPN::operator=(const RPN &other)
     else
          std::cout << "Self-attribution detected! The objects already have the same address." <<std::endl;
     return (*this);
-}
-
-int performingOperation(std::string token, int a, int b)
-{
-    int result = 0;
-    
-    if (token == "+")
-        result = a + b;
-    else if (token == "-")
-        result = a - b;
-    else if (token == "*")
-        result = a * b;
-    else if (token == "/")
-    {
-        if (b == 0)
-        {
-            std::cout << BRIGHT_RED "Error: Divisão por zero." RESET << std::endl;
-            return (INT_MIN);
-        }
-    result = a / b;
-    }
-    return (result);   
 }
 
 /* Methods for Reverse Polish Notation */
@@ -90,7 +68,28 @@ void RPN::calculate(std::string input)
         std::cout << BRIGHT_MAGENTA "Result: " RESET << _values.top() << std::endl;
     else
         std::cout << BRIGHT_RED "Error: Invalid expression." RESET << std::endl;
+}
 
+int RPN::performingOperation(std::string token, int a, int b)
+{
+    int result = 0;
+    
+    if (token == "+")
+        result = a + b;
+    else if (token == "-")
+        result = a - b;
+    else if (token == "*")
+        result = a * b;
+    else if (token == "/")
+    {
+        if (b == 0)
+        {
+            std::cout << BRIGHT_RED "Error: Divisão por zero." RESET << std::endl;
+            return (INT_MIN);
+        }
+    result = a / b;
+    }
+    return (result);
 }
 
 bool RPN::validInput(std::string input)

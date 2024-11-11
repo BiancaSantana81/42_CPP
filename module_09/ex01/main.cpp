@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:54:05 by bsantana          #+#    #+#             */
-/*   Updated: 2024/11/06 11:20:56 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/11/11 11:11:47 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,8 @@ int main(int argc, char **argv)
     }
 
     RPN rpnCalculator;
-    std::string input = argv[1];
 
-    rpnCalculator.calculate(input);
+    rpnCalculator.calculate(argv[1]);
 
     return (0);
 }
