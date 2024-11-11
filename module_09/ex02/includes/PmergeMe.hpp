@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 13:59:55 by bsantana          #+#    #+#             */
-/*   Updated: 2024/11/08 18:15:14 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/11/11 11:32:58 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ class PmergeMe
 
     bool parsing(int argc, char **argv);
     bool validNumber(std::string input);
+    bool isSorted(std::vector<int> &container);
 
     // methods for initialization of containers and sorting with deque
 

@@ -6,11 +6,28 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 14:25:39 by bsantana          #+#    #+#             */
-/*   Updated: 2024/11/08 11:36:24 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/11/11 11:46:48 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/PmergeMe.hpp"
+
+bool PmergeMe::parsing(int argc, char **argv)
+{
+    if (argc == 1 || argc > 3001)
+    {
+        std::cout << BRIGHT_RED "Error: number of invalid arguments." RESET << std::endl;
+        return(false);
+    }
+    
+    for (int i = 1; i < argc; i++)
+    {
+        if (!validNumber(argv[i]))
+            return (false);
+    }
+
+    return (true);
+}
 
 bool PmergeMe::validNumber(std::string input)
 {
@@ -38,25 +55,33 @@ bool PmergeMe::validNumber(std::string input)
         if (*it == intNumber)
         {
             std::cout << BRIGHT_RED "Error: Duplicate number found: " RESET << intNumber << std::endl;
-            return false;
+            return (false);
         }
     }
     return (true);
 }
 
-bool PmergeMe::parsing(int argc, char **argv)
-{
-    if (argc == 1 || argc > 3001)
-    {
-        std::cout << BRIGHT_RED "Error: number of invalid arguments." RESET << std::endl;
-        return(false);
-    }
-    
-    for (int i = 1; i < argc; i++)
-    {
-        if (!validNumber(argv[i]))
-            return (false);
-    }
+// bool PmergeMe::isSorted(std::vector<int> &container)
+// {
+//     for (size_t i = 0; i < container.size(); i++)
+//     {
+//         //if (container[i] < container[i + 1])
 
-    return (true);
+//         if (container[i] < container[i - 1])
+//         {
+//             std::cout << BRIGHT_RED "Error: the container is already sorted! " RESET << std::endl;
+//             return (false);
+//         }
+//     }
+//     return (true);
+// }
+
+bool PmergeMe::isSorted(std::vector<int> &container)
+{
+    for (size_t i = 1; i < container.size(); i++)
+    {
+        if (container[i] < container[i - 1])
+            return (true);
+    }
+    return (false);
 }

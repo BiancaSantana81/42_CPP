@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 11:37:17 by bsantana          #+#    #+#             */
-/*   Updated: 2024/11/08 18:13:23 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/11/11 11:47:41 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,12 @@ void PmergeMe::sortVector(int argc, char **argv)
 {
     for (int i = 1; i < argc; i++)
         _vectorContainer.push_back(atoi(argv[i]));
+
+    if (!isSorted(_vectorContainer))
+    {
+        std::cout << BRIGHT_RED "Error: the container is sorted! " RESET << std::endl;
+        exit(1);
+    }
 
     printValues(_vectorContainer, "BEFORE: ");
 
