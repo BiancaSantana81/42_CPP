@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 12:41:16 by bsantana          #+#    #+#             */
-/*   Updated: 2024/11/05 14:10:09 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/11/11 10:44:11 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 #include <fstream>
 #include <sstream>
 
-#include "init.hpp"
+#include "parsing.hpp"
 
 class BitcoinExchange
 {

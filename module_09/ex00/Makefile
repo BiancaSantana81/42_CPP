@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bsantana <bsantana@student.42.fr>          +#+  +:+       +#+         #
+#    By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/09 17:40:05 by bsantana          #+#    #+#              #
-#    Updated: 2024/10/28 15:57:41 by bsantana         ###   ########.fr        #
+#    Updated: 2024/11/11 10:43:23 by bsantana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CC = c++
 FLAGS = -Werror -Wall -Wextra -std=c++98
 MAKEFLAGS += --silent
 
-SRCS = sources/main.cpp sources/init.cpp sources/utils.cpp \
+SRCS = sources/main.cpp sources/parsing.cpp \
 	   sources/BitcoinExchange.cpp 
 
 OBJS_DIR = objs

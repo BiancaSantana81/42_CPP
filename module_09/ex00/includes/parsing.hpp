@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.hpp                                           :+:      :+:    :+:   */
+/*   parsing.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 11:30:19 by bsantana          #+#    #+#             */
-/*   Updated: 2024/11/05 10:54:35 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/11/11 10:43:57 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INIT_HPP
-#define INIT_HPP
+#ifndef PARSING_HPP
+#define PARSING_HPP
 
 #include <iostream>
 #include <cstring>

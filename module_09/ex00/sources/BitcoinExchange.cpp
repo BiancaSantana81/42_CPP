@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 12:41:19 by bsantana          #+#    #+#             */
-/*   Updated: 2024/11/05 14:29:49 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/11/11 10:53:41 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,12 @@ BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &other)
 // METHODS
 
 /*
-    Este método lê os valores do arquivo .csv e os armazena no contêiner `_data`.
-    Foi escolhido o contêiner `std::map` para possibilitar uma busca eficiente através de uma estrutura chave-valor,
-    onde a chave é a data e o valor é a taxa de câmbio correspondente.
-    Se o arquivo não puder ser aberto ou o cabeçalho inicial não corresponder ao esperado, uma exceção será lançada.
-    O método ignora espaços ao redor dos campos e valida o formato das linhas,
-    assegurando que estejam no formato "data,valor" antes de adicioná-las ao contêiner.
+    This method reads the values from the .csv file and stores them in the `_data` container.
+    The `std::map` container was chosen to enable efficient searching using a key-value structure,
+    where the key is the date and the value is the corresponding exchange rate.
+    If the file cannot be opened or the initial header does not match what is expected, an exception will be thrown.
+    The method ignores spaces around the fields and validates the format of the lines,
+    ensuring that they are in “date,value” format before adding them to the container.
 */
 
 int BitcoinExchange::populatingContainer(std::string csv)
@@ -76,11 +76,11 @@ int BitcoinExchange::populatingContainer(std::string csv)
 }
 
 /*
-    Este método lê as entradas do arquivo .txt e verifica se ele contém o cabeçalho esperado: `date | value`.
-    Caso o cabeçalho seja válido, o método processa cada linha do arquivo .txt e ignora linhas vazias.
-    Cada entrada é então passada para o método `formatData`, que valida e converte o valor 
-    para a taxa de câmbio do Bitcoin, garantindo que apenas dados corretamente formatados 
-    e validados sejam processados.
+    This method reads the entries from the .txt file and checks if it contains the expected header: `date | value`.
+    If the header is valid, the method processes each line of the .txt file and ignores empty lines.
+    Each entry is then passed to the `formatData` method, which validates and converts the value 
+    to the Bitcoin exchange rate, ensuring that only correctly formatted and validated data is processed. 
+    and validated data is processed.
 */
 
 void BitcoinExchange::loadingData(std::ifstream &file)
@@ -100,9 +100,9 @@ void BitcoinExchange::loadingData(std::ifstream &file)
 }
 
 /*
-   Método principal: fluxo de validação e conversão de dados em .txt.
-   Recebe uma linha do arquivo .txt, valida e extrai a data e o valor.
-   Se a validação for bem-sucedida, chama o método para converter o valor.
+   Main method: data validation and conversion flow in .txt.
+   Receives a line from the .txt file, validates it and extracts the date and value.
+   If validation is successful, calls the method to convert the value.
 */
 
 void BitcoinExchange::formatData(const std::string &line)
@@ -110,17 +110,16 @@ void BitcoinExchange::formatData(const std::string &line)
     std::string date;
     float value;
 
-    if (validateAndExtractData(line, date, value)) {
+    if (validateAndExtractData(line, date, value))
         convertValue(date, value);
-    }
 }
 
 /*
-    Método para validar e extrair valores de .txt.
-    Recebe uma linha de entrada, verifica se a linha contém um formato válido (date | value).
-    Extrai a data e o valor, removendo espaços em branco.
-    Retorna true se a validação for bem-sucedida e as variáveis de saída 'date' e 'value' são preenchidas.
-    Caso contrário, imprime mensagens de erro apropriadas e retorna false.
+    Method to validate and extract values from .txt.
+    Receives an input line, checks that the line contains a valid format (date | value).
+    Extracts the date and value, removing whitespace.
+    Returns true if validation is successful and the output variables 'date' and 'value' are filled.
+    Otherwise, prints the appropriate error message and returns false.
 */
 
 bool BitcoinExchange::validateAndExtractData(const std::string &line, std::string &date, float &value)
@@ -169,11 +168,11 @@ bool BitcoinExchange::validateAndExtractData(const std::string &line, std::strin
 }
 
 /*
-    Método para converter o valor usando a taxa de câmbio mais próxima disponível.
-    Recebe uma data e um valor a ser convertido.
-    Procura pela taxa de câmbio correspondente à data ou a mais próxima anterior.
-    Se uma taxa for encontrada, calcula e exibe o valor convertido.
-    Caso contrário, imprime uma mensagem de erro indicando que a taxa não foi encontrada para a data fornecida.
+    Method for converting the value using the nearest available exchange rate.
+    Receives a date and an amount to be converted.
+    Searches for the exchange rate corresponding to the date or the nearest previous one.
+    If a rate is found, calculates and displays the converted value.
+    Otherwise, it prints an error message indicating that the rate was not found for the given date.
 */
 
 void BitcoinExchange::convertValue(const std::string &date, float value)
@@ -181,19 +180,21 @@ void BitcoinExchange::convertValue(const std::string &date, float value)
     std::map<std::string, float>::iterator closest_it = _data.end();
 
     for (std::map<std::string, float>::iterator it = _data.begin(); it != _data.end(); ++it) {
-        if (it->first == date) {
+        if (it->first == date)
+        {
             closest_it = it;
-            break;
-        } else if (it->first < date) {
-            closest_it = it;
-        } else {
-            break;
+            break ;
         }
+        else if (it->first < date)
+            closest_it = it;
+        else
+            break ;
     }
 
-    if (closest_it == _data.end()) {
+    if (closest_it == _data.end())
+    {
         std::cout << BRIGHT_RED "Error: exchange rate not found for date => " RESET << date << std::endl;
-        return;
+        return ;
     }
 
     float convertedValue = value * closest_it->second;
