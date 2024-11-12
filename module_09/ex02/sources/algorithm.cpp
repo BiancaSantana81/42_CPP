@@ -6,14 +6,13 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 11:37:17 by bsantana          #+#    #+#             */
-/*   Updated: 2024/11/12 11:38:23 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/11/12 12:10:37 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/PmergeMe.hpp"
 
-
-/* 
+/*
    The algorithm chosen to solve this exercise was merge-insertion sort.
    First, the container values are separated into two containers (min and max) and
    inserted in ascending order. Next, the values from the max container are inserted into the min
