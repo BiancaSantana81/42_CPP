@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 14:00:33 by bsantana          #+#    #+#             */
-/*   Updated: 2024/11/08 17:43:23 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/11/12 14:20:57 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int main(int argc, char **argv)
 {
-    PmergeMe init;
-    
-    if (!init.parsing(argc, argv))
+    PmergeMe sortManager;
+
+    if (!sortManager.parsing(argc, argv))
         return (1);
 
-    init.sortVector(argc, argv);
-    init.sortDeque(argc, argv);
+    sortManager.sortVector(argc, argv);
+    sortManager.sortDeque(argc, argv);
 
     return (0);
 }

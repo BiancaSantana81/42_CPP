@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 12:41:19 by bsantana          #+#    #+#             */
-/*   Updated: 2024/11/11 18:02:33 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/11/12 14:14:50 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &other)
     where the key is the date and the value is the corresponding exchange rate.
     If the file cannot be opened or the initial header does not match what is expected, an exception will be thrown.
     The method ignores spaces around the fields and validates the format of the lines,
-    ensuring that they are in “date,value” format before adding them to the container.
+    ensuring that they are in “date,exchange_rate” format before adding them to the container.
 */
 
 int BitcoinExchange::populatingContainer(std::string csv)
