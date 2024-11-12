@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 11:37:17 by bsantana          #+#    #+#             */
-/*   Updated: 2024/11/12 11:33:55 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/11/12 11:38:23 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -168,7 +168,7 @@ void PmergeMe::separateValues(std::vector<int> &minValues, std::vector<int> &max
     }
 }
 
-/* 3. insert the values of maxValues into minValues in order */
+/* 3. insert the values of maxValues into minValues in order*/
 
 void PmergeMe::insertValues(std::vector<int> &minValues, std::vector<int> &maxValues)
 {
