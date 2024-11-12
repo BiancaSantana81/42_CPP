@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 13:59:55 by bsantana          #+#    #+#             */
-/*   Updated: 2024/11/11 18:10:27 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/11/12 11:12:34 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ class PmergeMe
 
     std::deque<int> _dequeContainer;
     std::vector<int> _vectorContainer;
-    std::vector<int> _jacobsthalSequence; // sequence of Jacobsthal
-    std::vector<int> _jacobsthalIndex; // index of Jacobsthal
 
     public:
+
+    // constructors and destructor
 
     PmergeMe(void);
     PmergeMe(const PmergeMe &other);
@@ -64,10 +64,6 @@ class PmergeMe
     void separateValues(std::deque<int> &minValues, std::deque<int> &maxValues);
     void insertValues(std::deque<int> &minValues, std::deque<int> &maxValues);
 
-    // Jacobsthal sequence
-
-    void generateJacobsthalSequence(unsigned int sizeContainer);
-    void generateJacobsthalIndex(unsigned int sizeMaxValues);
 };
 
 template <typename T>

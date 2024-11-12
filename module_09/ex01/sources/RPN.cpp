@@ -6,7 +6,7 @@
 /*   By: bsantana <bsantana@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:33:52 by bsantana          #+#    #+#             */
-/*   Updated: 2024/11/11 18:51:17 by bsantana         ###   ########.fr       */
+/*   Updated: 2024/11/12 12:21:08 by bsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void RPN::calculate(std::string input)
         {
             if (_values.size() < 2)
                 continue ;
-        
+
             int b = _values.top();
             _values.pop();
 
@@ -77,7 +77,7 @@ void RPN::calculate(std::string input)
 int RPN::performingOperation(std::string token, int a, int b)
 {
     int result = 0;
-    
+
     if (token == "+")
         result = a + b;
     else if (token == "-")
@@ -124,7 +124,7 @@ bool RPN::isNumber(std::string token)
     iss >> number;
     if (iss.fail())
         return (false);
-    if (number < 1 || number > 9)
+    if (number < 0 || number > 9)
         return (false);
     return (true);
 }
